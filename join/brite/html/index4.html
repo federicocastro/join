@@ -1,0 +1,1779 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>Brite | Multi-Purpose HTML5 Template</title>
+<meta name="keywords" content="" />
+<meta name="description" content="">
+<meta name="author" content="">
+
+<!-- Mobile view -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- Favicon -->
+<link rel="shortcut icon" href="images/fav-icon.ico">
+<link rel="stylesheet" type="text/css" href="js/bootstrap/bootstrap.min.css">
+
+<!-- Google fonts  -->
+<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Yesteryear" rel="stylesheet">
+
+<!-- Template's stylesheets -->
+<link rel="stylesheet" href="js/megamenu/stylesheets/screen.css">
+<link rel="stylesheet" href="css/theme-default.css" type="text/css">
+<link rel="stylesheet" href="js/loaders/stylesheets/screen.css">
+<link rel="stylesheet" href="css/corporate.css" type="text/css">
+<link rel="stylesheet" href="fonts/font-awesome/css/font-awesome.min.css" type="text/css">
+<link rel="stylesheet" type="text/css" href="fonts/Simple-Line-Icons-Webfont/simple-line-icons.css" media="screen" />
+<link rel="stylesheet" href="fonts/et-line-font/et-line-font.css">
+<link rel="stylesheet" type="text/css" href="js/revolution-slider/css/settings.css">
+<link rel="stylesheet" type="text/css" href="js/revolution-slider/css/layers.css">
+<link rel="stylesheet" type="text/css" href="js/revolution-slider/css/navigation.css">
+<link rel="stylesheet" href="js/parallax/main.css">
+<link rel="stylesheet" type="text/css" href="js/cubeportfolio/cubeportfolio.min.css">
+<link href="js/owl-carousel/owl.carousel.css" rel="stylesheet">
+<link href="js/owl-carousel/owl.theme.css" rel="stylesheet">
+<link href="js/animations/css/animations.min.css" rel="stylesheet" type="text/css" media="all" />
+<link href="js/tabs/css/responsive-tabs.css" rel="stylesheet" type="text/css" media="all" />
+<!-- Template's stylesheets END -->
+
+<!--[if lt IE 9]>
+<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+
+<!-- Style Customizer's stylesheets -->
+<link rel="stylesheet" type="text/css" href="js/style-customizer/css/spectrum.css">
+<link rel="stylesheet" type="text/css" href="js/style-customizer/css/style-customizer.css">
+<link rel="stylesheet/less" type="text/css" href="less/skin.less">
+<!-- Style Customizer's stylesheets END -->
+
+<!-- Skin stylesheet -->
+
+</head>
+
+<body>
+<div class="over-loader loader-live">
+  <div class="loader">
+    <div class="loader-item style4">
+      <div class="cube1"></div>
+      <div class="cube2"></div>
+    </div>
+  </div>
+</div>
+<!--end loading--> 
+
+<!-- Style Customizer -->
+<section id="style-customizer">
+  <div class="style-customizer-wrap form-horizontal">
+    <h4 class="sc-header uppercase">Style Customizer</h4>
+    <h5 class="uppercase">Layout Style</h5>
+    <div class="sc-variable-row form-group">
+      <div class="radio-group col-xs-12">
+        <input type="radio" name="sc-layout-type" id="sc-layout-type-boxed" class="sc-variable" data-key="layoutType" value="boxed" checked>
+        <input type="radio" name="sc-layout-type" id="sc-layout-type-wide" class="sc-variable" data-key="layoutType" value="wide">
+        <label for="sc-layout-type-wide" class="style-fweight-normal">Wide</label>
+        <label for="sc-layout-type-boxed" class="style-fweight-normal">Boxed</label>
+      </div>
+    </div>
+    <fieldset id="outer-bg-section">
+      <h5 class="customizer-style-tytle-padd">Outer Background Styles</h5>
+      <div class="sc-variable-row form-group">
+        <div class="col-xs-12">
+          <select name="sc-bg-outer-type" id="sc-bg-outer-type" data-key="outerBgType" class="sc-variable col-xs-8">
+            <option value="color" selected>Solid color</option>
+            <option value="pattern">Pattern</option>
+            <option value="image">Image</option>
+          </select>
+          <div class="col-xs-4">
+            <div id="sc-bg-outer-color-wrap">
+              <input type="color" name="sc-bg-outer-color" id="sc-bg-outer-color" class="sc-variable" data-key="outerBgColor">
+            </div>
+            <div id="sc-bg-outer-image-wrap">
+              <input type="file" accept="image/*" name="sc-bg-outer-image" id="sc-bg-outer-image" class="sc-variable sr-only" data-key="outerBgImage">
+              <label for="sc-bg-outer-image" class="sc-btn" title="Upload image"><i class="fa fa-upload"></i> </label>
+            </div>
+          </div>
+        </div>
+      </div>
+    </fieldset>
+    <h5 class="customizer-style-tytle-padd">Color Options</h5>
+    <div class="sc-variable-row form-group style-form-group">
+      <label for="sc-color-prim" class="col-xs-8 control-label color-text">Primary Color</label>
+      <div class="col-xs-4">
+        <input type="color" id="sc-color-prim" class="sc-variable" data-key="colorPrimary">
+      </div>
+    </div>
+    <br/>
+    <div class="form-group">
+      <div class="col-xs-12">
+        <button class="sc-btn" id="sc-download-css"><i class="fa fa-download"></i> Get CSS file</button>
+      </div>
+    </div>
+    <br/>
+    <br/>
+    <div> <a class="sty-demo-btn" href="http://codelayers.net/templates/arma/demo/demo.html" target="_blank">Demos</a> </div>
+  </div>
+  <button id="sc-toggle" title="Styles Customizer"><i class="fa fa-wrench"></i> </button>
+</section>
+<div class="modal fade" tabindex="-1" role="dialog" id="afterSaveCSSFileModal" aria-labelledby="afterSaveCSSFileModalLabel">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="afterSaveCSSFileModalLabel">File saved</h4>
+      </div>
+      <div class="modal-body"> In order to apply the generated custom styles to your template, please follow these steps:
+        <ol>
+          <li class="sc-after-save-todo-point-file">Upload the "skin.css" file to "css" directory in your template</li>
+          <li class="sc-after-save-todo-point-image">Upload the image file to "img" directory in your template. Keep the image file name unchanged.</li>
+          <li class="sc-after-save-todo-point-stylesheet-code"> Copy this code and paste it into "index.html" file in your template, after the line marked as <code>&lt;!-- Skin stylesheet --&gt;</code>
+            <pre><code>&lt;link rel="stylesheet" href="css/skin.css"&gt;</code></pre>
+          </li>
+          <li class="sc-after-save-todo-point-preloader"> Copy this code and paste it into "index.html" file in your template, after the line marked as <code>&lt;!-- Preloader icon --&gt;</code>
+            <pre><code class="sc-preloader-html"></code></pre>
+          </li>
+        </ol>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Style customizer END -->
+
+<div class="wrapper-boxed">
+  <div class="site-wrapper">
+    <div class="col-md-12 nopadding">
+      <div class="header-section dark-dropdowns style4 pin-style">
+        <div class="container">
+          <div class="mod-menu">
+            <div class="row">
+              <div class="col-sm-2"> <a href="index.html" title="" class="logo style-2 mar-4"> <img src="images/logo/logo-dark.png" alt=""> </a> </div>
+              <div class="col-sm-10">
+                <div class="main-nav">
+                  <ul class="nav navbar-nav top-nav">
+                    <li class="search-parent"> <a href="javascript:void(0)" title=""><i aria-hidden="true" class="fa fa-search"></i></a>
+                      <div class="search-box ">
+                        <div class="content">
+                          <div class="form-control">
+                            <input type="text" placeholder="Type to search" />
+                            <a href="#" class="search-btn mar-1"><i aria-hidden="true" class="fa fa-search"></i></a> </div>
+                          <a href="#" class="close-btn mar-1">x</a> </div>
+                      </div>
+                    </li>
+                    <li class="cart-parent"> <a href="javascript:void(0)" title=""> <i aria-hidden="true" class="fa fa-shopping-cart"></i> <span class="number mar2"> 4 </span> </a>
+                      <div class="cart-box">
+                        <div class="content">
+                          <div class="row">
+                            <div class="col-xs-8"> 2 item(s) </div>
+                            <div class="col-xs-4 text-right"> <span>$99</span> </div>
+                          </div>
+                          <ul>
+                            <li> <img src="http://via.placeholder.com/80x80" alt=""> Jean & Teashirt <span>$30</span> <a href="#" title="" class="close-btn">x</a> </li>
+                            <li> <img src="http://via.placeholder.com/80x80" alt=""> Jean & Teashirt <span>$30</span> <a href="#" title="" class="close-btn">x</a> </li>
+                          </ul>
+                          <div class="row">
+                            <div class="col-xs-6"> <a href="#" title="View Cart" class="btn btn-block btn-warning">View Cart</a> </div>
+                            <div class="col-xs-6"> <a href="#" title="Check out" class="btn btn-block btn-primary">Check out</a> </div>
+                          </div>
+                        </div>
+                      </div>
+                    </li>
+                    <li class="visible-xs menu-icon"> <a href="javascript:void(0)" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#menu" aria-expanded="false"> <i aria-hidden="true" class="fa fa-bars"></i> </a> </li>
+                  </ul>
+                  <div id="menu" class="collapse">
+                    <ul class="nav navbar-nav">
+                      <li class="right active"> <a href="#">Home</a> <span class="arrow"></span>
+                        <ul class="dm-align-2">
+                          <li> <a href="index2.html">Home Page 2</a></li>
+                          <li> <a href="index3.html">Home Page 3</a></li>
+                          <li class="active"> <a href="index4.html">Home Page 4</a></li>
+                          <li> <a href="index5.html">Home Page 5</a></li>
+                          <li> <a href="index6.html">Home Page 6</a></li>
+                          <li> <a href="index7.html">Home Page 7</a></li>
+                          <li> <a href="index8.html">Home Page 8</a></li>
+                          <li> <a href="index9.html">Home Page 9</a></li>
+                          <li> <a href="index10.html">Home Page 10</a></li>
+                          <li> <a href="index.html">Home Default</a></li>
+                        </ul>
+                      </li>
+                      <li> <a href="slider-kenburns.html">Pages</a> <span class="arrow"></span>
+                        <ul class="dm-align-2">
+                          <li> <a href="#">About <span class="sub-arrow dark pull-right"><i class="fa fa-angle-right" aria-hidden="true"></i></span> </a> <span class="arrow"></span>
+                            <ul>
+                              <li> <a href="page-about1.html">About Style 1</a> </li>
+                              <li> <a href="page-about2.html">About Style 2</a> </li>
+                              <li> <a href="page-about3.html">About Style 3</a> </li>
+                              <li> <a href="page-about4.html">About Style 4</a> </li>
+                              <li> <a href="page-about5.html">About Me</a> </li>
+                            </ul>
+                          </li>
+                          <li> <a href="#">Services <span class="sub-arrow dark pull-right"><i class="fa fa-angle-right" aria-hidden="true"></i></span> </a> <span class="arrow"></span>
+                            <ul>
+                              <li> <a href="page-services1.html">Services Style 1</a> </li>
+                              <li> <a href="page-services2.html">Services Style 2</a> </li>
+                              <li> <a href="page-services3.html">Services Style 3</a> </li>
+                              <li> <a href="page-services4.html">Services Style 4</a> </li>
+                            </ul>
+                          </li>
+                          <li> <a href="#">Team <span class="sub-arrow dark pull-right"><i class="fa fa-angle-right" aria-hidden="true"></i></span> </a> <span class="arrow"></span>
+                            <ul>
+                              <li> <a href="page-team-classic.html">Team Classic</a> </li>
+                              <li> <a href="page-team-parallax.html">Team Parallax</a> </li>
+                              <li> <a href="page-team-dark.html">Team dark Style</a> </li>
+                              <li> <a href="page-team-creative.html">Team Creative</a> </li>
+                            </ul>
+                          </li>
+                          <li> <a href="#">FAQ <span class="sub-arrow dark pull-right"><i class="fa fa-angle-right" aria-hidden="true"></i></span> </a> <span class="arrow"></span>
+                            <ul>
+                              <li> <a href="page-faq1.html">FAQ Style 1</a> </li>
+                              <li> <a href="page-faq2.html">FAQ Style 2</a> </li>
+                            </ul>
+                          </li>
+                          <li> <a href="#">Contact<span class="sub-arrow dark pull-right"><i class="fa fa-angle-right" aria-hidden="true"></i></span> </a> <span class="arrow"></span>
+                            <ul>
+                              <li> <a href="page-contact.html">Contact Classic</a> </li>
+                              <li> <a href="page-contact-left-sidebar.html">Contact Left Sidebar</a> </li>
+                              <li> <a href="page-contact-right-sidebar.html">Contact Right Sidebar</a> </li>
+                              <li> <a href="page-contact-map.html">Full Width Map</a> </li>
+                              <li> <a href="page-contact-parallax.html">Contact Parallax</a> </li>
+                              <li> <a href="page-contact-captcha.php">Contact With Captcha</a> </li>
+                            </ul>
+                          </li>
+                          <li> <a href="#">Other Pages 1<span class="sub-arrow dark pull-right"><i class="fa fa-angle-right" aria-hidden="true"></i></span> </a> <span class="arrow"></span>
+                            <ul>
+                              <li> <a href="page-full-width.html">Full Width Page</a></li>
+                              <li> <a href="page-left-sidebar.html">Left Sidebar</a></li>
+                              <li> <a href="page-right-sidebar.html">Right Sidebar</a></li>
+                              <li> <a href="page-packages.html">Package Plans</a></li>
+                              <li> <a href="page-careers.html">Careers</a></li>
+                              <li> <a href="page-coming-soon.html">Coming Soon</a></li>
+                            </ul>
+                          </li>
+                          <li> <a href="#">Other Pages 2<span class="sub-arrow dark pull-right"><i class="fa fa-angle-right" aria-hidden="true"></i></span> </a> <span class="arrow"></span>
+                            <ul>
+                              <li> <a href="page-login.html">Login</a></li>
+                              <li> <a href="page-register.html">Register</a></li>
+                              <li> <a href="page-sitemap.html">Sitemap</a></li>
+                              <li> <a href="page-maintenance.html">Maintenance</a></li>
+                              <li> <a href="page-404.html">404 Error Page</a></li>
+                              <li> <a href="page-404-2.html">404 Error Page 2</a></li>
+                            </ul>
+                          </li>
+                        </ul>
+                      </li>
+                      <li> <a href="slider-kenburns.html">Features</a> <span class="arrow"></span>
+                        <ul class="dm-align-2">
+                          <li> <a href="#">Sliders <span class="sub-arrow dark pull-right"><i class="fa fa-angle-right" aria-hidden="true"></i></span> </a> <span class="arrow"></span>
+                            <ul>
+                              <li> <a href="slider-kenburns.html">KenBurns</a> </li>
+                              <li> <a href="slider-parallax.html">Parallax</a> </li>
+                              <li> <a href="slider-3d.html">3D</a> </li>
+                              <li> <a href="slider-carousel.html">Carousel</a> </li>
+                              <li> <a href="slider-gallery.html">Gallery</a> </li>
+                              <li> <a href="slider-scroll-effect.html">Scroll Efects</a> </li>
+                              <li> <a href="slider-vimeo.html">Vimeo Video</a> </li>
+                              <li> <a href="slider-youtube.html">Youtube Video</a> </li>
+                            </ul>
+                          </li>
+                          <li> <a href="#">Headers <span class="sub-arrow dark pull-right"><i class="fa fa-angle-right" aria-hidden="true"></i></span> </a> <span class="arrow"></span>
+                            <ul>
+                              <li> <a href="index7.html">Header Light</a> </li>
+                              <li> <a href="page-about5.html">Header Dark</a> </li>
+                              <li> <a href="index4.html">Header Modern</a> </li>
+                              <li> <a href="index.html">Header Transparent</a> </li>
+                              <li> <a href="page-team-creative.html">Header Creative</a> </li>
+                              <li> <a href="index.html">Header Left Logo</a> </li>
+                              <li> <a href="page-team-creative.html">Header Center Logo</a> </li>
+                              <li> <a href="index7.html">Header White</a> </li>
+                            </ul>
+                          </li>
+                          <li> <a href="#">Menu Styles <span class="sub-arrow dark pull-right"><i class="fa fa-angle-right" aria-hidden="true"></i></span> </a> <span class="arrow"></span>
+                            <ul>
+                              <li> <a href="index.html">Menu Transparent</a> </li>
+                              <li> <a href="index2.html">Menu Left logo</a> </li>
+                              <li> <a href="index7.html">Menu light</a> </li>
+                              <li> <a href="index2.html">Menu Dark</a> </li>
+                              <li> <a href="page-team-creative.html">Menu Center Logo</a> </li>
+                              <li> <a href="index4.html">Menu Boxed</a> </li>
+                              <li> <a href="page-team-creative.html">Menu Center</a> </li>
+                            </ul>
+                          </li>
+                          <li> <a href="#">Loading Styles<span class="sub-arrow dark pull-right"><i class="fa fa-angle-right" aria-hidden="true"></i></span> </a> <span class="arrow"></span>
+                            <ul>
+                              <li> <a href="loading-style1.html">Loading Style 1</a> </li>
+                              <li> <a href="loading-style2.html">Loading Style 2</a> </li>
+                              <li> <a href="loading-style3.html">Loading Style 3</a> </li>
+                              <li> <a href="loading-style4.html">Loading Style 4</a> </li>
+                              <li> <a href="loading-style5.html">Loading Style 5</a> </li>
+                              <li> <a href="loading-style6.html">Loading Style 6</a> </li>
+                              <li> <a href="loading-style7.html">Loading Style 7</a> </li>
+                              <li> <a href="loading-style8.html">Loading Style 8</a> </li>
+                              <li> <a href="loading-style9.html">Loading Style 9</a> </li>
+                              <li> <a href="loading-style10.html">Loading Style 10</a> </li>
+                            </ul>
+                          </li>
+                          <li> <a href="#">Footer Styles<span class="sub-arrow dark pull-right"><i class="fa fa-angle-right" aria-hidden="true"></i></span> </a> <span class="arrow"></span>
+                            <ul>
+                              <li> <a href="index3.html">Footer Dark</a> </li>
+                              <li> <a href="index4.html">Footer Light</a> </li>
+                              <li> <a href="index3.html">Footer Simple</a> </li>
+                              <li> <a href="page-about1.html">Footer Parallax</a> </li>
+                              <li> <a href="index8.html">Footer Big</a> </li>
+                              <li> <a href="index5.html">Footer Modern</a> </li>
+                              <li> <a href="index10.html">Footer With Map</a> </li>
+                              <li> <a href="page-about1.html">Footer Transparent</a> </li>
+                              <li> <a href="index4.html">Footer Classic</a> </li>
+                            </ul>
+                          </li>
+                          <li> <a href="#">Videos<span class="sub-arrow dark pull-right"><i class="fa fa-angle-right" aria-hidden="true"></i></span> </a> <span class="arrow"></span>
+                            <ul>
+                              <li> <a href="shortcodes-videos.html">Youtube Videos</a> </li>
+                              <li> <a href="shortcodes-videos.html">Vimeo Videos</a> </li>
+                              <li> <a href="shortcodes-videos.html">HTML 5 Videos</a> </li>
+                            </ul>
+                          </li>
+                          <li> <a href="#">Layered PSD Files</a> </li>
+                          <li> <a href="#">Unlimited Colors</a> </li>
+                          <li> <a href="#">Wide & Boxed</a> </li>
+                        </ul>
+                      </li>
+                      <li class="mega-menu"> <a href="header-style3.html">Portfolio</a> <span class="arrow"></span>
+                        <ul>
+                          <li> <a href="#" title="home samples">Portfolio columns</a> <span class="arrow"></span>
+                            <ul>
+                              <li> <a href="portfolio-1-columns.html"><i class="fa fa-angle-right"></i> &nbsp; One Column</a> </li>
+                              <li> <a href="portfolio-2-columns.html"><i class="fa fa-angle-right"></i> &nbsp; Two Column</a> </li>
+                              <li> <a href="portfolio-3-columns.html"><i class="fa fa-angle-right"></i> &nbsp; Three Column</a> </li>
+                              <li> <a href="portfolio-4-columns.html"><i class="fa fa-angle-right"></i> &nbsp; Four Column</a> </li>
+                              <li> <a href="portfolio-5-columns.html"><i class="fa fa-angle-right"></i> &nbsp; Five Column</a> </li>
+                              <li> <a href="portfolio-6-columns.html"><i class="fa fa-angle-right"></i> &nbsp; Six Column</a> </li>
+                            </ul>
+                          </li>
+                          <li> <a href="#">Portfolio Styles</a> <span class="arrow"></span>
+                            <ul>
+                              <li> <a href="portfolio-masonry.html"><i class="fa fa-angle-right"></i> &nbsp; Masonry</a> </li>
+                              <li> <a href="portfolio-masonry-projects.html"><i class="fa fa-angle-right"></i> &nbsp; Masonry-Projects</a> </li>
+                              <li> <a href="portfolio-mosaic.html"><i class="fa fa-angle-right"></i> &nbsp; Mosaic</a> </li>
+                              <li> <a href="portfolio-mosaic-flat.html"><i class="fa fa-angle-right"></i> &nbsp; Mosaic-Flat</a> </li>
+                              <li> <a href="portfolio-mosaic-projects.html"><i class="fa fa-angle-right"></i> &nbsp; Mosaic-Projects</a> </li>
+                              <li> <a href="portfolio-slider-projects.html"><i class="fa fa-angle-right"></i> &nbsp; slider-projects</a> </li>
+                            </ul>
+                          </li>
+                          <li> <a href="#">Portfolio Styles</a> <span class="arrow"></span>
+                            <ul>
+                              <li> <a href="portfolio-full-width.html"><i class="fa fa-angle-right"></i> &nbsp; Full Width</a> </li>
+                              <li> <a href="portfolio-gallery.html"><i class="fa fa-angle-right"></i> &nbsp; Gallery</a> </li>
+                              <li> <a href="portfolio-classic.html"><i class="fa fa-angle-right"></i> &nbsp; Classic</a> </li>
+                              <li> <a href="portfolio-nospace.html"><i class="fa fa-angle-right"></i> &nbsp; No Space</a> </li>
+                              <li> <a href="portfolio-boxed-size.html"><i class="fa fa-angle-right"></i> &nbsp; Boxed Size</a> </li>
+                              <li> <a href="portfolio-modern.html"><i class="fa fa-angle-right"></i> &nbsp; Modern</a> </li>
+                            </ul>
+                          </li>
+                          <li> <a href="#">Portfolio Single Page</a> <span class="arrow"></span>
+                            <ul>
+                              <li> <a href="portfolio-parallax.html"><i class="fa fa-angle-right"></i> &nbsp; Parallax Image</a> </li>
+                              <li> <a href="portfolio-video.html"><i class="fa fa-angle-right"></i> &nbsp; Video Background</a> </li>
+                              <li> <a href="portfolio-left-sidebar.html"><i class="fa fa-angle-right"></i> &nbsp; Left Sidebar</a> </li>
+                              <li> <a href="portfolio-right-sidebar.html"><i class="fa fa-angle-right"></i> &nbsp; Right Sidebar</a> </li>
+                              <li> <a href="portfolio-carousel.html"><i class="fa fa-angle-right"></i> &nbsp; Carousel</a> </li>
+                              <li> <a href="portfolio-fullwidth-image.html"><i class="fa fa-angle-right"></i> &nbsp; Full width Image</a> </li>
+                            </ul>
+                          </li>
+                        </ul>
+                      </li>
+                      <li class="mega-menu five-col"> <a href="carousel-sliders.html">Shortcodes</a> <span class="arrow"></span>
+                        <ul>
+                          <li> <a href="#">Shortcodes 1</a> <span class="arrow"></span>
+                            <ul>
+                              <li><a href="shortcodes-accordions.html"><i class="fa fa-plus-circle"></i> &nbsp; Accordions</a> </li>
+                              <li><a href="shortcodes-alerts.html"><i class="fa fa-exclamation" aria-hidden="true"></i> &nbsp; Alerts</a> </li>
+                              <li><a href="shortcodes-animations.html"><i class="fa fa-bars"></i> &nbsp; Animations</a> </li>
+                              <li><a href="shortcodes-blockquotes.html"><i class="fa fa-quote-right" aria-hidden="true"></i> &nbsp; Blockquotes</a> </li>
+                              <li><a href="shortcodes-breadcrumbs.html"><i class="fa fa-share" aria-hidden="true"></i> &nbsp; Breadcrumbs</a> </li>
+                              <li><a href="shortcodes-buttons.html"><i class="fa fa-external-link" aria-hidden="true"></i> &nbsp; Buttons</a> </li>
+                              <li><a href="shortcodes-call-to-action.html"><i class="fa fa-level-up" aria-hidden="true"></i> &nbsp; Call to Action</a> </li>
+                              <li><a href="shortcodes-clients-logos.html"><i class="fa fa-user" aria-hidden="true"></i> &nbsp; Clients Logos</a> </li>
+                              <li><a href="shortcodes-carousel-sliders.html"><i class="fa fa-sort" aria-hidden="true"></i> &nbsp; Carousel Sliders</a> </li>
+                              <li><a href="shortcodes-counters.html"><i class="fa fa-text-height" aria-hidden="true"></i> &nbsp; Counters</a> </li>
+                            </ul>
+                          </li>
+                          <li> <a href="#">Shortcodes 2</a> <span class="arrow"></span>
+                            <ul>
+                              <li><a href="shortcodes-content-boxes.html"><i class="fa fa-th" aria-hidden="true"></i> &nbsp; Content Boxes</a> </li>
+                              <li><a href="shortcodes-data-tables.html"><i class="fa fa-table" aria-hidden="true"></i> &nbsp; Data Tables</a> </li>
+                              <li><a href="shortcodes-date-pickers.html"><i class="fa fa-calendar" aria-hidden="true"></i> &nbsp; Date Pickers</a> </li>
+                              <li><a href="shortcodes-dropcaps.html"><i class="fa fa-font" aria-hidden="true"></i> &nbsp; Dropcap & Highlight</a> </li>
+                              <li><a href="shortcodes-dividers.html"><i class="fa fa-minus" aria-hidden="true"></i> &nbsp; Dividers</a> </li>
+                              <li><a href="shortcodes-file-uploads.html"><i class="fa fa-upload" aria-hidden="true"></i> &nbsp; File Uploads</a> </li>
+                              <li><a href="shortcodes-forms.html"><i class="fa fa-envelope" aria-hidden="true"></i> &nbsp; Forms</a> </li>
+                              <li><a href="shortcodes-grids.html"><i class="fa fa-th-list" aria-hidden="true"></i> &nbsp; Grids</a> </li>
+                              <li><a href="shortcodes-heading-styles.html"><i class="fa fa-text-height" aria-hidden="true"></i> &nbsp; Heading Styles</a> </li>
+                              <li><a href="shortcodes-hover-styles.html"><i class="fa fa-picture-o" aria-hidden="true"></i> &nbsp; Hover Styles</a> </li>
+                            </ul>
+                          </li>
+                          <li> <a href="#">Shortcodes 3</a> <span class="arrow"></span>
+                            <ul>
+                              <li><a href="shortcodes-icon-boxes.html"><i class="fa fa-th-large" aria-hidden="true"></i> &nbsp; Icon Boxes</a> </li>
+                              <li><a href="shortcodes-icon-circles.html"><i class="fa fa-circle-o" aria-hidden="true"></i> &nbsp; Icon Circles</a> </li>
+                              <li><a href="shortcodes-countdown-timers.html"><i class="fa fa-bars" aria-hidden="true"></i> &nbsp; Countdown Timers</a> </li>
+                              <li><a href="shortcodes-icon-lists.html"><i class="fa fa-list" aria-hidden="true"></i> &nbsp; Icon Lists</a> </li>
+                              <li><a href="shortcodes-images.html"><i class="fa fa-picture-o" aria-hidden="true"></i> &nbsp; Images</a> </li>
+                              <li><a href="shortcodes-labels-and-badges.html"><i class="fa fa-adjust" aria-hidden="true"></i> &nbsp; Labels and Badges</a> </li>
+                              <li><a href="shortcodes-lightbox.html"><i class="fa fa-th" aria-hidden="true"></i> &nbsp; Lightbox</a> </li>
+                              <li><a href="shortcodes-lists.html"><i class="fa fa-list-ul" aria-hidden="true"></i> &nbsp; Lists</a> </li>
+                              <li><a href="shortcodes-maps.html"><i class="fa fa-map-marker" aria-hidden="true"></i> &nbsp; Maps</a> </li>
+                              <li><a href="shortcodes-modal-popup.html"><i class="fa fa-search-plus" aria-hidden="true"></i> &nbsp; Modal Popup</a> </li>
+                            </ul>
+                          </li>
+                          <li> <a href="#">Shortcode 4</a> <span class="arrow"></span>
+                            <ul>
+                              <li><a href="shortcodes-pagenation.html"><i class="fa fa-exchange" aria-hidden="true"></i> &nbsp; Pagenation</a> </li>
+                              <li><a href="shortcodes-parallax-backgrounds.html"><i class="fa fa-align-center" aria-hidden="true"></i> &nbsp; Parallax Backgrounds</a> </li>
+                              <li><a href="shortcodes-pricing-tables.html"><i class="fa fa-table" aria-hidden="true"></i> &nbsp; Pricing Tables</a> </li>
+                              <li><a href="shortcodes-pie-charts.html"><i class="fa fa-pie-chart" aria-hidden="true"></i> &nbsp; Pie Charts</a> </li>
+                              <li><a href="shortcodes-pricing-badges.html"><i class="fa fa-external-link"></i> &nbsp; Pricing Badges</a> </li>
+                              <li><a href="shortcodes-progress-bars.html"><i class="fa fa-outdent" aria-hidden="true"></i> &nbsp; Progress Bars</a> </li>
+                              <li><a href="shortcodes-process-steps.html"><i class="fa fa-long-arrow-right" aria-hidden="true"></i> &nbsp; Process Steps</a> </li>
+                              <li><a href="shortcodes-post-styles.html"><i class="fa fa-pencil" aria-hidden="true"></i> &nbsp; Post Styles</a> </li>
+                              <li><a href="shortcodes-toogle-switches.html"><i class="fa fa-toggle-on" aria-hidden="true"></i> &nbsp; Toogle Switches</a> </li>
+                              <li><a href="shortcodes-timeline.html"><i class="fa fa-align-left" aria-hidden="true"></i> &nbsp; Timeline</a> </li>
+                            </ul>
+                          </li>
+                          <li> <a href="#">Shortcode 5</a> <span class="arrow"></span>
+                            <ul>
+                              <li><a href="shortcodes-star-ratings.html"><i class="fa fa-star-half-o" aria-hidden="true"></i> &nbsp; Star Ratings</a> </li>
+                              <li><a href="shortcodes-sections.html"><i class="fa fa-square-o" aria-hidden="true"></i> &nbsp; Sections</a> </li>
+                              <li><a href="shortcodes-social-icons.html"><i class="fa fa-twitter" aria-hidden="true"></i> &nbsp; Social Icons</a> </li>
+                              <li><a href="shortcodes-tabs.html"><i class="fa fa-th-large" aria-hidden="true"></i> &nbsp; Tabs</a> </li>
+                              <li><a href="shortcodes-team.html"><i class="fa fa-user" aria-hidden="true"></i> &nbsp; Team</a> </li>
+                              <li><a href="shortcodes-testimonials.html"><i class="fa fa-pencil-square"></i> &nbsp; Testimonials</a> </li>
+                              <li><a href="shortcodes-tooltips.html"><i class="fa fa-font" aria-hidden="true"></i> &nbsp; Tooltips</a> </li>
+                              <li><a href="shortcodes-toogles.html"><i class="fa fa-toggle-on" aria-hidden="true"></i> &nbsp; Toogles</a> </li>
+                              <li><a href="shortcodes-typography.html"><i class="fa fa-text-height" aria-hidden="true"></i> &nbsp; Typography</a> </li>
+                              <li><a href="shortcodes-videos.html"><i class="fa fa-play-circle" aria-hidden="true"></i> &nbsp; Videos</a> </li>
+                            </ul>
+                          </li>
+                        </ul>
+                      </li>
+                      <li class="right"> <a href="#">Blog</a> <span class="arrow"></span>
+                        <ul class="dm-align-2">
+                          <li> <a href="#">Classic <span class="sub-arrow dark pull-right"><i class="fa fa-angle-right" aria-hidden="true"></i></span> </a> <span class="arrow"></span>
+                            <ul>
+                              <li> <a href="blog-full-width.html">Full Width</a> </li>
+                              <li> <a href="blog-left-sidebar.html">Left Sidebar</a> </li>
+                              <li> <a href="blog-right-sidebar.html">Right Sidebar</a> </li>
+                            </ul>
+                          </li>
+                          <li> <a href="#">Grids <span class="sub-arrow dark pull-right"><i class="fa fa-angle-right" aria-hidden="true"></i></span> </a> <span class="arrow"></span>
+                            <ul>
+                              <li> <a href="blog-1-columns.html">One Column</a> </li>
+                              <li> <a href="blog-2-columns.html">Two Column</a> </li>
+                              <li> <a href="blog-3-columns.html">Three Column</a> </li>
+                              <li> <a href="blog-4-columns.html">Four Column</a> </li>
+                              <li> <a href="blog-5-columns.html">Five Column</a> </li>
+                              <li> <a href="blog-6-columns.html">Six Column</a> </li>
+                            </ul>
+                          </li>
+                          <li> <a href="#">Default<span class="sub-arrow dark pull-right"><i class="fa fa-angle-right" aria-hidden="true"></i></span> </a> <span class="arrow"></span>
+                            <ul>
+                              <li> <a href="blog-default-full-width.html">Full Width</a> </li>
+                              <li> <a href="blog-default-left-sidebar.html">Left Sidebar</a> </li>
+                              <li> <a href="blog-default-right-sidebar.html">Right Sidebar</a> </li>
+                              <li> <a href="blog-default-author.html">Author Page</a> </li>
+                              <li> <a href="blog-default-comments.html">Blog Comments</a> </li>
+                            </ul>
+                          </li>
+                          <li> <a href="#">Thumbnail<span class="sub-arrow dark pull-right"><i class="fa fa-angle-right" aria-hidden="true"></i></span> </a> <span class="arrow"></span>
+                            <ul>
+                              <li> <a href="blog-full-width-thumbnail.html">Full Width</a> </li>
+                              <li> <a href="blog-left-sidebar-thumbnail.html">Left Sidebar</a> </li>
+                              <li> <a href="blog-right-sidebar-thumbnail.html">Right Sidebar</a> </li>
+                              <li> <a href="blog-author-thumbnail.html">Author Page</a> </li>
+                              <li> <a href="blog-comments-thumbnail.html">Blog Comments</a> </li>
+                            </ul>
+                          </li>
+                          <li> <a href="#">Single Post<span class="sub-arrow dark pull-right"><i class="fa fa-angle-right" aria-hidden="true"></i></span> </a> <span class="arrow"></span>
+                            <ul>
+                              <li> <a href="blog-image-post.html">Image Post</a> </li>
+                              <li> <a href="blog-video-post.html">Video Post</a> </li>
+                              <li> <a href="blog-gallery-post.html">Gallery Post</a> </li>
+                              <li> <a href="blog-sidebar-post.html">Sidebar Post</a> </li>
+                            </ul>
+                          </li>
+                        </ul>
+                      </li>
+                      <li class="right"> <a href="#">Shop</a> <span class="arrow"></span>
+                        <ul>
+                          <li> <a href="#">Default<span class="sub-arrow dark pull-right"><i class="fa fa-angle-right" aria-hidden="true"></i></span> </a> <span class="arrow"></span>
+                            <ul>
+                              <li> <a href="shop-full-width.html">Full Width</a> </li>
+                              <li> <a href="shop-left-sidebar.html">Left Sidebar</a> </li>
+                              <li> <a href="shop-right-sidebar.html">Right Sidebar</a> </li>
+                            </ul>
+                          </li>
+                          <li> <a href="#">Grids <span class="sub-arrow dark pull-right"><i class="fa fa-angle-right" aria-hidden="true"></i></span> </a> <span class="arrow"></span>
+                            <ul>
+                              <li> <a href="shop-2-columns.html">Two Column</a> </li>
+                              <li> <a href="shop-3-columns.html">Three Column</a> </li>
+                              <li> <a href="shop-4-columns.html">Four Column</a> </li>
+                              <li> <a href="shop-5-columns.html">Five Column</a> </li>
+                              <li> <a href="shop-6-columns.html">Six Column</a> </li>
+                            </ul>
+                          </li>
+                          <li> <a href="#">Single Product<span class="sub-arrow dark pull-right"><i class="fa fa-angle-right" aria-hidden="true"></i></span> </a> <span class="arrow"></span>
+                            <ul>
+                              <li> <a href="shop-single-full-width.html">Full Width</a> </li>
+                              <li> <a href="shop-single-left-sidebar.html">Left Sidebar</a> </li>
+                              <li> <a href="shop-single-right-sidebar.html">Right Sidebar</a> </li>
+                              <li> <a href="shop-single-both-sidebar.html">both Sidebars</a> </li>
+                            </ul>
+                          </li>
+                          <li> <a href="#">Order Process<span class="sub-arrow dark pull-right"><i class="fa fa-angle-right" aria-hidden="true"></i></span> </a> <span class="arrow"></span>
+                            <ul>
+                              <li> <a href="shop-cart.html">Shoping Cart</a> </li>
+                              <li> <a href="shop-checkout.html">Checkout</a> </li>
+                              <li> <a href="shop-wishlist.html">Wishlist</a> </li>
+                            </ul>
+                          </li>
+                        </ul>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--end menu--> 
+      
+    </div>
+    <!--end menu-->
+    
+    <div class="clearfix"></div>
+    
+    <!-- START REVOLUTION SLIDER 5.0 -->
+    <div class="slide-tmargin mar-7">
+      <div class="slidermaxwidth">
+        <div id="rev_slider_112_1_wrapper" class="rev_slider_wrapper fullwidthbanner-container" data-alias="travel-static-captions84" style="margin:0px auto;background-color:transparent;padding:0px;margin-top:0px;margin-bottom:0px;"> 
+          <!-- START REVOLUTION SLIDER 5.0.7 auto mode -->
+          <div id="rev_slider_112_1" class="rev_slider fullwidthabanner" style="display:none;" data-version="5.0.7">
+            <ul>
+              
+              <!-- SLIDE  -->
+              <li data-index="rs-1" data-transition="parallaxhorizontal" data-slotamount="default"  data-easein="default" data-easeout="default" data-masterspeed="default"  data-thumb=""  data-rotate="0"  data-fstransition="fade" data-fsmasterspeed="1500" data-fsslotamount="7" data-saveperformance="off"  data-title="Number One" data-description=""> 
+                <!-- MAIN IMAGE --> 
+                <img src="http://via.placeholder.com/2000x1300" alt=""  data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="10" class="rev-slidebg" data-no-retina> 
+                
+                <!-- LAYER NR. 1 -->
+                <div class="tp-caption raleway white uppercase text-white tp-resizeme"
+			data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']" 
+			data-y="['top','top','top','top']" data-voffset="['390','240','240','200']" 
+			data-fontsize="['16','16','14','14']"
+			data-lineheight="['70','70','70','50']"
+			data-width="none"
+			data-height="none"
+			data-whitespace="nowrap"
+			data-transform_idle="o:1;"			 
+			data-transform_in="z:0;rX:0deg;rY:0;rZ:0;sX:1.5;sY:1.5;skX:0;skY:0;opacity:0;s:1500;e:Power3.easeInOut;" 
+			data-transform_out="y:[100%];s:1000;e:Power2.easeInOut;s:1000;e:Power2.easeInOut;" 
+			data-mask_in="x:0px;y:0px;" 
+			data-mask_out="x:inherit;y:inherit;" 
+			data-start="2000" 
+			data-splitin="none" 
+			data-splitout="none" 
+			data-responsive_offset="on" 						
+			style="z-index: 7; white-space: nowrap;">onsectetuer adipiscing elit sit amet justo </div>
+                
+                <!-- LAYER NR. 2 -->
+                <div class="tp-caption montserrat fweight-6 text-white tp-resizeme"
+			data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']" 
+			data-y="['top','top','top','top']" data-voffset="['440','100','100','110']" 
+			data-fontsize="['70','70','50','30']"
+			data-lineheight="['100','100','100','50']"
+			data-width="none"
+			data-height="none"
+			data-whitespace="nowrap"
+			data-transform_idle="o:1;"			 
+			data-transform_in="z:0;rX:0deg;rY:0;rZ:0;sX:1.5;sY:1.5;skX:0;skY:0;opacity:0;s:1500;e:Power3.easeInOut;" 
+			data-transform_out="y:[100%];s:1000;e:Power2.easeInOut;s:1000;e:Power2.easeInOut;" 
+			data-mask_in="x:0px;y:0px;" 
+			data-mask_out="x:inherit;y:inherit;" 
+			data-start="1000" 
+			data-splitin="none" 
+			data-splitout="none" 
+			data-responsive_offset="on" 						
+			style="z-index: 7; white-space: nowrap;">Expert Business </div>
+                
+                <!-- LAYER NR. 3 -->
+                <div class="tp-caption montserrat fweight-6 text-white tp-resizeme"
+			data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']" 
+			data-y="['top','top','top','top']" data-voffset="['500','150','150','150']" 
+			data-fontsize="['70','60','50','30']"
+			data-lineheight="['100','100','100','50']"
+			data-width="none"
+			data-height="none"
+			data-whitespace="nowrap"
+			data-transform_idle="o:1;"			 
+			data-transform_in="z:0;rX:0deg;rY:0;rZ:0;sX:1.5;sY:1.5;skX:0;skY:0;opacity:0;s:1500;e:Power3.easeInOut;" 
+			data-transform_out="y:[100%];s:1000;e:Power2.easeInOut;s:1000;e:Power2.easeInOut;" 
+			data-mask_in="x:0px;y:0px;" 
+			data-mask_out="x:inherit;y:inherit;" 
+			data-start="1500" 
+			data-splitin="none" 
+			data-splitout="none" 
+			data-responsive_offset="on" 						
+			style="z-index: 7; white-space: nowrap;"> Solutions </div>
+                
+                <!-- LAYER NR. 4 -->
+                <div class="tp-caption sbut2 btn-round"
+			data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']" 
+			data-y="['top','top','top','top']" data-voffset="['670','350','370','300']"
+			data-speed="800"
+			data-start="2500"
+			data-transform_in="y:bottom;s:1500;e:Power3.easeOut;"
+			data-transform_out="opacity:0;s:3000;e:Power4.easeIn;s:3000;e:Power4.easeIn;" 
+			data-endspeed="300"
+			data-captionhidden="off"
+			style="z-index: 6"> <a href="#">Get Started now!</a> </div>
+              </li>
+              
+              <!-- SLIDE  -->
+              <li data-index="rs-2" data-transition="parallaxhorizontal" data-slotamount="default"  data-easein="default" data-easeout="default" data-masterspeed="default"  data-thumb=""  data-rotate="0"  data-fstransition="fade" data-fsmasterspeed="1500" data-fsslotamount="7" data-saveperformance="off"  data-title="Number One" data-description=""> 
+                <!-- MAIN IMAGE --> 
+                <img src="http://via.placeholder.com/2000x1300" alt=""  data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="10" class="rev-slidebg" data-no-retina> 
+                
+                <!-- LAYER NR. 1 -->
+                <div class="tp-caption raleway uppercase text-dark tp-resizeme"
+			data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']" 
+			data-y="['top','top','top','top']" data-voffset="['390','240','240','200']" 
+			data-fontsize="['16','16','14','14']"
+			data-lineheight="['70','70','70','50']"
+			data-width="none"
+			data-height="none"
+			data-whitespace="nowrap"
+			data-transform_idle="o:1;"			 
+			data-transform_in="z:0;rX:0deg;rY:0;rZ:0;sX:1.5;sY:1.5;skX:0;skY:0;opacity:0;s:1500;e:Power3.easeInOut;" 
+			data-transform_out="y:[100%];s:1000;e:Power2.easeInOut;s:1000;e:Power2.easeInOut;" 
+			data-mask_in="x:0px;y:0px;" 
+			data-mask_out="x:inherit;y:inherit;" 
+			data-start="2000" 
+			data-splitin="none" 
+			data-splitout="none" 
+			data-responsive_offset="on" 						
+			style="z-index: 7; white-space: nowrap;">onsectetuer adipiscing elit sit amet justo </div>
+                
+                <!-- LAYER NR. 2 -->
+                <div class="tp-caption montserrat fweight-6 text-dark tp-resizeme"
+			data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']" 
+			data-y="['top','top','top','top']" data-voffset="['440','100','100','110']" 
+			data-fontsize="['70','70','50','30']"
+			data-lineheight="['100','100','100','50']"
+			data-width="none"
+			data-height="none"
+			data-whitespace="nowrap"
+			data-transform_idle="o:1;"			 
+			data-transform_in="z:0;rX:0deg;rY:0;rZ:0;sX:1.5;sY:1.5;skX:0;skY:0;opacity:0;s:1500;e:Power3.easeInOut;" 
+			data-transform_out="y:[100%];s:1000;e:Power2.easeInOut;s:1000;e:Power2.easeInOut;" 
+			data-mask_in="x:0px;y:0px;" 
+			data-mask_out="x:inherit;y:inherit;" 
+			data-start="1000" 
+			data-splitin="none" 
+			data-splitout="none" 
+			data-responsive_offset="on" 						
+			style="z-index: 7; white-space: nowrap;">Beautifully </div>
+                
+                <!-- LAYER NR. 3 -->
+                <div class="tp-caption montserrat fweight-6 text-dark tp-resizeme"
+			data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']" 
+			data-y="['top','top','top','top']" data-voffset="['500','150','150','150']" 
+			data-fontsize="['70','60','50','30']"
+			data-lineheight="['100','100','100','50']"
+			data-width="none"
+			data-height="none"
+			data-whitespace="nowrap"
+			data-transform_idle="o:1;"			 
+			data-transform_in="z:0;rX:0deg;rY:0;rZ:0;sX:1.5;sY:1.5;skX:0;skY:0;opacity:0;s:1500;e:Power3.easeInOut;" 
+			data-transform_out="y:[100%];s:1000;e:Power2.easeInOut;s:1000;e:Power2.easeInOut;" 
+			data-mask_in="x:0px;y:0px;" 
+			data-mask_out="x:inherit;y:inherit;" 
+			data-start="1500" 
+			data-splitin="none" 
+			data-splitout="none" 
+			data-responsive_offset="on" 						
+			style="z-index: 7; white-space: nowrap;">Crafted Designs </div>
+                
+                <!-- LAYER NR. 4 -->
+                <div class="tp-caption sbut2 dark btn-round"
+			data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']" 
+			data-y="['top','top','top','top']" data-voffset="['670','350','370','300']"
+			data-speed="800"
+			data-start="2500"
+			data-transform_in="y:bottom;s:1500;e:Power3.easeOut;"
+			data-transform_out="opacity:0;s:3000;e:Power4.easeIn;s:3000;e:Power4.easeIn;" 
+			data-endspeed="300"
+			data-captionhidden="off"
+			style="z-index: 6"> <a href="#">Get Started now!</a> </div>
+              </li>
+              
+              <!-- SLIDE  -->
+              <li data-index="rs-3" data-transition="parallaxhorizontal" data-slotamount="default"  data-easein="default" data-easeout="default" data-masterspeed="default"  data-thumb=""  data-rotate="0"  data-fstransition="fade" data-fsmasterspeed="1500" data-fsslotamount="7" data-saveperformance="off"  data-title="Number One" data-description=""> 
+                <!-- MAIN IMAGE --> 
+                <img src="http://via.placeholder.com/2000x1300" alt=""  data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="10" class="rev-slidebg" data-no-retina> 
+                
+                <!-- LAYER NR. 1 -->
+                <div class="tp-caption raleway white uppercase text-white tp-resizeme"
+			data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']" 
+			data-y="['top','top','top','top']" data-voffset="['390','240','240','200']" 
+			data-fontsize="['16','16','14','14']"
+			data-lineheight="['70','70','70','50']"
+			data-width="none"
+			data-height="none"
+			data-whitespace="nowrap"
+			data-transform_idle="o:1;"			 
+			data-transform_in="z:0;rX:0deg;rY:0;rZ:0;sX:1.5;sY:1.5;skX:0;skY:0;opacity:0;s:1500;e:Power3.easeInOut;" 
+			data-transform_out="y:[100%];s:1000;e:Power2.easeInOut;s:1000;e:Power2.easeInOut;" 
+			data-mask_in="x:0px;y:0px;" 
+			data-mask_out="x:inherit;y:inherit;" 
+			data-start="2000" 
+			data-splitin="none" 
+			data-splitout="none" 
+			data-responsive_offset="on" 						
+			style="z-index: 7; white-space: nowrap;">onsectetuer adipiscing elit sit amet justo </div>
+                
+                <!-- LAYER NR. 2 -->
+                <div class="tp-caption montserrat fweight-6 text-white tp-resizeme"
+			data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']" 
+			data-y="['top','top','top','top']" data-voffset="['440','100','100','110']" 
+			data-fontsize="['70','70','50','30']"
+			data-lineheight="['100','100','100','50']"
+			data-width="none"
+			data-height="none"
+			data-whitespace="nowrap"
+			data-transform_idle="o:1;"			 
+			data-transform_in="z:0;rX:0deg;rY:0;rZ:0;sX:1.5;sY:1.5;skX:0;skY:0;opacity:0;s:1500;e:Power3.easeInOut;" 
+			data-transform_out="y:[100%];s:1000;e:Power2.easeInOut;s:1000;e:Power2.easeInOut;" 
+			data-mask_in="x:0px;y:0px;" 
+			data-mask_out="x:inherit;y:inherit;" 
+			data-start="1000" 
+			data-splitin="none" 
+			data-splitout="none" 
+			data-responsive_offset="on" 						
+			style="z-index: 7; white-space: nowrap;">Creative & Modern </div>
+                
+                <!-- LAYER NR. 3 -->
+                <div class="tp-caption montserrat fweight-6 text-white tp-resizeme"
+			data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']" 
+			data-y="['top','top','top','top']" data-voffset="['500','150','150','150']" 
+			data-fontsize="['70','60','50','30']"
+			data-lineheight="['100','100','100','50']"
+			data-width="none"
+			data-height="none"
+			data-whitespace="nowrap"
+			data-transform_idle="o:1;"			 
+			data-transform_in="z:0;rX:0deg;rY:0;rZ:0;sX:1.5;sY:1.5;skX:0;skY:0;opacity:0;s:1500;e:Power3.easeInOut;" 
+			data-transform_out="y:[100%];s:1000;e:Power2.easeInOut;s:1000;e:Power2.easeInOut;" 
+			data-mask_in="x:0px;y:0px;" 
+			data-mask_out="x:inherit;y:inherit;" 
+			data-start="1500" 
+			data-splitin="none" 
+			data-splitout="none" 
+			data-responsive_offset="on" 						
+			style="z-index: 7; white-space: nowrap;">Agency Studio </div>
+                
+                <!-- LAYER NR. 4 -->
+                <div class="tp-caption sbut2 btn-round"
+			data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']" 
+			data-y="['top','top','top','top']" data-voffset="['670','350','370','300']"
+			data-speed="800"
+			data-start="2500"
+			data-transform_in="y:bottom;s:1500;e:Power3.easeOut;"
+			data-transform_out="opacity:0;s:3000;e:Power4.easeIn;s:3000;e:Power4.easeIn;" 
+			data-endspeed="300"
+			data-captionhidden="off"
+			style="z-index: 6"> <a href="#">Get Started now!</a> </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <!-- END REVOLUTION SLIDER WRAPPER --> 
+    </div>
+    <div class="clearfix"></div>
+    <!-- END OF SLIDER WRAPPER -->
+    
+    <section class="sec-padding">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-12">
+            <div class="sec-title-container text-center">
+              <h5 class="font-weight-4 less-mar-1 line-height-4 montserrat text-primary">about our company and success</h5>
+              <h2 class="font-weight-6 less-mar-1 montserrat line-height-5">We are digitalagency studio and <br/>
+                design modern designs</h2>
+            </div>
+          </div>
+          <div class="clearfix"></div>
+          <!--end title-->
+          
+          <div class="col-md-4">
+            <div class="ce-feature-box-32 text-left">
+              <div class="icon-plain-small left dark icon"><span class="icon-camera"></span></div>
+              <div class=" text-box-right text-left">
+                <h5 class="title font-weight-5">Fully Responsive</h5>
+                <p>Vestibulum ante ipsum primis sit amet justo elit faucibus orci luctus ultrices posuere cubilia Curae.</p>
+              </div>
+            </div>
+          </div>
+          <!--end item-->
+          
+          <div class="col-md-4">
+            <div class="ce-feature-box-32 text-left">
+              <div class="icon-plain-small left dark icon"><span class="icon-bike"></span></div>
+              <div class=" text-box-right text-left">
+                <h5 class="title font-weight-5">Beautiful Graphics</h5>
+                <p>Vestibulum ante ipsum primis sit amet justo elit faucibus orci luctus ultrices posuere cubilia Curae.</p>
+              </div>
+            </div>
+          </div>
+          <!--end item-->
+          
+          <div class="col-md-4">
+            <div class="ce-feature-box-32 text-left">
+              <div class="icon-plain-small left dark icon"><span class="icon-map"></span></div>
+              <div class=" text-box-right text-left">
+                <h5 class="title font-weight-5">Clean & Easy to use</h5>
+                <p>Vestibulum ante ipsum primis sit amet justo elit faucibus orci luctus ultrices posuere cubilia Curae.</p>
+              </div>
+            </div>
+          </div>
+          <!--end item--> 
+          
+        </div>
+      </div>
+    </section>
+    <div class="clearfix"></div>
+    <!-- end section -->
+    
+    <section class="section-side-image section-dark sec-padding clearfix">
+      <div class="img-holder col-md-12 col-sm-3 pull-left">
+        <div class="background-imgholder" style="background:url(http://via.placeholder.com/1500x960);"><img class="nodisplay-image" src="http://via.placeholder.com/1500x960" alt=""/> </div>
+      </div>
+      <div class="container-fluid">
+        <div class="row no-gutter">
+          <div class="col-md-10 col-centered">
+            <div class="col-sm-12">
+              <div class="sec-title-container text-center">
+                <h5 class="font-weight-4 text-white less-mar-1 line-height-4 montserrat opacity-4">We are delivering beautiful Products</h5>
+                <h2 class="font-weight-6 text-white less-mar-1 montserrat line-height-5">We offer high Quality Templates and<br/>
+                  easy to use Developing Services </h2>
+              </div>
+            </div>
+            <div class="clearfix"></div>
+            <!--end title-->
+            
+            <div class="col-md-2 col-sm-12 col-xs-12">
+              <div class="ce-feature-box-25 h-primary margin-bottom">
+                <div class="icon-plain-small center icon text-dark"><span class="icon-linegraph"></span></div>
+                <div class="clearfix"></div>
+                <br/>
+                <h5 class="title nopadding">Responsive</h5>
+              </div>
+            </div>
+            <!--end item-->
+            
+            <div class="col-md-2 col-sm-12 col-xs-12">
+              <div class="ce-feature-box-25 h-primary margin-bottom">
+                <div class="icon-plain-small center icon text-dark"><span class="icon-strategy"></span></div>
+                <div class="clearfix"></div>
+                <br/>
+                <h5 class="title nopadding">Animations</h5>
+              </div>
+            </div>
+            <!--end item-->
+            
+            <div class="col-md-2 col-sm-12 col-xs-12">
+              <div class="ce-feature-box-25 h-primary margin-bottom">
+                <div class="icon-plain-small center icon text-dark"><span class="icon-lightbulb"></span></div>
+                <div class="clearfix"></div>
+                <br/>
+                <h5 class="title nopadding">Design</h5>
+              </div>
+            </div>
+            <!--end item-->
+            
+            <div class="col-md-2 col-sm-12 col-xs-12">
+              <div class="ce-feature-box-25 h-primary margin-bottom">
+                <div class="icon-plain-small center icon text-dark"><span class="icon-bike"></span></div>
+                <div class="clearfix"></div>
+                <br/>
+                <h5 class="title nopadding">Developing</h5>
+              </div>
+            </div>
+            <!--end item-->
+            
+            <div class="col-md-2 col-sm-12 col-xs-12">
+              <div class="ce-feature-box-25 h-primary margin-bottom">
+                <div class="icon-plain-small center icon text-dark"><span class="icon-alarmclock"></span></div>
+                <div class="clearfix"></div>
+                <br/>
+                <h5 class="title nopadding">Icon Design</h5>
+              </div>
+            </div>
+            <!--end item-->
+            
+            <div class="col-md-2 col-sm-12 col-xs-12">
+              <div class="ce-feature-box-25 h-primary margin-bottom">
+                <div class="icon-plain-small center icon text-dark"><span class="icon-anchor"></span></div>
+                <div class="clearfix"></div>
+                <br/>
+                <h5 class="title nopadding">Clean Code</h5>
+              </div>
+            </div>
+            <!--end item-->
+            
+            <div class="clearfix"></div>
+            <div class="col-divider-margin-3"></div>
+            <div class="col-md-2 col-sm-12 col-xs-12">
+              <div class="ce-feature-box-25 h-primary margin-bottom">
+                <div class="icon-plain-small center icon text-dark"><span class="icon-laptop"></span></div>
+                <div class="clearfix"></div>
+                <br/>
+                <h5 class="title nopadding">UI Design</h5>
+              </div>
+            </div>
+            <!--end item-->
+            
+            <div class="col-md-2 col-sm-12 col-xs-12">
+              <div class="ce-feature-box-25 h-primary margin-bottom">
+                <div class="icon-plain-small center icon text-dark"><span class="icon-lock"></span></div>
+                <div class="clearfix"></div>
+                <br/>
+                <h5 class="title nopadding">Full Secure</h5>
+              </div>
+            </div>
+            <!--end item-->
+            
+            <div class="col-md-2 col-sm-12 col-xs-12">
+              <div class="ce-feature-box-25 h-primary margin-bottom">
+                <div class="icon-plain-small center icon text-dark"><span class="icon-layers"></span></div>
+                <div class="clearfix"></div>
+                <br/>
+                <h5 class="title nopadding">Layer PSD</h5>
+              </div>
+            </div>
+            <!--end item-->
+            
+            <div class="col-md-2 col-sm-12 col-xs-12">
+              <div class="ce-feature-box-25 h-primary margin-bottom">
+                <div class="icon-plain-small center icon text-dark"><span class="icon-basket"></span></div>
+                <div class="clearfix"></div>
+                <br/>
+                <h5 class="title nopadding">Shop Pages</h5>
+              </div>
+            </div>
+            <!--end item-->
+            
+            <div class="col-md-2 col-sm-12 col-xs-12">
+              <div class="ce-feature-box-25 h-primary margin-bottom">
+                <div class="icon-plain-small center icon text-dark"><span class="icon-map"></span></div>
+                <div class="clearfix"></div>
+                <br/>
+                <h5 class="title nopadding">Map Service</h5>
+              </div>
+            </div>
+            <!--end item-->
+            
+            <div class="col-md-2 col-sm-12 col-xs-12">
+              <div class="ce-feature-box-25 h-primary margin-bottom">
+                <div class="icon-plain-small center icon text-dark"><span class="icon-trophy"></span></div>
+                <div class="clearfix"></div>
+                <br/>
+                <h5 class="title nopadding">Awards</h5>
+              </div>
+            </div>
+            <!--end item--> 
+            
+          </div>
+          <!--end main div--> 
+          
+        </div>
+      </div>
+    </section>
+    <div class=" clearfix"></div>
+    <!--end section-->
+    
+    <section class="sec-padding section-light">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-12">
+            <div class="sec-title-container text-center">
+              <h5 class="font-weight-4 less-mar-1 line-height-4 montserrat text-primary">We are creating beautiful Products</h5>
+              <h2 class="font-weight-6 less-mar-1 montserrat line-height-5">We offer high Quality Templates and<br/>
+                Detailed digital Works </h2>
+            </div>
+          </div>
+          <div class="clearfix"></div>
+          <!--end title-->
+          
+          <div id="js-grid-mosaic-flat" class="cbp cbp-l-grid-mosaic-flat">
+            <div class="cbp-item web-design graphic"> <a href="images/portfolio/1.jpg" class="cbp-caption cbp-lightbox" data-title="Bolt UI<br>by Tiberiu Neamu">
+              <div class="cbp-caption-defaultWrap"> <img src="http://via.placeholder.com/380x380" alt=""> </div>
+              <div class="cbp-caption-activeWrap">
+                <div class="cbp-l-caption-alignCenter">
+                  <div class="cbp-l-caption-body">
+                    <div class="cbp-l-caption-title">Bolt UI</div>
+                  </div>
+                </div>
+              </div>
+              </a> </div>
+            <div class="cbp-item print motion"> <a href="images/portfolio/3.jpg" class="cbp-caption cbp-lightbox" data-title="World Clock Widget<br>by Paul Flavius Nechita">
+              <div class="cbp-caption-defaultWrap"> <img src="http://via.placeholder.com/380x380" alt=""> </div>
+              <div class="cbp-caption-activeWrap">
+                <div class="cbp-l-caption-alignCenter">
+                  <div class="cbp-l-caption-body">
+                    <div class="cbp-l-caption-title">World Clock Widget</div>
+                  </div>
+                </div>
+              </div>
+              </a> </div>
+            <div class="cbp-item print motion"> <a href="images/portfolio/2.jpg" class="cbp-caption cbp-lightbox" data-title="WhereTO App<br>by Tiberiu Neamu">
+              <div class="cbp-caption-defaultWrap"> <img src="http://via.placeholder.com/380x760" alt=""> </div>
+              <div class="cbp-caption-activeWrap">
+                <div class="cbp-l-caption-alignCenter">
+                  <div class="cbp-l-caption-body">
+                    <div class="cbp-l-caption-title">WhereTO App</div>
+                  </div>
+                </div>
+              </div>
+              </a> </div>
+            <div class="cbp-item motion graphic"> <a href="images/portfolio/10.jpg" class="cbp-caption cbp-lightbox" data-title="Seemple* Music for iPad<br>by Tiberiu Neamu">
+              <div class="cbp-caption-defaultWrap"> <img src="http://via.placeholder.com/380x760" alt=""> </div>
+              <div class="cbp-caption-activeWrap">
+                <div class="cbp-l-caption-alignCenter">
+                  <div class="cbp-l-caption-body">
+                    <div class="cbp-l-caption-title">Seemple* Music for iPad</div>
+                  </div>
+                </div>
+              </div>
+              </a> </div>
+            <div class="cbp-item web-design print"> <a href="images/portfolio/12.jpg" class="cbp-caption cbp-lightbox" data-title="iDevices<br>by Tiberiu Neamu">
+              <div class="cbp-caption-defaultWrap"> <img src="http://via.placeholder.com/380x760" alt=""> </div>
+              <div class="cbp-caption-activeWrap">
+                <div class="cbp-l-caption-alignCenter">
+                  <div class="cbp-l-caption-body">
+                    <div class="cbp-l-caption-title">iDevices</div>
+                  </div>
+                </div>
+              </div>
+              </a> </div>
+            <div class="cbp-item print motion"> <a href="images/portfolio/5.jpg" class="cbp-caption cbp-lightbox" data-title="Remind~Me Widget<br>by Tiberiu Neamu">
+              <div class="cbp-caption-defaultWrap"> <img src="http://via.placeholder.com/380x760" alt=""> </div>
+              <div class="cbp-caption-activeWrap">
+                <div class="cbp-l-caption-alignCenter">
+                  <div class="cbp-l-caption-body">
+                    <div class="cbp-l-caption-title">Remind~Me Widget</div>
+                  </div>
+                </div>
+              </div>
+              </a> </div>
+            <div class="cbp-item web-design print"> <a href="images/portfolio/4.jpg" class="cbp-caption cbp-lightbox" data-title="Workout Buddy<br>by Tiberiu Neamu">
+              <div class="cbp-caption-defaultWrap"> <img src="http://via.placeholder.com/380x380" alt=""> </div>
+              <div class="cbp-caption-activeWrap">
+                <div class="cbp-l-caption-alignCenter">
+                  <div class="cbp-l-caption-body">
+                    <div class="cbp-l-caption-title">Workout Buddy</div>
+                  </div>
+                </div>
+              </div>
+              </a> </div>
+            <div class="cbp-item print graphic"> <a href="images/portfolio/8.jpg" class="cbp-caption cbp-lightbox" data-title="Digital Menu<br>by Cosmin Capitanu">
+              <div class="cbp-caption-defaultWrap"> <img src="http://via.placeholder.com/380x380" alt=""> </div>
+              <div class="cbp-caption-activeWrap">
+                <div class="cbp-l-caption-alignCenter">
+                  <div class="cbp-l-caption-body">
+                    <div class="cbp-l-caption-title">Digital Menu</div>
+                  </div>
+                </div>
+              </div>
+              </a> </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <div class="clearfix"></div>
+    <!-- end section -->
+    
+    <section class="sec-padding section-medium-dark">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-12">
+            <div class="sec-title-container text-center">
+              <h5 class="font-weight-4 text-white less-mar-1 line-height-4 montserrat opacity-4">We are offring flexible Price</h5>
+              <h2 class="font-weight-6 text-white less-mar-1 montserrat line-height-5">We offer best price products and<br/>
+                included unlimited Plans </h2>
+            </div>
+          </div>
+          <div class="clearfix"></div>
+          <!--end title-->
+          
+          <div class="col-md-4">
+            <div class="ce-feature-box-34 margin-bottom">
+              <div class="text-box">
+                <h5>Free</h5>
+                <h1 class="font-weight-4">$0</h1>
+                <div class="clearfix"></div>
+                <ul class="features-list">
+                  <li><i class="fa fa-check" aria-hidden="true"></i> 1 GB of space</li>
+                  <li><i class="fa fa-check" aria-hidden="true"></i> Access from anywhere</li>
+                  <li><i class="fa fa-check" aria-hidden="true"></i> Free Domain</li>
+                  <li><i class="fa fa-check" aria-hidden="true"></i> Simple file sharing</li>
+                </ul>
+                <div class="clearfix"></div>
+                <br/>
+                <br/>
+                <div class="col-md-12 text-center"> <a class="btn btn-border border-1x light btn-medium btn-xround uppercase" href="#">Order Now !</a></div>
+              </div>
+            </div>
+          </div>
+          <!--end item-->
+          
+          <div class="col-md-4">
+            <div class="ce-feature-box-34 active margin-bottom">
+              <div class="text-box">
+                <div class="act-ribbon"><img src="images/81.png" alt="" class="img-responsive"/></div>
+                <h5>Standard</h5>
+                <h1 class="font-weight-4">$49</h1>
+                <div class="clearfix"></div>
+                <ul class="features-list">
+                  <li><i class="fa fa-check" aria-hidden="true"></i> 1 GB of space</li>
+                  <li><i class="fa fa-check" aria-hidden="true"></i> 256 MB Memory</li>
+                  <li><i class="fa fa-check" aria-hidden="true"></i> Full Support</li>
+                  <li><i class="fa fa-times icon-red " aria-hidden="true"></i> Site Builder</li>
+                </ul>
+                <div class="clearfix"></div>
+                <br/>
+                <br/>
+                <div class="col-md-12 text-center"> <a class="btn btn-border border-1x light btn-medium btn-xround uppercase" href="#">Order Now !</a></div>
+              </div>
+            </div>
+          </div>
+          <!--end item-->
+          
+          <div class="col-md-4">
+            <div class="ce-feature-box-34 margin-bottom">
+              <div class="text-box">
+                <h5>Unlimited</h5>
+                <h1 class="font-weight-4">$49</h1>
+                <div class="clearfix"></div>
+                <ul class="features-list">
+                  <li><i class="fa fa-check" aria-hidden="true"></i> 1 GB of space</li>
+                  <li><i class="fa fa-check" aria-hidden="true"></i> 256 MB Memory</li>
+                  <li><i class="fa fa-check" aria-hidden="true"></i> Full Support</li>
+                  <li><i class="fa fa-times icon-red " aria-hidden="true"></i> Site Builder</li>
+                </ul>
+                <div class="clearfix"></div>
+                <br/>
+                <br/>
+                <div class="col-md-12 text-center"> <a class="btn btn-border border-1x light btn-medium btn-xround uppercase" href="#">Order Now !</a></div>
+              </div>
+            </div>
+          </div>
+          <!--end item--> 
+          
+        </div>
+      </div>
+    </section>
+    <div class="clearfix"></div>
+    <!-- end section -->
+    
+    <section class="sec-padding section-primary">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-12">
+            <div class="sec-title-container text-center">
+              <h5 class="font-weight-4 less-mar-1 line-height-4 montserrat">Our creative team gives you best Support</h5>
+              <h2 class="font-weight-6 less-mar-1 montserrat line-height-5">Our Creative Team gives You best <br/>
+                Service and excellent Support</h2>
+            </div>
+          </div>
+          <div class="clearfix"></div>
+          <!--end title-->
+          
+          <div class="col-md-4 col-sm-6 col-xs-12 margin-bottom">
+            <div class="ce-feature-box-35 dark">
+              <div class="main-box">
+                <div class="img-box"><img src="http://via.placeholder.com/700x900" alt="" class="img-responsive"/></div>
+                <div class="text-box">
+                  <div class="inner-box">
+                    <h5 class="nopadding title">Margaret</h5>
+                    <p class="subtext">Manager</p>
+                    <br/>
+                    <p class="small-text">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Suspendisse et justo. </p>
+                    <br/>
+                    <ul class="sc-icons">
+                      <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                      <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                      <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+                      <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!--end feature box--> 
+            
+          </div>
+          <!--end item-->
+          
+          <div class="col-md-4 col-sm-6 col-xs-12 margin-bottom">
+            <div class="ce-feature-box-35 dark">
+              <div class="main-box">
+                <div class="img-box"><img src="http://via.placeholder.com/700x900" alt="" class="img-responsive"/></div>
+                <div class="text-box">
+                  <div class="inner-box">
+                    <h5 class="nopadding title">Matthew</h5>
+                    <p class="subtext">Founder & CEO</p>
+                    <br/>
+                    <p class="small-text">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Suspendisse et justo. </p>
+                    <br/>
+                    <ul class="sc-icons">
+                      <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                      <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                      <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+                      <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!--end feature box--> 
+            
+          </div>
+          <!--end item-->
+          
+          <div class="col-md-4 col-sm-6 col-xs-12 margin-bottom">
+            <div class="ce-feature-box-35 dark">
+              <div class="main-box">
+                <div class="img-box"><img src="http://via.placeholder.com/700x900" alt="" class="img-responsive"/></div>
+                <div class="text-box">
+                  <div class="inner-box">
+                    <h5 class="nopadding title">Jennifer</h5>
+                    <p class="subtext">Support</p>
+                    <br/>
+                    <p class="small-text">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Suspendisse et justo. </p>
+                    <br/>
+                    <ul class="sc-icons">
+                      <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                      <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                      <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+                      <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!--end feature box--> 
+            
+          </div>
+          <!--end item--> 
+        </div>
+      </div>
+    </section>
+    <div class="clearfix"></div>
+    <!-- end section -->
+    
+    <section class="sec-padding section-light">
+      <div class="container">
+        <div class="row slide-controls-4">
+          <div class="col-sm-12">
+            <div class="sec-title-container text-center">
+              <h5 class="font-weight-4 less-mar-1 line-height-4 montserrat text-primary">What our people and clients says</h5>
+              <h2 class="font-weight-6 less-mar-1 montserrat line-height-5">Our Customers and people Says<br/>
+                we deliver quality products </h2>
+            </div>
+          </div>
+          <div class="clearfix"></div>
+          <!--end title-->
+          
+          <div id="owl-demo3" class="owl-carousel owl-theme">
+            <div class="item">
+              <div class="col-md-4">
+                <div class="ce-feature-box-33 margin-bottom">
+                  <div class="text-box text-center">
+                    <div class="imgbox-xlarge round center overflow-hidden"><img src="http://via.placeholder.com/300x300" alt="" class="img-responsive"/></div>
+                    <div class="clearfix"></div>
+                    <br/>
+                    <p>Elit odio erat vel eget consectetuer adipiscing elit Suspendisse et justo Praesent mattis commodo.</p>
+                    <div class="clearfix"></div>
+                    <br/>
+                    <h5 class="less-mar-1 title montserrat">Matthew</h5>
+                    <span>Manager</span> </div>
+                </div>
+              </div>
+              <!--end item-->
+              
+              <div class="col-md-4">
+                <div class="ce-feature-box-33 margin-bottom">
+                  <div class="text-box text-center">
+                    <div class="imgbox-xlarge round center overflow-hidden"><img src="http://via.placeholder.com/300x300" alt="" class="img-responsive"/></div>
+                    <div class="clearfix"></div>
+                    <br/>
+                    <p>Elit odio erat vel eget consectetuer adipiscing elit Suspendisse et justo Praesent mattis commodo.</p>
+                    <div class="clearfix"></div>
+                    <br/>
+                    <h5 class="less-mar-1 title montserrat">Margaret</h5>
+                    <span>Developer</span> </div>
+                </div>
+              </div>
+              <!--end item-->
+              
+              <div class="col-md-4">
+                <div class="ce-feature-box-33 margin-bottom">
+                  <div class="text-box text-center">
+                    <div class="imgbox-xlarge round center overflow-hidden"><img src="http://via.placeholder.com/300x300" alt="" class="img-responsive"/></div>
+                    <div class="clearfix"></div>
+                    <br/>
+                    <p>Elit odio erat vel eget consectetuer adipiscing elit Suspendisse et justo Praesent mattis commodo.</p>
+                    <div class="clearfix"></div>
+                    <br/>
+                    <h5 class="less-mar-1 title montserrat">Nicholas</h5>
+                    <span>Designer</span> </div>
+                </div>
+              </div>
+              <!--end item--> 
+            </div>
+            <!--end carousel item-->
+            
+            <div class="item">
+              <div class="col-md-4">
+                <div class="ce-feature-box-33 margin-bottom">
+                  <div class="text-box text-center">
+                    <div class="imgbox-xlarge round center overflow-hidden"><img src="http://via.placeholder.com/300x300" alt="" class="img-responsive"/></div>
+                    <div class="clearfix"></div>
+                    <br/>
+                    <p>Elit odio erat vel eget consectetuer adipiscing elit Suspendisse et justo Praesent mattis commodo.</p>
+                    <div class="clearfix"></div>
+                    <br/>
+                    <h5 class="less-mar-1 title montserrat">Matthew</h5>
+                    <span>Manager</span> </div>
+                </div>
+              </div>
+              <!--end item-->
+              
+              <div class="col-md-4">
+                <div class="ce-feature-box-33 margin-bottom">
+                  <div class="text-box text-center">
+                    <div class="imgbox-xlarge round center overflow-hidden"><img src="http://via.placeholder.com/300x300" alt="" class="img-responsive"/></div>
+                    <div class="clearfix"></div>
+                    <br/>
+                    <p>Elit odio erat vel eget consectetuer adipiscing elit Suspendisse et justo Praesent mattis commodo.</p>
+                    <div class="clearfix"></div>
+                    <br/>
+                    <h5 class="less-mar-1 title montserrat">Margaret</h5>
+                    <span>Developer</span> </div>
+                </div>
+              </div>
+              <!--end item-->
+              
+              <div class="col-md-4">
+                <div class="ce-feature-box-33 margin-bottom">
+                  <div class="text-box text-center">
+                    <div class="imgbox-xlarge round center overflow-hidden"><img src="http://via.placeholder.com/300x300" alt="" class="img-responsive"/></div>
+                    <div class="clearfix"></div>
+                    <br/>
+                    <p>Elit odio erat vel eget consectetuer adipiscing elit Suspendisse et justo Praesent mattis commodo.</p>
+                    <div class="clearfix"></div>
+                    <br/>
+                    <h5 class="less-mar-1 title montserrat">Nicholas</h5>
+                    <span>Designer</span> </div>
+                </div>
+              </div>
+              <!--end item--> 
+            </div>
+            <!--end carousel item--> 
+            
+          </div>
+          <!--end carousel main--> 
+        </div>
+      </div>
+    </section>
+    <div class="clearfix"></div>
+    <!-- end section -->
+    
+    <section class="sec-padding-5">
+      <div class="container">
+        <div class="row">
+          <div id="owl-demo11" class="owl-carousel owl-theme">
+            <div class="item">
+              <ul class="clients-list grid-cols-5 hover-7 noborder">
+                <li><a href="#"><img src="http://via.placeholder.com/225x120" alt=""></a></li>
+                <li><a href="#"><img src="http://via.placeholder.com/225x120" alt=""></a></li>
+                <li><a href="#"><img src="http://via.placeholder.com/225x120" alt=""></a></li>
+                <li><a href="#"><img src="http://via.placeholder.com/225x120" alt=""></a></li>
+                <li><a href="#"><img src="http://via.placeholder.com/225x120" alt=""></a></li>
+              </ul>
+            </div>
+            <!--end carousel item-->
+            
+            <div class="item">
+              <ul class="clients-list grid-cols-5 hover-7 noborder">
+                <li><a href="#"><img src="http://via.placeholder.com/225x120" alt=""></a></li>
+                <li><a href="#"><img src="http://via.placeholder.com/225x120" alt=""></a></li>
+                <li><a href="#"><img src="http://via.placeholder.com/225x120" alt=""></a></li>
+                <li><a href="#"><img src="http://via.placeholder.com/225x120" alt=""></a></li>
+                <li><a href="#"><img src="http://via.placeholder.com/225x120" alt=""></a></li>
+              </ul>
+            </div>
+            <!--end carousel item--> 
+            
+          </div>
+          <!--end carousel--> 
+          
+        </div>
+      </div>
+    </section>
+    <div class="clearfix"></div>
+    <!-- end section -->
+    
+    <section class="sec-padding section-dark section-pattren-5">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-12">
+            <div class="sec-title-container text-center">
+              <h5 class="font-weight-4 less-mar-1 line-height-4 montserrat text-primary">Read more about our Blogs</h5>
+              <h2 class="font-weight-6 less-mar-1 montserrat line-height-5 text-white">Blogs included business, education<br/>
+                and all business people </h2>
+            </div>
+          </div>
+          <div class="clearfix"></div>
+          <!--end title-->
+          
+          <div class="col-md-4 col-sm-6 col-xs-12">
+            <div class="ce-feature-box-36 no-margin less-padd-2 hover-shadow">
+              <div class="img-box"> <img src="http://via.placeholder.com/1000x1000" alt="" class="img-responsive"/> </div>
+              <div class="postinfo-box">
+                <h3 class=" title font-weight-4 montserrat"><a href="#">Aliquam justo Hendrerit </a></h3>
+                <div class="blog-post-info"><span><i class="fa fa-folder"></i> Business/corporate</span></div>
+                <br/>
+                <p>Consectetuer adipiscing elit Suspendisse et justo Praesent mattis commodo augue. </p>
+              </div>
+              <!--end post item--> 
+            </div>
+          </div>
+          <!--end col main-->
+          
+          <div class="col-md-4 col-sm-6 col-xs-12">
+            <div class="ce-feature-box-36 no-margin less-padd-2 hover-shadow active">
+              <div class="img-box"> <img src="http://via.placeholder.com/1000x1000" alt="" class="img-responsive"/> </div>
+              <div class="postinfo-box">
+                <h3 class="title font-weight-4 montserrat"><a href="#">Praesent elit commodo </a></h3>
+                <div class="blog-post-info"><span><i class="fa fa-folder"></i> Business/corporate</span></div>
+                <br/>
+                <p>Consectetuer adipiscing elit Suspendisse et justo Praesent mattis commodo augue. </p>
+              </div>
+              <!--end post item--> 
+            </div>
+          </div>
+          <!--end col main-->
+          
+          <div class="col-md-4 col-sm-6 col-xs-12">
+            <div class="ce-feature-box-36 no-margin less-padd-2 hover-shadow">
+              <div class="img-box"> <img src="http://via.placeholder.com/1000x1000" alt="" class="img-responsive"/> </div>
+              <div class="postinfo-box">
+                <h3 class=" title font-weight-4 montserrat"><a href="#">Duis felis elit scelerisque</a></h3>
+                <div class="blog-post-info"><span><i class="fa fa-folder"></i> Business/corporate</span></div>
+                <br/>
+                <p>Consectetuer adipiscing elit Suspendisse et justo Praesent mattis commodo augue. </p>
+              </div>
+              <!--end post item--> 
+            </div>
+          </div>
+          <!--end col main--> 
+          
+        </div>
+      </div>
+    </section>
+    <div class="clearfix"></div>
+    <!-- end section -->
+    
+    <section class="sec-padding-4 section-primary">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12 text-center">
+            <h2 class="less-mar-1 font-weight-3">Interested in working with Us?</h2>
+            <div class="clearfix"></div>
+            <br/>
+            <a class="btn btn-border btn-border-1x btn-round dark uppercase" href="#"><i class="fa fa-play-circle" aria-hidden="true"></i> Contact Us</a> </div>
+        </div>
+      </div>
+    </section>
+    <div class="clearfix"></div>
+    <!--end section-->
+    
+    <div class="sec-padding">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-3 col-sm-12 colmargin clearfix margin-bottom">
+            <div class="fo-map">
+              <div class="footer-logo"><img src="images/logo/logo-dark.png" alt=""/></div>
+              <p class="text-dark">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Suspendisse et justo. Praesent mattis commodo </p>
+              <p class="text-dark">consectetuer adipiscing elit Suspendisse et justo Praesent mattis commodo.</p>
+              <h6 class="text-dark">© -codelayers.net</h6>
+            </div>
+          </div>
+          <!--end item-->
+          
+          <div class="col-md-3 col-xs-12 clearfix margin-bottom">
+            <h4 class="less-mar3 font-weight-5">Quick Links</h4>
+            <div class="clearfix"></div>
+            <br/>
+            <ul class="footer-quick-links-5">
+              <li><a href="#"> Home</a></li>
+              <li><a href="#"> Products</a></li>
+              <li><a href="#"> About Us</a></li>
+              <li><a href="#"> Our Services</a></li>
+              <li><a href="#"> Contact</a></li>
+            </ul>
+          </div>
+          <!--end item-->
+          
+          <div class="col-md-3 col-xs-12 clearfix margin-bottom">
+            <h4 class="less-mar3 font-weight-5">Our Services</h4>
+            <div class="clearfix"></div>
+            <br/>
+            <ul class="footer-quick-links-5">
+              <li><a href="#"> UI Design</a></li>
+              <li><a href="#"> Animations</a></li>
+              <li><a href="#"> Graphic Design</a></li>
+              <li><a href="#"> Responsive Design</a></li>
+              <li><a href="#"> Phot Gallery</a></li>
+            </ul>
+          </div>
+          <!--end item-->
+          
+          <div class="col-md-3 col-xs-12 clearfix margin-bottom">
+            <h4 class="less-mar3 font-weight-5">Contact Us</h4>
+            <div class="clearfix"></div>
+            <br/>
+            <address class="text-dark">
+            <strong class="text-dark uppercase">Address:</strong> <br>
+            No.28 - 63739 street lorem ipsum, <br>
+            ipsum City, Country
+            </address>
+            <span class="text-dark"><strong class="text-dark uppercase">Phone:</strong> + 1 (234) 567 8901</span><br>
+            <span class="text-dark"><strong class="text-dark uppercase">Email:</strong> support@yoursite.com </span><br>
+            <span class="text-dark"><strong class="text-dark uppercase">Fax:</strong> + 1 (234) 567 8901</span>
+            <ul class="footer-social-icons dark left-align icons-plain text-center">
+              <li><a class="twitter" href="#"><i class="fa fa-twitter"></i></a></li>
+              <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+              <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+              <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+              <li><a href="#"><i class="fa fa-dribbble"></i></a></li>
+            </ul>
+          </div>
+          <!--end item--> 
+          
+        </div>
+      </div>
+    </div>
+    <div class="clearfix"></div>
+    <!-- end section -->
+    
+    <section class="sec-padding-6 section-light">
+      <div class="container">
+        <div class="row">
+          <div class="fo-copyright-holder text-center"> Copyright © 2017 l Codelayers. All rights reserved. </div>
+        </div>
+      </div>
+    </section>
+    <div class="clearfix"></div>
+    <!-- end section --> 
+    
+    <a href="#" class="scrollup"><i class="fa fa-angle-up" aria-hidden="true"></i></a><!-- end scroll to top of the page--> 
+    
+  </div>
+  <!--end site wrapper--> 
+</div>
+<!--end wrapper boxed--> 
+
+<!-- Scripts --> 
+<script src="js/jquery/jquery.js"></script> 
+<script src="js/bootstrap/bootstrap.min.js"></script> 
+<script src="js/style-customizer/js/spectrum.js"></script> 
+<script src="js/less/less.min.js" data-env="development"></script> 
+<script src="js/style-customizer/js/style-customizer.js"></script> 
+<!-- Scripts END --> 
+
+<!-- Template scripts --> 
+<script src="js/megamenu/js/main.js"></script> 
+
+<!-- REVOLUTION JS FILES --> 
+<script type="text/javascript" src="js/revolution-slider/js/jquery.themepunch.tools.min.js"></script> 
+<script type="text/javascript" src="js/revolution-slider/js/jquery.themepunch.revolution.min.js"></script> 
+<!-- SLIDER REVOLUTION 5.0 EXTENSIONS  
+(Load Extensions only on Local File Systems ! 
+The following part can be removed on Server for On Demand Loading) --> 
+<script type="text/javascript" src="js/revolution-slider/js/extensions/revolution.extension.actions.min.js"></script> 
+<script type="text/javascript" src="js/revolution-slider/js/extensions/revolution.extension.carousel.min.js"></script> 
+<script type="text/javascript" src="js/revolution-slider/js/extensions/revolution.extension.kenburn.min.js"></script> 
+<script type="text/javascript" src="js/revolution-slider/js/extensions/revolution.extension.layeranimation.min.js"></script> 
+<script type="text/javascript" src="js/revolution-slider/js/extensions/revolution.extension.migration.min.js"></script> 
+<script type="text/javascript" src="js/revolution-slider/js/extensions/revolution.extension.navigation.min.js"></script> 
+<script type="text/javascript" src="js/revolution-slider/js/extensions/revolution.extension.parallax.min.js"></script> 
+<script type="text/javascript" src="js/revolution-slider/js/extensions/revolution.extension.slideanims.min.js"></script> 
+<script type="text/javascript" src="js/revolution-slider/js/extensions/revolution.extension.video.min.js"></script> 
+<script type="text/javascript">
+	var tpj=jQuery;					
+	var revapi112;
+	tpj(document).ready(function() {
+	if(tpj("#rev_slider_112_1").revolution == undefined){
+	revslider_showDoubleJqueryError("#rev_slider_112_1");
+	}else{
+	revapi112 = tpj("#rev_slider_112_1").show().revolution({
+	sliderType:"standard",
+	jsFileLocation:"js/revolution-slider/js/",
+	sliderLayout:"auto",
+	dottedOverlay:"none",
+	delay:6000,
+	navigation: {
+	keyboardNavigation:"off",
+	keyboard_direction: "horizontal",
+	mouseScrollNavigation:"off",
+	onHoverStop:"off",
+	touch:{
+	touchenabled:"on",
+	swipe_threshold: 75,
+	swipe_min_touches: 1,
+	swipe_direction: "horizontal",
+	drag_block_vertical: false
+	}
+	,
+	bullets: {
+	enable:true,
+	hide_onmobile:true,
+	hide_under:600,
+	style:"hermes",
+	hide_onleave:true,
+	hide_delay:200,
+	hide_delay_mobile:1200,
+	direction:"vertical",
+	h_align:"right",
+	v_align:"center",
+	h_offset:30,
+	v_offset:0,
+	space:5,
+	tmp:''
+	}
+	},
+	viewPort: {
+	enable:true,
+	outof:"pause",
+	visible_area:"80%"
+	},
+	responsiveLevels:[1240,1024,778,480],
+	gridwidth:[1240,1024,778,480],
+	gridheight:[1000,600,500,400],
+	lazyType:"none",
+	parallax: {
+	type:"mouse",
+	origo:"slidercenter",
+	speed:2000,
+	levels:[2,3,4,5,6,7,12,16,10,50],
+	},
+	shadow:0,
+	spinner:"off",
+	stopLoop:"off",
+	stopAfterLoops:-1,
+	stopAtSlide:-1,
+	shuffle:"off",
+	autoHeight:"off",
+	hideThumbsOnMobile:"off",
+	hideSliderAtLimit:0,
+	hideCaptionAtLimit:0,
+	hideAllCaptionAtLilmit:0,
+	debugMode:false,
+	fallbacks: {
+	simplifyAll:"off",
+	nextSlideOnWindowFocus:"off",
+	disableFocusListener:false,
+	}
+	});
+	}
+	});	/*ready*/
+</script> 
+<script type="text/javascript">
+                var tpj = jQuery;
+
+                var revapi280;
+                tpj(document).ready(function() {
+                    if (tpj("#rev_slider_280_1").revolution == undefined) {
+                        revslider_showDoubleJqueryError("#rev_slider_280_1");
+                    } else {
+                        revapi280 = tpj("#rev_slider_280_1").show().revolution({
+                            sliderType: "hero",
+                            jsFileLocation: "../../revolution/js/",
+                            sliderLayout: "auto",
+                            dottedOverlay: "none",
+                            delay: 9000,
+                            navigation: {},
+                            responsiveLevels: [1240, 1024, 778, 480],
+                            visibilityLevels: [1240, 1024, 778, 480],
+                            gridwidth: [1000, 1024, 778, 480],
+                            gridheight: [1050, 520, 420, 420],
+                            lazyType: "none",
+                            parallax: {
+                                type: "scroll",
+                                origo: "slidercenter",
+                                speed: 1000,
+                                levels: [5, 10, 15, 20, 25, 30, 35, 40, 45, 46, 47, 48, 49, 50, 51, 55],
+                                type: "scroll",
+                            },
+                            shadow: 0,
+                            spinner: "spinner2",
+                            autoHeight: "off",
+                            fullScreenAutoWidth: "off",
+                            fullScreenAlignForce: "off",
+                            fullScreenOffsetContainer: "",
+                            fullScreenOffset: "60",
+                            disableProgressBar: "on",
+                            hideThumbsOnMobile: "off",
+                            hideSliderAtLimit: 0,
+                            hideCaptionAtLimit: 0,
+                            hideAllCaptionAtLilmit: 0,
+                            debugMode: false,
+                            fallbacks: {
+                                simplifyAll: "off",
+                                disableFocusListener: false,
+                            }
+                        });
+                    }
+                }); /*ready*/
+            </script> 
+<script>
+    $(window).load(function(){
+      setTimeout(function(){
+
+        $('.loader-live').fadeOut();
+      },1000);
+    })
+
+  </script> 
+<script src="js/parallax/parallax-background.min.js"></script> 
+<script>
+	(function ($) {
+		$('.parallax').parallaxBackground();
+	})(jQuery);
+</script> 
+<script src="js/tabs/js/responsive-tabs.min.js" type="text/javascript"></script> 
+<script type="text/javascript" src="js/cubeportfolio/jquery.cubeportfolio.min.js"></script> 
+<script type="text/javascript" src="js/cubeportfolio/mosaic-flat.js"></script> 
+<script src="js/owl-carousel/owl.carousel.js"></script> 
+<script src="js/owl-carousel/custom.js"></script> 
+<script src="js/owl-carousel/owl.carousel.js"></script> 
+<script src="js/owl-carousel/custom.js"></script> 
+<script src="js/animations/js/animations.min.js" type="text/javascript"></script> 
+<script src="js/animations/js/appear.min.js" type="text/javascript"></script> 
+<script src="js/functions/functions.js"></script>
+</body>
+</html>

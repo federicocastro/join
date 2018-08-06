@@ -1,0 +1,57 @@
+
+{% extends "base.html" %}
+{% load static i18n %}
+{% block content %}
+  <div class="wrapper-boxed">
+    <div class="site-wrapper">
+
+      <!--Section 0: HEADER-->
+      {% include "partials/top_navbar.html" %}
+      <div class="clearfix"></div>
+
+      <!--Section 1: Features-->
+      {% include "partials/slider.html" %}
+      <div class="clearfix"></div>
+
+      <!--Section 2: People -->
+      {% include "partials/people.html" %}
+      <div class="clearfix"></div>
+
+      <!--Section 3: Proyecs -->
+      {% include "partials/projects.html" %}
+      <div class="clearfix"></div>
+
+      <!--Section 4: Counters -->
+      {% include "partials/counters.html" %}
+      <div class="clearfix"></div>
+
+      <!--Section 5: Collaborate-->
+      {% include "partials/participate.html" %}
+      <div class="clearfix"></div>
+
+      <!--Section 6: Fans -->
+      {% include "partials/fans.html" %}
+      <div class="clearfix"></div>
+
+      <!--Section 7: Services-->
+      {% include "partials/services.html" %}
+      <div class="clearfix"></div>
+
+      <!--Section 8: Community counters -->
+      {% include "partials/community.html" %}
+      <div class="clearfix"></div>
+
+      <!--Section 9: Opinions -->
+      {% include "partials/opinions.html" %}
+      <div class="clearfix"></div>
+
+      <!--Section 10: About Us-->
+      {% include "partials/about.html" %}
+      <div class="clearfix"></div>
+
+      <!-- SCROLL UP -->
+      <a class="scrollup" href="#"><i aria-hidden="true" class="fa fa-angle-up"></i></a><!-- end scroll to top of the page-->
+    </div>
+    <!--end site wrapper-->
+  </div>
+{% endblock %}

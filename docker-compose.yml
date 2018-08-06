@@ -1,0 +1,81 @@
+version: '3.1'
+services:
+  postgres:
+    image: postgres
+    stdin_open: true
+    tty: true
+    environment:
+      POSTGRES_PASSWORD: beluz
+      POSTGRES_USER: beluz
+      POSTGRES_DB: beluz
+    ports:
+      - "5432:5432"
+    volumes:
+      - ./postgres:/var/lib/postgresql/data
+      - ./databases:/tmp/databases
+      - ./pg:/tmp/pg
+  rabbit:
+    image: rabbitmq
+    ports:
+      - "15672:15672"
+      - "5672:5672"
+      - "5671:5671"
+    volumes:
+      - ./rabbitmq:/etc/rabbitmq
+  redis:
+    image: redis
+    ports:
+      - "6379:6379"
+    volumes:
+      - ./redis:/data
+  pgadmin:
+    image: dpage/pgadmin4
+    ports:
+      - "9000:80"
+    environment:
+      PGADMIN_DEFAULT_EMAIL: beluz@admin.com
+      PGADMIN_DEFAULT_PASSWORD: beluz
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: beluz
+    command: ["python", "beluz/manage.py", "runserver", "0.0.0.0:8013"]
+    ports:
+     - "8013:8013"
+    environment:
+      DATABASE_HOST: postgres
+    tty: true
+    volumes:
+      - ./:/base/
+      - ./pythonuserbase/:/beluz/pythonuserbase/
+    depends_on:
+      - postgres
+      - rabbit
+      - redis
+  web_requirements:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: beluz
+    command: ["pip3", "install", "-r", "requirements.txt", "--user"]
+    ports:
+     - "8013:8013"
+    tty: true
+    volumes:
+      - ./:/base/
+      - ./pythonuserbase/:/beluz/pythonuserbase/
+  web_prod:
+    build:
+      context: .
+      dockerfile: Dockerfile-prod
+    image: ceg_membership
+    ports:
+     - "8013:8013"
+    tty: true
+    volumes:
+      - ./.pipcache:/root/.cache/pip
+    depends_on:
+      - postgres
+      - rabbit
+      - redis

@@ -1,0 +1,70 @@
+{% load static i18n %}
+<head>
+  {% block meta %}
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  {% endblock %}
+  {% block title %}<title>BeLuz</title>{% endblock %}
+  {% block keywords %}<meta name="keywords" content="" />{% endblock %}
+  {% block description %}<meta name="description" content="">{% endblock %}
+  {% block author %}<meta name="author" content="">{% endblock %}
+
+  {% block mobile_viewport %}
+  <!-- Mobile view -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  {% endblock %}
+
+  <!-- Favicon -->
+  {% block favico %}<link rel="shortcut icon" href="{% static "images/fav-icon.ico" %}">{% endblock %}
+
+  <link rel="stylesheet" type="text/css" href="{% static "js/bootstrap/bootstrap.min.css" %}">
+
+  <!-- Google fonts  -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Yesteryear" rel="stylesheet">
+  {% block extra_fonts %}
+  {% endblock %}
+
+  <!-- Template's stylesheets -->
+  {% block css_head %}
+    <link rel="stylesheet" href="{% static "js/megamenu/stylesheets/screen.css" %}">
+    <link rel="stylesheet" href="{% static "css/theme-default.css" %}" type="text/css">
+    <link rel="stylesheet" href="{% static "js/loaders/stylesheets/screen.css" %}">
+    <link rel="stylesheet" href="{% static "css/corporate.css" %}" type="text/css">
+    <link rel="stylesheet" href="{% static "fonts/font-awesome/css/font-awesome.min.css" %}" type="text/css">
+    <link rel="stylesheet" type="text/css" href="{% static "fonts/Simple-Line-Icons-Webfont/simple-line-icons.css" %}" media="screen" />
+    <link rel="stylesheet" href="{% static "fonts/et-line-font/et-line-font.css" %}">
+    <link rel="stylesheet" type="text/css" href="{% static "js/smart-forms/smart-forms.css" %}">
+    <link rel="stylesheet" type="text/css" href="{% static "js/revolution-slider/css/settings.css" %}">
+    <link rel="stylesheet" type="text/css" href="{% static "js/revolution-slider/css/layers.css" %}">
+    <link rel="stylesheet" type="text/css" href="{% static "js/revolution-slider/css/navigation.css" %}">
+    <link rel="stylesheet" href="{% static "js/parallax/main.css" %}">
+    <link rel="stylesheet" type="text/css" href="{% static "js/cubeportfolio/cubeportfolio.min.css" %}">
+    <link href="{% static "js/owl-carousel/owl.carousel.css" %}" rel="stylesheet">
+    <link href="{% static "js/owl-carousel/owl.theme.css" %}" rel="stylesheet">
+    <link href="{% static "js/tabs/css/responsive-tabs.css" %}" rel="stylesheet" type="text/css" media="all" />
+    <link href="{% static "css/beluz.css" %}" rel="stylesheet" type="text/css" media="all" />
+    <link href="{% static "js/ytplayer/ytplayer.css" %}" rel="stylesheet" type="text/css" media="all" />
+
+  {% endblock %}
+  <!-- Template's stylesheets END -->
+
+  {% block extra_css_head %}{% endblock %}
+
+  {% block js_head %}
+    <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  {% endblock %}
+  {% block extra_js_head %}
+  {% endblock %}
+
+  <!-- Style Customizer's stylesheets -->
+  <link rel="stylesheet" type="text/css" href="{% static "js/style-customizer/css/spectrum.css" %}">
+  <link rel="stylesheet" type="text/css" href="{% static "js/style-customizer/css/style-customizer.css" %}">
+  <link rel="stylesheet/less" type="text/css" href="{% static "less/skin.less" %}">
+  <!-- Style Customizer's stylesheets END -->
+
+  <!-- Skin stylesheet -->
+</head>

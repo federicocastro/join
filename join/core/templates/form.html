@@ -1,0 +1,50 @@
+{% load i18n static %}
+<section class="sec-padding">
+  <div class="container">
+    <div class="col-md-12 text-center"><h4 class="uppercase">{{ form.title }}Form with light background</h4></div>
+    <div class="clearfix"></div>
+    <br/> <br/>
+    <div class="form-body bg-light">
+      <div class="row">
+        <div class="col-md-6">
+          <label class="lable-text" for="name"> Name</label>
+          <input class="input-1" id="name" name="Name" placeholder="Enter name" type="text"/>
+        </div>
+        <div class="col-md-6">
+          <label class="lable-text" for="email"> Email Address</label>
+          <input class="input-1" id="email" name="Name" placeholder="Enter your email" type="text"/>
+        </div>
+      </div>
+      <!-- end row -->
+      <div class="row">
+        <div class="col-md-6">
+          <label class="lable-text" for="phone">Phone Number</label>
+          <input class="input-1" id="phone" name="Name" placeholder="Enter phone number" type="text"/>
+        </div>
+        <div class="col-md-6">
+          <label class="lable-text" for="adress">Address</label>
+          <input class="input-1" id="address" name="Name" placeholder="Enter your address" type="text"/>
+        </div>
+      </div>
+      <!-- end row -->
+      <div class="row">
+        <div class="col-md-12">
+          <label class="lable-text" for="message">Message</label>
+          <textarea class="textaria-1" id="comment" name="message" placeholder="Enter your message"></textarea>
+        </div>
+      </div>
+      <!-- end row -->
+      <div class="row">
+        <br/>
+        <div class="col-md-12 text-center">
+          <button class="btn btn-dark btn-medium uppercase" type="submit">
+            <i class="fa fa-paper-plane"></i>
+            Submit message
+          </button>
+        </div>
+      </div>
+      <!-- end row -->
+    </div>
+    <!--end form body-->
+  </div>
+</section>

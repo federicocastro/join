@@ -9,8 +9,8 @@ ADD . /base
 
 RUN pip install -r /base/requirements/prod.txt
 
-WORKDIR /base/beluz
+WORKDIR /base/join
 
 EXPOSE 8000
 
-CMD ["daphne", "beluz.asgi:application", "--bind", "0.0.0.0", "--port", "8000", "--verbosity", "1"]
+CMD ["daphne", "join.asgi:application", "--bind", "0.0.0.0", "--port", "8000", "--verbosity", "1"]

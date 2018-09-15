@@ -4,7 +4,7 @@
     <div class="container">
       <div class="mod-menu">
         <div class="row">
-          <div class="col-sm-2"> <a class="logo style-2 mar-4" href="index.html" title=""> <img alt="" src="{% static "images/logo/logo.png" %}  "/> </a> </div>
+          <div class="col-sm-2"> <a class="logo style-2 mar-4" href="index.html" title=""> <img alt="" src="{% static "images/logo/join-logo.png" %}  "/> </a> </div>
           <div class="col-sm-10">
             <div class="main-nav">
               <ul class="nav navbar-nav top-nav">
@@ -43,7 +43,7 @@
                 <ul class="nav navbar-nav">
                   <li class="right active"> <a href="/">{% trans "Home" %}</a> <span class="arrow"></span></li>
                   <li> <a href="/">{% trans "Usuarios" %}</a> <span class="arrow"></span>
-                  <li> <a href="/">{% trans "Proyectos" %}</a> <span class="arrow"></span>
+                  <li> <a href="{% url "list_project" %}">{% trans "Proyectos" %}</a> <span class="arrow"></span>
                   <li> <a href="/">{% trans "Foro" %}</a> <span class="arrow"></span>
                   <li> <a href="/">{% trans "Noticias" %}</a> <span class="arrow"></span>
                 </ul>

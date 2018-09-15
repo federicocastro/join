@@ -4,17 +4,66 @@
 {% include "head.html" %}
 <body>
 {% include "loader.html" %}
-{% include "style_customizer.html" %}
-{% block content %}
-  {% include "content.html" %}
-{% endblock %}
+<div class="wrapper-boxed">
+  <div class="site-wrapper">
+    <!--Section 0: HEADER-->
+    {% include "partials/top_navbar.html" %}
+    <div class="clearfix"></div>
+    {% block content %}
+
+      <!--Section 1: Features-->
+      {% include "partials/slider.html" %}
+      <div class="clearfix"></div>
+
+      <!--Section 2: People -->
+      {% include "partials/people.html" %}
+      <div class="clearfix"></div>
+
+      <!--Section 3: Proyecs -->
+      {% include "partials/projects.html" %}
+      <div class="clearfix"></div>
+
+      <!--Section 4: Counters -->
+      {% include "partials/counters.html" %}
+      <div class="clearfix"></div>
+
+      <!--Section 5: Collaborate-->
+      {% include "partials/participate.html" %}
+      <div class="clearfix"></div>
+
+      <!--Section 6: Fans -->
+      {% include "partials/fans.html" %}
+      <div class="clearfix"></div>
+
+      <!--Section 7: Services-->
+      {% include "partials/services.html" %}
+      <div class="clearfix"></div>
+
+      <!--Section 8: Community counters -->
+      {% include "partials/community.html" %}
+      <div class="clearfix"></div>
+
+      <!--Section 9: Opinions -->
+      {% include "partials/opinions.html" %}
+      <div class="clearfix"></div>
+
+      <!--Section 10: About Us-->
+      {% include "partials/about.html" %}
+      <div class="clearfix"></div>
+    {% endblock %}
+
+    <!-- SCROLL UP -->
+    <a class="scrollup" href="#"><i aria-hidden="true" class="fa fa-angle-up"></i></a><!-- end scroll to top of the page-->
+  </div>
+  <!--end site wrapper-->
+</div>
+
 <!-- Scripts -->
 {% block scripts %}
   <script src="{% static "js/jquery/jquery.js" %}"></script>
   <script src="{% static "js/bootstrap/bootstrap.min.js" %}"></script>
   <script src="{% static "js/style-customizer/js/spectrum.js" %}"></script>
   <script src="{% static "js/less/less.min.js" %}" data-env="development"></script>
-  <script src="{% static "js/style-customizer/js/style-customizer.js" %}"></script>
 {% endblock %}
 <!-- Scripts END -->
 
@@ -24,6 +73,9 @@
   <script type="text/javascript" src="{% static "js/ytplayer/jquery.mb.YTPlayer.js" %}"></script>
   <script type="text/javascript" src="{% static "js/ytplayer/elementvideo-custom.js" %}"></script>
   <script type="text/javascript" src="{% static "js/ytplayer/play-pause-btn.js" %}"></script>
+{% endblock %}
+
+{% block extra_template_scripts %}
 {% endblock %}
 
 <!-- REVOLUTION JS FILES -->
@@ -46,12 +98,12 @@
 
   <script type="text/javascript">
       var tpj=jQuery;
-      var revapi4;
+      var revapi104;
       tpj(document).ready(function() {
-          if(tpj("#rev_slider").revolution == undefined){
-              revslider_showDoubleJqueryError("#rev_slider");
+          if(tpj("#rev_slider_104_1").revolution == undefined){
+              revslider_showDoubleJqueryError("#rev_slider_104_1");
           }else{
-              revapi4 = tpj("#rev_slider").show().revolution({
+              revapi104 = tpj("#rev_slider_104_1").show().revolution({
                   sliderType:"standard",
                   jsFileLocation:"js/revolution-slider/js/",
                   sliderLayout:"auto",
@@ -62,29 +114,6 @@
                       keyboard_direction: "horizontal",
                       mouseScrollNavigation:"off",
                       onHoverStop:"off",
-                      arrows: {
-                          style:"uranus",
-                          enable:true,
-                          hide_onmobile:false,
-                          hide_under:100,
-                          hide_onleave:true,
-                          hide_delay:200,
-                          hide_delay_mobile:1200,
-                          tmp:'',
-                          left: {
-                              h_align:"left",
-                              v_align:"center",
-                              h_offset:80,
-                              v_offset:0
-                          },
-                          right: {
-                              h_align:"right",
-                              v_align:"center",
-                              h_offset:80,
-                              v_offset:0
-                          }
-                      }
-                      ,
                       touch:{
                           touchenabled:"on",
                           swipe_threshold: 75,
@@ -93,38 +122,47 @@
                           drag_block_vertical: false
                       }
                       ,
-
-
-
+                      bullets: {
+                          enable:true,
+                          hide_onmobile:true,
+                          hide_under:960,
+                          style:"zeus",
+                          hide_onleave:false,
+                          direction:"horizontal",
+                          h_align:"right",
+                          v_align:"bottom",
+                          h_offset:80,
+                          v_offset:50,
+                          space:5,
+                          tmp:'<span class="tp-bullet-image"></span><span class="tp-bullet-imageoverlay"></span><span class="tp-bullet-title">{{title}}</span>'
+                      }
                   },
-                  viewPort: {
-                      enable:true,
-                      outof:"pause",
-                      visible_area:"80%"
-                  },
-
                   responsiveLevels:[1240,1024,778,480],
                   gridwidth:[1240,1024,778,480],
-                  gridheight:[850,730,600,420],
-                  lazyType:"smart",
+                  gridheight:[700,700,960,720],
+                  lazyType:"none",
                   parallax: {
                       type:"mouse",
                       origo:"slidercenter",
                       speed:2000,
                       levels:[2,3,4,5,6,7,12,16,10,50],
+                      disable_onmobile:"on"
                   },
                   shadow:0,
                   spinner:"off",
-                  stopLoop:"off",
-                  stopAfterLoops:-1,
-                  stopAtSlide:-1,
+                  stopLoop:"on",
+                  stopAfterLoops:0,
+                  stopAtSlide:1,
                   shuffle:"off",
                   autoHeight:"off",
+                  fullScreenAlignForce:"off",
+                  fullScreenOffsetContainer: "",
+                  fullScreenOffset: "60px",
+                  disableProgressBar:"on",
                   hideThumbsOnMobile:"off",
                   hideSliderAtLimit:0,
                   hideCaptionAtLimit:0,
                   hideAllCaptionAtLilmit:0,
-                  disableProgressBar:"on",
                   debugMode:false,
                   fallbacks: {
                       simplifyAll:"off",
@@ -132,56 +170,38 @@
                       disableFocusListener:false,
                   }
               });
-          }
+              var newCall = new Object(),
+                  cslide;
+
+              newCall.callback = function() {
+                  var proc = revapi104.revgetparallaxproc(),
+                      fade = 1+proc,
+                      scale = 1+(Math.abs(proc)/10);
+
+                  punchgs.TweenLite.set(revapi104.find('.slotholder, .rs-background-video-layer'),{opacity:fade,scale:scale});
+              }
+              newCall.inmodule = "parallax";
+              newCall.atposition = "start";
+
+              revapi104.bind("revolution.slide.onloaded",function (e) {
+                  revapi104.revaddcallback(newCall);
+              });				}
       });	/*ready*/
   </script>
-  <script type="text/javascript">
-      var tpj = jQuery;
 
-      var revapi211;
-      tpj(document).ready(function() {
-          if (tpj("#rev_slider_211_1").revolution == undefined) {
-              revslider_showDoubleJqueryError("#rev_slider_211_1");
-          } else {
-              revapi211 = tpj("#rev_slider_211_1").show().revolution({
-                  sliderType:"standard",
-                  jsFileLocation:"js/revolution-slider/js/",
-                  sliderLayout:"auto",
-                  dottedOverlay: "none",
-                  delay: 9000,
-                  navigation: {},
-                  responsiveLevels: [1240, 1024, 778, 480],
-                  visibilityLevels: [1240, 1024, 778, 480],
-                  gridwidth: [1400, 1240, 778, 480],
-                  gridheight: [768, 768, 960, 720],
-                  lazyType: "none",
-                  parallax: {
-                      type: "3D",
-                      origo: "slidercenter",
-                      speed: 1000,
-                      levels: [5, 10, 15, 20, 25, 30, 5, 0, 45, 50, 47, 48, 49, 50, 51, 55],
-                      type: "3D",
-                      ddd_shadow: "off",
-                      ddd_bgfreeze: "off",
-                      ddd_overflow: "hidden",
-                      ddd_layer_overflow: "visible",
-                      ddd_z_correction: 65,
-                  },
-                  spinner: "off",
-                  autoHeight: "off",
-                  disableProgressBar: "on",
-                  hideThumbsOnMobile: "off",
-                  hideSliderAtLimit: 0,
-                  hideCaptionAtLimit: 0,
-                  hideAllCaptionAtLilmit: 0,
-                  debugMode: false,
-                  fallbacks: {
-                      simplifyAll: "off",
-                      disableFocusListener: false,
-                  }
-              });
-          }
-      }); /*ready*/
+
+  <script src="{% static "js/jFlickrFeed/jflickrfeed.min.js" %}"></script>
+  <script>
+      $('#basicuse').jflickrfeed({
+          limit: 6,
+          qstrings: {
+              id: '133294431@N08'
+          },
+          itemTemplate:
+          '<li>' +
+          '<a href="{{image_b}}"><img src="{{image_s}}" alt="{{title}}" /></a>' +
+          '</li>'
+      });
   </script>
 
   <script>
@@ -193,6 +213,7 @@
       })
 
   </script>
+
   <script src="{% static "js/parallax/parallax-background.min.js" %}"></script>
   <script>
       (function ($) {

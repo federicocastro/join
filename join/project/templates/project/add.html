@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+{% load core_tags %}
+{% block content %}
+  {% load i18n static %}
+  <section class="sec-padding">
+    <div class="container">
+      <div class="col-md-12 text-center"><h4 class="uppercase">{% trans "Add New Project" %}</h4></div>
+      <div class="clearfix"></div>
+      <br/> <br/>
+      <form method="post">
+        {% csrf_token %}
+        <div class="form-body bg-light">
+
+          <div class="row">
+            <div class="col-md-12">
+              <label class="lable-text" for="title">{{ form.title.label }}</label>
+              {{ form.title | add_css_class:"input-1" }}
+            </div>
+            <div class="col-md-12">
+              <label class="lable-text" for="description">{{ form.description.label }}</label>
+              {{ form.description | add_css_class:"input-1" }}
+            </div>
+          </div>
+          <!-- end row -->
+          <div class="row">
+            <div class="col-md-6">
+              <label class="lable-text" for="collaborators">{{ form.collaborators.label }}</label>
+              {{ form.collaborators | add_css_class:"input-1" }}
+            </div>
+            <div class="col-md-6">
+              <label class="lable-text" for="gallery">{{ form.gallery.label }}</label>
+              {{ form.gallery | add_css_class:"input-1" }}
+            </div>
+          </div>
+          <!-- end row -->
+          <div class="row">
+            <br/>
+            <div class="col-md-12 text-center">
+              <button class="btn btn-dark btn-medium uppercase" type="submit">
+                <i class="fa fa-paper-plane"></i>
+                {% trans "Add Project" %}
+              </button>
+            </div>
+          </div>
+          <!-- end row -->
+        </div>
+        <!--end form body-->
+      </form>
+    </div>
+  </section>
+{% endblock %}

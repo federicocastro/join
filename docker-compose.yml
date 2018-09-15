@@ -33,14 +33,14 @@ services:
     ports:
       - "9000:80"
     environment:
-      PGADMIN_DEFAULT_EMAIL: beluz@admin.com
-      PGADMIN_DEFAULT_PASSWORD: beluz
+      PGADMIN_DEFAULT_EMAIL: join@admin.com
+      PGADMIN_DEFAULT_PASSWORD: join
   web:
     build:
       context: .
       dockerfile: Dockerfile
-    image: beluz
-    command: ["python", "beluz/manage.py", "runserver", "0.0.0.0:8013"]
+    image: join
+    command: ["python", "join/manage.py", "runserver", "0.0.0.0:8013"]
     ports:
      - "8013:8013"
     environment:
@@ -48,7 +48,7 @@ services:
     tty: true
     volumes:
       - ./:/base/
-      - ./pythonuserbase/:/beluz/pythonuserbase/
+      - ./pythonuserbase/:/join/pythonuserbase/
     depends_on:
       - postgres
       - rabbit
@@ -57,14 +57,14 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-    image: beluz
+    image: join
     command: ["pip3", "install", "-r", "requirements.txt", "--user"]
     ports:
      - "8013:8013"
     tty: true
     volumes:
       - ./:/base/
-      - ./pythonuserbase/:/beluz/pythonuserbase/
+      - ./pythonuserbase/:/join/pythonuserbase/
   web_prod:
     build:
       context: .

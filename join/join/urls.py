@@ -30,6 +30,7 @@ urlpatterns = [
     path('api/token/verify/', verify_jwt_token),
     path('comments/', include('django_comments.urls')),
     path('projects/', include('project.urls')),
+    path('users/', include('authentication.urls')),
     path('photologue/', include('photologue.urls', namespace='photologue')),
     path('login/', auth_views.login,
          {

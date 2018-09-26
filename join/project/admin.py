@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Project
+from .models import Project, Interest
 
 
 @admin.register(Project)
@@ -11,3 +11,12 @@ class ProjectAdmin(admin.ModelAdmin):
         qs = super(ProjectAdmin, self).get_queryset(request)
         qs = qs.select_related('owner')
         return qs
+
+
+@admin.register(Interest)
+class InterestAdmin(admin.ModelAdmin):
+    list_display = ('id', 'title', 'slug')
+
+
+class InterestInlineAdmin(admin.TabularInline):
+    model = Interest

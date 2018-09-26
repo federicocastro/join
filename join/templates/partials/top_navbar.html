@@ -42,7 +42,7 @@
               <div class="collapse" id="menu">
                 <ul class="nav navbar-nav">
                   <li class="right active"> <a href="/">{% trans "Home" %}</a> <span class="arrow"></span></li>
-                  <li> <a href="/">{% trans "Usuarios" %}</a> <span class="arrow"></span>
+                  <li> <a href="{% url "find_users" %}">{% trans "Usuarios" %}</a> <span class="arrow"></span>
                   <li> <a href="{% url "list_project" %}">{% trans "Proyectos" %}</a> <span class="arrow"></span>
                   <li> <a href="/">{% trans "Foro" %}</a> <span class="arrow"></span>
                   <li> <a href="/">{% trans "Noticias" %}</a> <span class="arrow"></span>

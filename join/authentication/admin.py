@@ -8,18 +8,20 @@ from .models import User
 
 
 class UserAdminAuth(UserAdmin):
-
     form = UserChangeForm
     add_form = UserCreationForm
     change_password_form = AdminPasswordChangeForm
     list_display = ('email', 'username', 'first_name', 'last_name', 'is_active', 'is_staff', 'is_superuser')
+
     fieldsets = (
         (None, {'fields': ('username', 'password')}),
         (_('Personal info'), {'fields': ('first_name', 'last_name', 'email', 'avatar')}),
         (_('Permissions'), {'fields': ('is_active', 'is_staff', 'is_superuser',
                                        'groups', 'user_permissions')}),
         (_('Important dates'), {'fields': ('last_login', 'date_joined')}),
+        (_('Interests'), {'fields': ('interests',)})
     )
+
     add_fieldsets = (
         (None, {
             'classes': ('wide',),
@@ -27,7 +29,8 @@ class UserAdminAuth(UserAdmin):
         }),
     )
     ordering = ('username',)
-    filter_horizontal = ['groups', 'user_permissions']
+
+    filter_horizontal = ['groups', 'user_permissions', 'interests']
     save_on_top = True
 
 

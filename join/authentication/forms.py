@@ -1,11 +1,20 @@
 from django import forms
+from django.contrib.admin.widgets import FilteredSelectMultiple
 from django.contrib.auth.forms import ReadOnlyPasswordHashField, UsernameField
 from django.utils.translation import ugettext_lazy as _
 
 from .models import User
+from project.models import Interest
 
 
 class UserChangeForm(forms.ModelForm):
+
+    interests = forms.ModelMultipleChoiceField(
+        Interest.objects.all(),
+        widget=FilteredSelectMultiple("Interests", True),
+        required=False,
+    )
+
     password = ReadOnlyPasswordHashField(
         label=_("Password"),
         help_text=_(
@@ -18,6 +27,7 @@ class UserChangeForm(forms.ModelForm):
     class Meta:
         model = User
         fields = '__all__'
+        exclude = []
         field_classes = {'username': UsernameField}
 
     def __init__(self, *args, **kwargs):

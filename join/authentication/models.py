@@ -24,4 +24,6 @@ class User(AbstractUser):
 
     avatar = models.ImageField(blank=True, null=True, upload_to='photos')
 
+    interests = models.ManyToManyField('project.Interest')
+
     objects = CustomUserManager()

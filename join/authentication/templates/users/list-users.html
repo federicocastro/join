@@ -1,0 +1,105 @@
+{% extends 'base.html' %}
+{% load core_tags %}
+{% block content %}
+  {% load i18n static %}
+  <section class="section-side-image clearfix">
+    <div class="img-holder col-md-12 col-sm-12 col-xs-12">
+      <div class="background-imgholder" style="background:url(http://via.placeholder.com/1500x1000);"><img alt="" class="nodisplay-image" src="http://via.placeholder.com/1500x1000"> </img></div>
+    </div>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-12 col-sm-12 col-xs-12 clearfix nopadding">
+          <div class="header-inner less-height">
+            <div class="overlay">
+              <div class="text text-center">
+                <h3 class="uppercase text-white less-mar-1 title">Portfolio</h3>
+                <h6 class="uppercase text-white sub-title"> Lightbox Gallery</h6>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <div class=" clearfix"></div>
+  <!--end header section -->
+  <section>
+    <div class="pagenation-holder">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6">
+            <h4>{% trans "Find Users" %}</h4>
+          </div>
+          <div class="col-md-6">
+            <ol class="breadcrumb">
+              <li><a href="#">{% trans "Home" %}</a></li>
+              <li class="current"><a href="#">{% trans "Users" %}</a></li>
+            </ol>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <div class="clearfix"></div>
+  <!--end section-->
+  <section class="sec-padding">
+    <div class="container">
+      <div class="row">
+        <div class="clearfix">
+          <div class="cbp-l-filters-dropdown cbp-l-filters-dropdown-floated" id="js-filters-lightbox-gallery1">
+            <div class="cbp-l-filters-dropdownWrap">
+              <div class="cbp-l-filters-dropdownHeader">Sort Gallery</div>
+              <div class="cbp-l-filters-dropdownList">
+                <div class="cbp-filter-item-active cbp-filter-item" data-filter="*">All</div>
+                <div class="cbp-filter-item" data-filter=".identity">Identity</div>
+                <div class="cbp-filter-item" data-filter=".web-design">Web Design</div>
+                <div class="cbp-filter-item" data-filter=".print">Print</div>
+              </div>
+            </div>
+          </div>
+          <div class="cbp-l-filters-button cbp-l-filters-left" id="js-filters-lightbox-gallery2">
+            <div class="cbp-filter-item-active cbp-filter-item" data-filter="*">All</div>
+            <div class="cbp-filter-item" data-filter=".graphic">Graphic</div>
+            <div class="cbp-filter-item" data-filter=".logos">Logo</div>
+            <div class="cbp-filter-item" data-filter=".motion">Motion</div>
+          </div>
+        </div>
+        <div class="cbp" id="js-grid-lightbox-gallery">
+        {% for user in object_list %}
+          <div class="cbp-item web-design graphic print motion">
+            <a class="cbp-caption cbp-singlePageInline" data-title="World Clock Widget&lt;br&gt;by Paul Flavius Nechita" href="js/cubeportfolio/ajax-lightbox-gallery/project1.html" rel="nofollow">
+              <div class="cbp-caption-defaultWrap">
+                <img alt="" src="http://placehold.it/1200x900"/>
+              </div>
+              <div class="cbp-caption-activeWrap">
+                <div class="cbp-l-caption-alignLeft">
+                  <div class="cbp-l-caption-body">
+                    <div class="cbp-l-caption-title">{{ user.first_name }} {{ user.last_name }}</div>
+                    <div class="cbp-l-caption-desc">by Paul Flavius Nechita</div>
+                  </div>
+                </div>
+              </div>
+            </a>
+          </div>
+        {% endfor %}
+        </div>
+        <div class="cbp-l-loadMore-button" id="js-loadMore-lightbox-gallery">
+          <a class="cbp-l-loadMore-link" href="js/cubeportfolio/ajax-lightbox-gallery/loadMore.html" rel="nofollow">
+            <span class="cbp-l-loadMore-defaultText">LOAD MORE</span>
+            <span class="cbp-l-loadMore-loadingText">LOADING...</span>
+            <span class="cbp-l-loadMore-noMoreLoading">NO MORE WORKS</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+  <div class="clearfix"></div>
+  <!-- end section -->
+{% endblock %}
+
+{% block extra_template_scripts %}
+  <!-- Template scripts -->
+  <script type="text/javascript" src="{% static "js/cubeportfolio/jquery.cubeportfolio.min.js" %}"></script>
+  <script type="text/javascript" src="{% static "js/cubeportfolio/lightbox-gallery.js" %}"></script>
+{% endblock %}
+

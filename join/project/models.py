@@ -1,5 +1,5 @@
 from django.db import models
-from core.models import TimeStampedModel, TitleDescriptionModel
+from core.models import TimeStampedModel, TitleDescriptionModel, TitleSlugDescriptionModel
 
 
 class Project(TimeStampedModel, TitleDescriptionModel):
@@ -7,3 +7,9 @@ class Project(TimeStampedModel, TitleDescriptionModel):
     collaborators = models.ManyToManyField('authentication.User', related_name='projects')
     gallery = models.OneToOneField('photologue.Gallery', on_delete=models.CASCADE, related_name='extended',
                                    blank=True, null=True)
+
+
+class Interest(TitleSlugDescriptionModel):
+
+    def __str__(self):
+        return self.title

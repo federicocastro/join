@@ -11,7 +11,8 @@ class UserAdminAuth(UserAdmin):
     form = UserChangeForm
     add_form = UserCreationForm
     change_password_form = AdminPasswordChangeForm
-    list_display = ('email', 'username', 'first_name', 'last_name', 'is_active', 'is_staff', 'is_superuser')
+    list_display = ('email', 'username', 'first_name', 'last_name',
+                    'is_active', 'is_staff', 'is_superuser', 'last_login')
 
     fieldsets = (
         (None, {'fields': ('username', 'password')}),

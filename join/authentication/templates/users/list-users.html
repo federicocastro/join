@@ -4,7 +4,7 @@
   {% load i18n static %}
   <section class="section-side-image clearfix">
     <div class="img-holder col-md-12 col-sm-12 col-xs-12">
-      <div class="background-imgholder" style="background:url(http://via.placeholder.com/1500x1000);"><img alt="" class="nodisplay-image" src="http://via.placeholder.com/1500x1000"> </img></div>
+      <div class="background-imgholder" style="background: url({% static "images/users-background.png" %});"><img alt="" class="nodisplay-image" src="{% static "images/users-background.png" %}"> </img></div>
     </div>
     <div class="container-fluid">
       <div class="row">
@@ -12,8 +12,8 @@
           <div class="header-inner less-height">
             <div class="overlay">
               <div class="text text-center">
-                <h3 class="uppercase text-white less-mar-1 title">Portfolio</h3>
-                <h6 class="uppercase text-white sub-title"> Lightbox Gallery</h6>
+                <h3 class="uppercase text-white less-mar-1 title">Personas Increíbles</h3>
+                <h6 class="uppercase text-white sub-title"> Que te encantaría conocer</h6>
               </div>
             </div>
           </div>
@@ -21,26 +21,7 @@
       </div>
     </div>
   </section>
-  <div class=" clearfix"></div>
   <!--end header section -->
-  <section>
-    <div class="pagenation-holder">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-6">
-            <h4>{% trans "Find Users" %}</h4>
-          </div>
-          <div class="col-md-6">
-            <ol class="breadcrumb">
-              <li><a href="#">{% trans "Home" %}</a></li>
-              <li class="current"><a href="#">{% trans "Users" %}</a></li>
-            </ol>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-  <div class="clearfix"></div>
   <!--end section-->
   <section class="sec-padding">
     <div class="container">
@@ -48,40 +29,55 @@
         <div class="clearfix">
           <div class="cbp-l-filters-dropdown cbp-l-filters-dropdown-floated" id="js-filters-lightbox-gallery1">
             <div class="cbp-l-filters-dropdownWrap">
-              <div class="cbp-l-filters-dropdownHeader">Sort Gallery</div>
+              <div class="cbp-l-filters-dropdownHeader">Filtrar Usuarios</div>
               <div class="cbp-l-filters-dropdownList">
-                <div class="cbp-filter-item-active cbp-filter-item" data-filter="*">All</div>
-                <div class="cbp-filter-item" data-filter=".identity">Identity</div>
-                <div class="cbp-filter-item" data-filter=".web-design">Web Design</div>
-                <div class="cbp-filter-item" data-filter=".print">Print</div>
+                <div class="cbp-filter-item-active cbp-filter-item" data-filter="*">Todos</div>
+                {% for profession in professions %}
+                  <div class="cbp-filter-item" data-filter=".{{ profession.slug }}">{{ profession.title }}</div>
+                {% endfor %}
               </div>
             </div>
           </div>
           <div class="cbp-l-filters-button cbp-l-filters-left" id="js-filters-lightbox-gallery2">
             <div class="cbp-filter-item-active cbp-filter-item" data-filter="*">All</div>
-            <div class="cbp-filter-item" data-filter=".graphic">Graphic</div>
-            <div class="cbp-filter-item" data-filter=".logos">Logo</div>
-            <div class="cbp-filter-item" data-filter=".motion">Motion</div>
+            {% for profession in professions %}
+              <div class="cbp-filter-item" data-filter=".{{ profession.slug }}">{{ profession.title }}</div>
+            {% endfor %}
           </div>
         </div>
         <div class="cbp" id="js-grid-lightbox-gallery">
-        {% for user in object_list %}
-          <div class="cbp-item web-design graphic print motion">
-            <a class="cbp-caption cbp-singlePageInline" data-title="World Clock Widget&lt;br&gt;by Paul Flavius Nechita" href="js/cubeportfolio/ajax-lightbox-gallery/project1.html" rel="nofollow">
-              <div class="cbp-caption-defaultWrap">
-                <img alt="" src="http://placehold.it/1200x900"/>
-              </div>
-              <div class="cbp-caption-activeWrap">
-                <div class="cbp-l-caption-alignLeft">
-                  <div class="cbp-l-caption-body">
-                    <div class="cbp-l-caption-title">{{ user.first_name }} {{ user.last_name }}</div>
-                    <div class="cbp-l-caption-desc">by Paul Flavius Nechita</div>
+          {% for user in object_list %}
+            <div class="cbp-item {{ user.profession.slug }} print motion">
+              <a class="cbp-caption" data-title="{{ user.get_full_name }}" href="{% url 'user_profile' user.id %}" rel="nofollow">
+                <div class="ce-feature-box-61 margin-bottom">
+                  <div class="img-box-main">
+                    <div class="img-box">
+                      <div class="overlay text-center">
+                        <p>{% if user.brief_introduction %}{{ user.brief_introduction }}{% endif %}</p>
+                        <br/>
+                        <ul class="sc-icons">
+                          <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                          <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                          <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+                          <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                        </ul>
+                      </div>
+                      {% if user.avatar %}
+                        <img alt="" class="img-responsive" src="{{ user.avatar.url }}"/>
+                      {% else %}
+                        <img alt="" class="img-responsive" src="http://via.placeholder.com/500x600"/>
+                      {% endif %}
+                    </div>
+                    <div class="text-box padding-3 text-center">
+                      <h5 class="less-mar-1">{{ user.get_full_name }}</h5>
+                      <p>{{ user.profession }}</p>
+                    </div>
                   </div>
                 </div>
-              </div>
-            </a>
-          </div>
-        {% endfor %}
+
+              </a>
+            </div>
+          {% endfor %}
         </div>
         <div class="cbp-l-loadMore-button" id="js-loadMore-lightbox-gallery">
           <a class="cbp-l-loadMore-link" href="js/cubeportfolio/ajax-lightbox-gallery/loadMore.html" rel="nofollow">

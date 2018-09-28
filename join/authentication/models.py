@@ -1,8 +1,16 @@
 from django.contrib.auth.models import AbstractUser, UserManager
 from django.db import models
+from django.db.models import F, CharField, Value
+from django.db.models.functions import Coalesce
+from django_extensions.db.models import TitleSlugDescriptionModel
 
 
 class CustomUserManager(UserManager):
+
+    def get_queryset(self, *args, **kwargs):
+        qs = super(CustomUserManager, self).get_queryset(*args, **kwargs)
+
+        return qs
 
     def get_by_natural_key(self, username):
         """
@@ -24,6 +32,16 @@ class User(AbstractUser):
 
     avatar = models.ImageField(blank=True, null=True, upload_to='photos')
 
+    profession = models.ForeignKey('authentication.Profession', blank=True, null=True, on_delete=models.SET_NULL)
+
     interests = models.ManyToManyField('project.Interest')
 
+    brief_introduction = models.TextField(max_length=150, blank=True, null=True)
+
     objects = CustomUserManager()
+
+
+class Profession(TitleSlugDescriptionModel):
+
+    def __str__(self):
+        return self.title

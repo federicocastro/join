@@ -1639,7 +1639,7 @@ a.read-more.primary:hover {
 	left: 0px;
 	z-index: 0;
 	background-size: cover !important;
-	background-position: 50% 50% !important;
+	background-position: 50% 53% !important;
 }
 
 /* side image 2
@@ -1670,7 +1670,7 @@ a.read-more.primary:hover {
 	left: 0px;
 	z-index: 0;
 	background-size: cover !important;
-	background-position: 50% 50% !important;
+	background-position: 50% 53% !important;
 }
 .image-holder {
 	width: 100%;

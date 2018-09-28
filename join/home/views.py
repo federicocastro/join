@@ -3,6 +3,8 @@ from django.shortcuts import render
 # Create your views here.
 from django.views.generic.base import TemplateView
 
+from authentication.models import User
+
 
 class PageView(TemplateView):
 
@@ -15,6 +17,10 @@ class PageView(TemplateView):
 class HomeView(TemplateView):
     template_name = 'home/home.html'
 
+    def get_context_data(self, **kwargs):
+        context = super(HomeView, self).get_context_data(**kwargs)
+        context['popular_users'] = User.objects.all()[:3]
+        return context
 
 page_view = PageView.as_view()
 home_view = HomeView.as_view()

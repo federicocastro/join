@@ -43,7 +43,45 @@
                 <ul class="nav navbar-nav">
                   <li class="right active"> <a href="/">{% trans "Home" %}</a> <span class="arrow"></span></li>
                   <li> <a href="{% url "find_users" %}">{% trans "Usuarios" %}</a> <span class="arrow"></span>
-                  <li> <a href="{% url "list_project" %}">{% trans "Proyectos" %}</a> <span class="arrow"></span>
+                  <li class="mega-menu"> <a href="{% url "list_project" %}">{% trans "Proyectos" %}</a> <span class="arrow"></span>
+                    <ul>
+                      <li> <a href="#" title="home samples">{% trans "Filtrar por Estado" %}</a> <span class="arrow"></span>
+                        <ul>
+                          <li> <a href="{% url "list_project" %}"><i class="fa fa-angle-right"></i> &nbsp; {% trans "Proyectos Abiertos" %}</a> </li>
+                          <li> <a href="{% url "list_project" %}"><i class="fa fa-angle-right"></i> &nbsp; {% trans "Proyectos Iniciados" %}</a> </li>
+                          <li> <a href="{% url "list_project" %}"><i class="fa fa-angle-right"></i> &nbsp; {% trans "Proyectos Finalizados" %}</a> </li>
+                        </ul>
+                      </li>
+                      <li> <a href="#">{% trans "Filtrar por Disciplina" %}</a> <span class="arrow"></span>
+                        <ul>
+                          <li> <a href="{% url "list_project" %}"><i class="fa fa-angle-right"></i> &nbsp; {% trans "Diseño Gráfico" %}</a> </li>
+                          <li> <a href="{% url "list_project" %}"><i class="fa fa-angle-right"></i> &nbsp; {% trans "Diseño de Indumentaría" %}</a> </li>
+                          <li> <a href="{% url "list_project" %}"><i class="fa fa-angle-right"></i> &nbsp; {% trans "Diseño de Interiores" %}</a> </li>
+                        </ul>
+                      </li>
+                      <li> <a href="#">{% trans "Ultimos Vistos" %}</a> <span class="arrow"></span>
+                        <ul>
+                          <li> <a href="{% url "list_project" %}"><i class="fa fa-angle-right"></i> &nbsp; Project</a> </li>
+                          <li> <a href="{% url "list_project" %}"><i class="fa fa-angle-right"></i> &nbsp; Project</a> </li>
+                          <li> <a href="{% url "list_project" %}"><i class="fa fa-angle-right"></i> &nbsp; Project</a> </li>
+                          <li> <a href="{% url "list_project" %}"><i class="fa fa-angle-right"></i> &nbsp; Project</a> </li>
+                          <li> <a href="{% url "list_project" %}"><i class="fa fa-angle-right"></i> &nbsp; Project</a> </li>
+                          <li> <a href="{% url "list_project" %}"><i class="fa fa-angle-right"></i> &nbsp; Project</a> </li>
+                        </ul>
+                      </li>
+                      <li> <a href="#">{% trans "Mis Proyectos" %}</a> <span class="arrow"></span>
+                        <ul>
+                          <li> <a href="portfolio-parallax.html"><i class="fa fa-angle-right"></i> &nbsp; My Project</a> </li>
+                          <li> <a href="portfolio-video.html"><i class="fa fa-angle-right"></i> &nbsp; My Project</a> </li>
+                          <li> <a href="portfolio-left-sidebar.html"><i class="fa fa-angle-right"></i> &nbsp; My Project</a> </li>
+                          <li> <a href="portfolio-right-sidebar.html"><i class="fa fa-angle-right"></i> &nbsp; My Project</a> </li>
+                          <li> <a href="portfolio-carousel.html"><i class="fa fa-angle-right"></i> &nbsp; My Project</a> </li>
+                          <li> <a class="btn btn-default" href="{% url "add_project" %}"><i class="fa fa-angle-right"></i> &nbsp; {% trans "Nuevo Proyecto" %}</a> </li>
+                        </ul>
+                      </li>
+                    </ul>
+                  </li>
+
                   <li> <a href="/">{% trans "Foro" %}</a> <span class="arrow"></span>
                   <li> <a href="/">{% trans "Noticias" %}</a> <span class="arrow"></span>
                 </ul>

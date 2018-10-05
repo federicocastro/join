@@ -25,7 +25,7 @@ SECRET_KEY = 'i5u9rgkw!j8#w70foi1$65im!y_74dmy!#gwd(0dnv0ni1r@vu'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['127.0.0.1', 'localhost', 'ec2-54-159-109-234.compute-1.amazonaws.com']
 
 SITE_ID = 1
 

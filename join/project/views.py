@@ -1,15 +1,17 @@
-from django.shortcuts import render
-from django.views.generic import FormView, CreateView, ListView
+from django.views.generic import CreateView, ListView
 from .models import Project
 
 
 class AddProjectView(CreateView):
     template_name = 'project/add.html'
     model = Project
-    fields = ['title', 'description', 'collaborators', 'gallery']
-    
+    fields = [
+        'title', 'brief_description', 'status', 'visibility',
+        'license', 'description', 'collaborators', 'gallery'x
+    ]
+
     def form_valid(self, form):
-        super(AddProjectView, self).form_valid(form)
+        return super(AddProjectView, self).form_valid(form)
 
 
 class ListProjectView(ListView):

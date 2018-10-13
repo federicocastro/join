@@ -45,169 +45,20 @@
   <section class="sec-padding">
     <div class="container">
       <div class="row">
-        <div class="clearfix">
-          <div class="cbp-l-filters-dropdown cbp-l-filters-dropdown-floated" id="js-filters-lightbox-gallery1">
-            <div class="cbp-l-filters-dropdownWrap">
-              <div class="cbp-l-filters-dropdownHeader">Sort Gallery</div>
-              <div class="cbp-l-filters-dropdownList">
-                <div class="cbp-filter-item-active cbp-filter-item" data-filter="*">All</div>
-                <div class="cbp-filter-item" data-filter=".identity">Identity</div>
-                <div class="cbp-filter-item" data-filter=".web-design">Web Design</div>
-                <div class="cbp-filter-item" data-filter=".print">Print</div>
+        <div><a class="btn btn-medium border dark xround-7 uppercase" href="{% url "add_project" %}">{% trans "Nuevo Proyecto" %}</a></div>
+      </div>
+      <div class="row sec-padding">
+        {% for project in object_list %}
+        <div class="col-md-3 col-sm-6 col-xs-12">
+            <div class="img-hover-4">
+              <div class="text-box ">
+                <h5 class="text-white">{{ project.title }}</h5>
+                <p class="text-light">{{ project.brief_description }}</p>
               </div>
+              <img src="http://via.placeholder.com/500x500" alt="" class="img-responsive"/>
             </div>
-          </div>
-          <div class="cbp-l-filters-button cbp-l-filters-left" id="js-filters-lightbox-gallery2">
-            <div class="cbp-filter-item-active cbp-filter-item" data-filter="*">All</div>
-            <div class="cbp-filter-item" data-filter=".graphic">Graphic</div>
-            <div class="cbp-filter-item" data-filter=".logos">Logo</div>
-            <div class="cbp-filter-item" data-filter=".motion">Motion</div>
-          </div>
         </div>
-        <div class="cbp" id="js-grid-lightbox-gallery">
-          <div class="cbp-item web-design graphic print motion">
-            <a class="cbp-caption cbp-singlePageInline" data-title="World Clock Widget&lt;br&gt;by Paul Flavius Nechita" href="js/cubeportfolio/ajax-lightbox-gallery/project1.html" rel="nofollow">
-              <div class="cbp-caption-defaultWrap">
-                <img alt="" src="http://placehold.it/1200x900"/>
-              </div>
-              <div class="cbp-caption-activeWrap">
-                <div class="cbp-l-caption-alignLeft">
-                  <div class="cbp-l-caption-body">
-                    <div class="cbp-l-caption-title">World Clock Widget</div>
-                    <div class="cbp-l-caption-desc">by Paul Flavius Nechita</div>
-                  </div>
-                </div>
-              </div>
-            </a>
-          </div>
-          <div class="cbp-item web-design logos identity graphic">
-            <a class="cbp-caption cbp-singlePageInline" data-title="Bolt UI&lt;br&gt;by Tiberiu Neamu" href="js/cubeportfolio/ajax-lightbox-gallery/project1.html" rel="nofollow">
-              <div class="cbp-caption-defaultWrap">
-                <img alt="" src="http://placehold.it/1200x900"/>
-              </div>
-              <div class="cbp-caption-activeWrap">
-                <div class="cbp-l-caption-alignLeft">
-                  <div class="cbp-l-caption-body">
-                    <div class="cbp-l-caption-title">Bolt UI</div>
-                    <div class="cbp-l-caption-desc">by Tiberiu Neamu</div>
-                  </div>
-                </div>
-              </div>
-            </a>
-          </div>
-          <div class="cbp-item graphic print identity">
-            <a class="cbp-caption cbp-singlePageInline" data-title="WhereTO App&lt;br&gt;by Tiberiu Neamu" href="js/cubeportfolio/ajax-lightbox-gallery/project1.html" rel="nofollow">
-              <div class="cbp-caption-defaultWrap">
-                <img alt="" src="http://placehold.it/1200x900"/>
-              </div>
-              <div class="cbp-caption-activeWrap">
-                <div class="cbp-l-caption-alignLeft">
-                  <div class="cbp-l-caption-body">
-                    <div class="cbp-l-caption-title">WhereTO App</div>
-                    <div class="cbp-l-caption-desc">by Tiberiu Neamu</div>
-                  </div>
-                </div>
-              </div>
-            </a>
-          </div>
-          <div class="cbp-item web-design motion logos">
-            <a class="cbp-caption cbp-singlePageInline" data-title="iDevices&lt;br&gt;by Tiberiu Neamu" href="js/cubeportfolio/ajax-lightbox-gallery/project1.html" rel="nofollow">
-              <div class="cbp-caption-defaultWrap">
-                <img alt="" src="http://placehold.it/1200x900"/>
-              </div>
-              <div class="cbp-caption-activeWrap">
-                <div class="cbp-l-caption-alignLeft">
-                  <div class="cbp-l-caption-body">
-                    <div class="cbp-l-caption-title">iDevices</div>
-                    <div class="cbp-l-caption-desc">by Tiberiu Neamu</div>
-                  </div>
-                </div>
-              </div>
-            </a>
-          </div>
-          <div class="cbp-item identity graphic print">
-            <a class="cbp-caption cbp-singlePageInline" data-title="Seemple* Music for iPad&lt;br&gt;by Tiberiu Neamu" href="js/cubeportfolio/ajax-lightbox-gallery/project1.html" rel="nofollow">
-              <div class="cbp-caption-defaultWrap">
-                <img alt="" src="http://placehold.it/1200x900"/>
-              </div>
-              <div class="cbp-caption-activeWrap">
-                <div class="cbp-l-caption-alignLeft">
-                  <div class="cbp-l-caption-body">
-                    <div class="cbp-l-caption-title">Seemple* Music for iPad</div>
-                    <div class="cbp-l-caption-desc">by Tiberiu Neamu</div>
-                  </div>
-                </div>
-              </div>
-            </a>
-          </div>
-          <div class="cbp-item motion print logos web-design">
-            <a class="cbp-caption cbp-singlePageInline" data-title="Remind~Me Widget&lt;br&gt;by Tiberiu Neamu" href="js/cubeportfolio/ajax-lightbox-gallery/project1.html" rel="nofollow">
-              <div class="cbp-caption-defaultWrap">
-                <img alt="" src="http://placehold.it/1200x900"/>
-              </div>
-              <div class="cbp-caption-activeWrap">
-                <div class="cbp-l-caption-alignLeft">
-                  <div class="cbp-l-caption-body">
-                    <div class="cbp-l-caption-title">Remind~Me Widget</div>
-                    <div class="cbp-l-caption-desc">by Tiberiu Neamu</div>
-                  </div>
-                </div>
-              </div>
-            </a>
-          </div>
-          <div class="cbp-item graphic logos">
-            <a class="cbp-caption cbp-singlePageInline" data-title="Workout Buddy&lt;br&gt;by Tiberiu Neamu" href="js/cubeportfolio/ajax-lightbox-gallery/project1.html" rel="nofollow">
-              <div class="cbp-caption-defaultWrap">
-                <img alt="" src="http://placehold.it/1200x900"/>
-              </div>
-              <div class="cbp-caption-activeWrap">
-                <div class="cbp-l-caption-alignLeft">
-                  <div class="cbp-l-caption-body">
-                    <div class="cbp-l-caption-title">Workout Buddy</div>
-                    <div class="cbp-l-caption-desc">by Tiberiu Neamu</div>
-                  </div>
-                </div>
-              </div>
-            </a>
-          </div>
-          <div class="cbp-item identity print logos motion">
-            <a class="cbp-caption cbp-singlePageInline" data-title="Digital Menu&lt;br&gt;by Cosmin Capitanu" href="js/cubeportfolio/ajax-lightbox-gallery/project1.html" rel="nofollow">
-              <div class="cbp-caption-defaultWrap">
-                <img alt="" src="http://placehold.it/1200x900"/>
-              </div>
-              <div class="cbp-caption-activeWrap">
-                <div class="cbp-l-caption-alignLeft">
-                  <div class="cbp-l-caption-body">
-                    <div class="cbp-l-caption-title">Digital Menu</div>
-                    <div class="cbp-l-caption-desc">by Cosmin Capitanu</div>
-                  </div>
-                </div>
-              </div>
-            </a>
-          </div>
-          <div class="cbp-item identity motion web-design">
-            <a class="cbp-caption cbp-singlePageInline" data-title="Holiday Selector&lt;br&gt;by Cosmin Capitanu" href="js/cubeportfolio/ajax-lightbox-gallery/project1.html" rel="nofollow">
-              <div class="cbp-caption-defaultWrap">
-                <img alt="" src="http://placehold.it/1200x900"/>
-              </div>
-              <div class="cbp-caption-activeWrap">
-                <div class="cbp-l-caption-alignLeft">
-                  <div class="cbp-l-caption-body">
-                    <div class="cbp-l-caption-title">Holiday Selector</div>
-                    <div class="cbp-l-caption-desc">by Cosmin Capitanu</div>
-                  </div>
-                </div>
-              </div>
-            </a>
-          </div>
-        </div>
-        <div class="cbp-l-loadMore-button" id="js-loadMore-lightbox-gallery">
-          <a class="cbp-l-loadMore-link" href="js/cubeportfolio/ajax-lightbox-gallery/loadMore.html" rel="nofollow">
-            <span class="cbp-l-loadMore-defaultText">LOAD MORE</span>
-            <span class="cbp-l-loadMore-loadingText">LOADING...</span>
-            <span class="cbp-l-loadMore-noMoreLoading">NO MORE WORKS</span>
-          </a>
-        </div>
+        {% endfor %}
       </div>
     </div>
   </section>

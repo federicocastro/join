@@ -17,9 +17,18 @@
               {{ form.title | add_css_class:"input-1" }}
             </div>
             <div class="col-md-12">
+              <label class="lable-text" for="description">{{ form.brief_description.label }}</label>
+              {{ form.brief_description | add_css_class:"input-1" }}
+            </div>
+            <div class="col-md-12">
               <label class="lable-text" for="description">{{ form.description.label }}</label>
               {{ form.description | add_css_class:"input-1" }}
             </div>
+            <div class="col-md-12">
+              <label class="lable-text" for="description">{{ form.visibility.label }}</label>
+              {{ form.visibility }}
+            </div>
+
           </div>
           <!-- end row -->
           <div class="row">

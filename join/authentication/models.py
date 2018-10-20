@@ -1,7 +1,7 @@
 from django.contrib.auth.models import AbstractUser, UserManager
 from django.db import models
-from django.db.models import F, CharField, Value
-from django.db.models.functions import Coalesce
+from photologue.models import Photo
+
 from django.utils.translation import ugettext_lazy as _
 from django_extensions.db.models import TitleSlugDescriptionModel
 from model_utils import Choices

@@ -4,6 +4,7 @@ from django.shortcuts import render
 from django.views.generic.base import TemplateView
 
 from authentication.models import User
+from project.models import Project
 
 
 class PageView(TemplateView):
@@ -19,8 +20,10 @@ class HomeView(TemplateView):
 
     def get_context_data(self, **kwargs):
         context = super(HomeView, self).get_context_data(**kwargs)
-        context['popular_users'] = User.objects.all()[:3]
+        context['popular_users'] = User.objects.all()[:6]
+        context['popular_projects'] = Project.objects.all()[:6]
         return context
+
 
 page_view = PageView.as_view()
 home_view = HomeView.as_view()

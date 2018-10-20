@@ -1,1 +1,303 @@
-<h1>User Profile</h1>
+{% extends 'base.html' %}
+{% load core_tags %}
+{% load static i18n %}
+{% block content %}
+  <div class="wrapper-boxed">
+      <div class="clearfix"></div>
+      <!--end header section -->
+      <section>
+        <div class="pagenation-holder">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-6">
+                <h4>{{ user.get_full_name }}</h4>
+              </div>
+              <div class="col-md-6">
+                <ol class="breadcrumb">
+                  <li><a href="#">{% trans "Home" %}</a></li>
+                  <li><a href="#">{% trans "Personas" %}</a></li>
+                  <li class="current"><a href="#">{{ user.get_full_name }}</a></li>
+                </ol>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <div class="clearfix"></div>
+      <!--end section-->
+      <section class="sec-padding">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-4 col-sm-12 col-xs-12 section-white">
+              <div class="pages-sidebar-item">
+                <h5 class="uppercase pages-sidebar-item-title">{{ user.profession }}</h5>
+                <ul class="port-project-info">
+                  <li><span>{% trans "Proyectos Vistos" %}:</span> {{ user.project_views_count }}</li>
+                  <li><span>{% trans "Likes" %}:</span> {{ user.likes_count }}</li>
+                  <li><span>{% trans "Followers" %}:</span> {{ user.followers_count }}</li>
+                  <li><span>{% trans "Following" %}:</span> {{ user.following_count }}</li>
+                </ul>
+              </div>
+              <!--end item holder-->
+              <div class="pages-sidebar-item">
+                <h5 class="uppercase pages-sidebar-item-title">{% trans "Equipos" %}</h5>
+                <div class="col-md-12 col-sm-12 col-xs-12 nopadding">
+                  <div class="imgbox-small left"> <img alt="" class="img-responsive" src="http://via.placeholder.com/700x700"/></div>
+                  <div class="text-box-right">
+                    <h6 class="uppercase nopadding"><a class="text-hover-gyellow" href="#">Nullam turpis Cras dapibusscing</a></h6>
+                    <div class="blog-post-info padding-top-1"> <span> By Benjamin</span> <span> 15 Comments</span> </div>
+                  </div>
+                </div>
+                <!--end post-->
+                <div class="divider-line solid light margin"></div>
+                <div class="col-md-12 col-sm-12 col-xs-12 nopadding">
+                  <div class="imgbox-small left"> <img alt="" class="img-responsive" src="http://via.placeholder.com/700x700"/></div>
+                  <div class="text-box-right">
+                    <h6 class="uppercase nopadding"><a class="text-hover-gyellow" href="#">Nullam turpis Cras dapibusscing</a></h6>
+                    <div class="blog-post-info padding-top-1"> <span> By Benjamin</span> <span> 15 Comments</span> </div>
+                  </div>
+                </div>
+                <!--end post-->
+                <div class="divider-line solid light margin"></div>
+                <div class="col-md-12 col-sm-12 col-xs-12 nopadding">
+                  <div class="imgbox-small left"> <img alt="" class="img-responsive" src="http://via.placeholder.com/700x700"/></div>
+                  <div class="text-box-right">
+                    <h6 class="uppercase nopadding"><a class="text-hover-gyellow" href="#">Nullam turpis Cras dapibusscing</a></h6>
+                    <div class="blog-post-info padding-top-1"> <span> By Benjamin</span> <span> 15 Comments</span> </div>
+                  </div>
+                </div>
+                <!--end post-->
+              </div>
+              <!--end item holder-->
+              <div class="pages-sidebar-item">
+                <h5 class="uppercase pages-sidebar-item-title">{% trans "Habilidades" %}</h5>
+                <ul class="pages-tags">
+                  <li><a href="#"></a></li>
+                  <li><a href="#">Art</a></li>
+                  <li><a href="#">UI Design</a></li>
+                  <li><a href="#">Photography</a></li>
+                  <li><a class="active" href="#">Design</a></li>
+                  <li><a href="#">Art</a></li>
+                  <li><a href="#">Responsive</a></li>
+                  <li><a href="#">Develop</a></li>
+                </ul>
+              </div>
+              <!--end item holder-->
+              <div class="pages-sidebar-item">
+                <h5 class="uppercase pages-sidebar-item-title">Newsletter</h5>
+                <input class="pages-newsletter" maxlength="100" name="name" type="text" value="Enter your e-mail">
+                </input></div>
+              <!--end item holder-->
+              <div class="pages-sidebar-item">
+                <h5 class="uppercase pages-sidebar-item-title">Featured Works</h5>
+                <ul class="sidebar-works">
+                  <li><a href="#"><img alt="" src="http://via.placeholder.com/600x600"/></a></li>
+                  <li><a href="#"><img alt="" src="http://via.placeholder.com/600x600"/></a></li>
+                  <li><a href="#"><img alt="" src="http://via.placeholder.com/600x600"/></a></li>
+                  <li><a href="#"><img alt="" src="http://via.placeholder.com/600x600"/></a></li>
+                  <li><a href="#"><img alt="" src="http://via.placeholder.com/600x600"/></a></li>
+                  <li class="last"><a href="#"><img alt="" src="http://via.placeholder.com/600x600"/></a></li>
+                </ul>
+              </div>
+              <!--end item holder-->
+            </div>
+            <!--end left col-->
+            <div class="col-md-8">
+              <div class="col-md-12">
+                <img alt="" class="img-responsive" src="http://placehold.it/2000x900"/>
+              </div>
+              <!--end item-->
+              <div class="col-divider-margin-6"></div>
+              <div class="col-md-12">
+                <ul class="port-project-info">
+                  <li><span>Project by:</span> John Doe</li>
+                  <li><span>date:</span> 26 August 216</li>
+                  <li><span>Skills:</span> PSD / HTML5 / CSS3</li>
+                  <li><span>Client:</span>Benjamin</li>
+                  <li><span>Website:</span> <a class="text-primary" href="#">www.example.com</a></li>
+                </ul>
+                <div class="clearfix"></div>
+                <ul class="social-icons h-anim-rotate socila-sm">
+                  <li class="hover-rss">
+                    <a href="#">
+                      <i aria-hidden="true" class="fa fa-rss"></i>
+                    </a>
+                  </li>
+                  <li class="hover-facebook">
+                    <a href="#">
+                      <i aria-hidden="true" class="fa fa-facebook"></i>
+                    </a>
+                  </li>
+                  <li class="hover-twitter">
+                    <a href="#">
+                      <i aria-hidden="true" class="fa fa-twitter"></i>
+                    </a>
+                  </li>
+                  <li class="hover-vimeo">
+                    <a href="#">
+                      <i aria-hidden="true" class="fa fa-vimeo"></i>
+                    </a>
+                  </li>
+                  <li class="hover-youtube">
+                    <a href="#">
+                      <i aria-hidden="true" class="fa fa-youtube"></i>
+                    </a>
+                  </li>
+                  <li class="hover-stumbleupon">
+                    <a href="#">
+                      <i aria-hidden="true" class="fa fa-stumbleupon"></i>
+                    </a>
+                  </li>
+                  <li class="hover-android">
+                    <a href="#">
+                      <i aria-hidden="true" class="fa fa-android"></i>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+              <!--end item-->
+              <div class="clearfix"></div>
+              <br/><br/>
+              <div class="col-md-12">
+                <h4>Project description</h4>
+                <p>Lorem ipsum dolor sit amet consectetuer adipiscing elit. Suspendisse et justo Praesent mattis commodo augue Aliquam ornare hendrerit augue Cras tellus In pulvinar lectus a est Curabitur eget orci Cras laoreet ligula Etiam sit amet dolor Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae Nullam tellus diam volutpat laoreet vel bibendum. </p>
+                <p>
+                  Lorem ipsum dolor sit amet consectetuer adipiscing elit. Suspendisse et justo Praesent mattis commodo augue Aliquam ornare hendrerit augue Cras tellus In pulvinar lectus a est Curabitur eget orci Cras laoreet ligula Etiam sit amet dolor Vestibulum ante ipsum primis in faucibus
+                </p>
+              </div>
+              <!--end item-->
+            </div>
+            <!--end right col-->
+          </div>
+        </div>
+      </section>
+      <div class="clearfix"></div>
+      <!-- end section -->
+      <section class="section-primary">
+        <div class="container">
+          <div class="divider-line solid light opacity-1"></div>
+          <div class="row sec-padding-6">
+            <ul class="clients-list grid-cols-5 hover-7 noborder">
+              <li><a href="#"><img alt="" src="http://via.placeholder.com/225x120"/></a></li>
+              <li><a href="#"><img alt="" src="http://via.placeholder.com/225x120"/></a></li>
+              <li><a href="#"><img alt="" src="http://via.placeholder.com/225x120"/></a></li>
+              <li><a href="#"><img alt="" src="http://via.placeholder.com/225x120"/></a></li>
+              <li><a href="#"><img alt="" src="http://via.placeholder.com/225x120"/></a></li>
+            </ul>
+          </div>
+        </div>
+      </section>
+      <div class="clearfix"></div>
+      <!-- end section -->
+      <div class="section-dark sec-padding">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-3 col-sm-12 colmargin clearfix margin-bottom">
+              <div class="fo-map">
+                <div class="footer-logo"><img alt="" src="{% static "images/logo/logo.png" %}  "/></div>
+                <address>
+                  <strong class="text-white">Address:</strong>
+                  <br/>
+                  No.28 - 63739 street lorem ipsum,
+                  <br/>
+                  ipsum City, Country
+                </address>
+                <span><strong class="text-white">Phone:</strong> + 1 (234) 567 8901</span><br/>
+                <span><strong class="text-white">Email:</strong> support@yoursite.com </span><br/>
+                <span><strong class="text-white">Fax:</strong> + 1 (234) 567 8901</span>
+                <ul class="footer-social-icons primary left-align icons-plain text-center">
+                  <li><a class="twitter" href="#"><i class="fa fa-twitter"></i></a></li>
+                  <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                  <li><a class="active" href="#"><i class="fa fa-google-plus"></i></a></li>
+                  <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                  <li><a href="#"><i class="fa fa-dribbble"></i></a></li>
+                </ul>
+              </div>
+            </div>
+            <!--end item-->
+            <div class="col-md-3 col-xs-12 clearfix margin-bottom">
+              <h4 class="text-white uppercase less-mar3 font-weight-5">Popular Services</h4>
+              <div class="clearfix"></div>
+              <div class="footer-title-bottomstrip"></div>
+              <ul class="footer-quick-links-4 white">
+                <li><a href="#"><i class="fa fa-angle-right"></i> Placerat bibendum</a></li>
+                <li><a href="#"><i class="fa fa-angle-right"></i> Ullamcorper odio nec turpis</a></li>
+                <li><a href="#"><i class="fa fa-angle-right"></i> Aliquam porttitor vestibulum ipsum</a></li>
+                <li><a href="#"><i class="fa fa-angle-right"></i> Lobortis enim nec nisi</a></li>
+                <li><a href="#"><i class="fa fa-angle-right"></i> Placerat bibendum</a></li>
+                <li><a href="#"><i class="fa fa-angle-right"></i> Lobortis enim nec nisi</a></li>
+                <li><a href="#"><i class="fa fa-angle-right"></i> Lobortis enim nec nisi</a></li>
+              </ul>
+            </div>
+            <!--end item-->
+            <div class="col-md-3 col-sm-12 col-xs-12 bmargin clearfix margin-bottom">
+              <div class="item-holder">
+                <h4 class="text-white uppercase less-mar3 font-weight-5">Recent Posts</h4>
+                <div class="fo-title-bottom-line white"></div>
+                <div class="clearfix"></div>
+                <div class="fo-posts">
+                  <div class="imgbox-medium left"><img alt="" class="img-responsive" src="http://via.placeholder.com/300x300"/></div>
+                  <div class="text-box-right">
+                    <h6 class="less-mar3 uppercase nopadding text-white"><a href="#">Aenean arcu tortor</a></h6>
+                    <p>Lorem ipsum dolor</p>
+                    <div class="post-info"> <span>By John Doe</span><span>May 15</span> </div>
+                  </div>
+                </div>
+                <div class=" divider-line light solid light opacity-1 "></div>
+                <div class="clearfix"></div>
+                <br>
+                <div class="fo-posts">
+                  <div class="imgbox-medium left"><img alt="" class="img-responsive" src="http://via.placeholder.com/300x300"/></div>
+                  <div class="text-box-right">
+                    <h6 class="less-mar3 uppercase nopadding text-white"><a href="#">Maecenas sed nisl amet</a></h6>
+                    <p>Lorem ipsum dolor</p>
+                    <div class="post-info"> <span>By John Doe</span><span>May 15</span> </div>
+                  </div>
+                </div>
+                </br></div>
+            </div>
+            <!--end item-->
+            <div class="col-md-3 col-xs-12 clearfix margin-bottom">
+              <h4 class="text-white uppercase less-mar3 font-weight-5">Need Help</h4>
+              <div class="clearfix"></div>
+              <div class="footer-title-bottomstrip"></div>
+              <ul class="footer-quick-links-4 white">
+                <li><a href="#"><i class="fa fa-angle-right"></i> Placerat bibendum</a></li>
+                <li><a href="#"><i class="fa fa-angle-right"></i> Ullamcorper odio nec turpis</a></li>
+                <li><a href="#"><i class="fa fa-angle-right"></i> Aliquam porttitor vestibulum ipsum</a></li>
+                <li><a href="#"><i class="fa fa-angle-right"></i> Lobortis enim nec nisi</a></li>
+                <li><a href="#"><i class="fa fa-angle-right"></i> Placerat bibendum</a></li>
+                <li><a href="#"><i class="fa fa-angle-right"></i> Lobortis enim nec nisi</a></li>
+                <li><a href="#"><i class="fa fa-angle-right"></i> Ullamcorper odio nec turpis</a></li>
+              </ul>
+            </div>
+            <!--end item-->
+            <div class="clearfix"></div>
+            <div class="col-divider-margin-5"></div>
+            <div class="col-md-12">
+              <input class="bb-newsletter" placeholder="Your Name" type="search"/>
+              <input class="bb-newsletter-email" placeholder="Email Address" type="search"/>
+              <input class="bb-newsletter-btn" name="search" type="submit" value="Submit"/>
+            </div>
+            <!--end newsletter-->
+          </div>
+        </div>
+      </div>
+      <div class="clearfix"></div>
+      <!-- end section -->
+      <section class="sec-padding-6">
+        <div class="container">
+          <div class="row">
+            <div class="fo-copyright-holder text-center">
+
+              Copyright © 2017 l yourdomain.com. All rights reserved. </div>
+          </div>
+        </div>
+      </section>
+      <div class="clearfix"></div>
+      <!-- end section -->
+      <a class="scrollup" href="#"></a><!-- end scroll to top of the page-->
+    </div>
+    <!--end site wrapper-->
+  </div>
+{% endblock %}

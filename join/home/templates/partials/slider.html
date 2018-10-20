@@ -1,11 +1,12 @@
-{% load i18n static %}
+{% load i18n static core_tags %}
 <div id="rev_slider_104_1_wrapper" class="rev_slider_wrapper fullscreen-container" data-alias="scroll-effect76" style="background-color:#111111;padding:0px;">
       <!-- START REVOLUTION SLIDER 5.0.7 fullscreen mode -->
       <div id="rev_slider_104_1" class="rev_slider fullscreenbanner" style="display:none;" data-version="5.0.7">
         <ul>	<!-- SLIDE  -->
           <li data-index="rs-309" data-transition="slideoverhorizontal" data-slotamount="default"  data-easein="Power4.easeInOut" data-easeout="Power4.easeInOut" data-masterspeed="1000"  data-thumb="../../assets/images/bigbold_3-100x50.jpg"  data-rotate="0"  data-fstransition="fade" data-fsmasterspeed="1500" data-fsslotamount="7" data-saveperformance="off"  data-title="Big &amp; Bold" data-description="">
             <!-- MAIN IMAGE -->
-            <img src="{% static "images/sliders/slide-prueba-min.jpg" %}" alt=""  data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="10" class="rev-slidebg" data-no-retina>
+            {% get_photo_url_by_slug "slide-home-1" as slide1 %}
+            <img src="{{ slide1.image.url }}" alt=""  data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="10" class="rev-slidebg" data-no-retina>
             <!-- LAYERS -->
 
             <!-- LAYER NR. 1 -->
@@ -52,7 +53,7 @@
                  data-responsive_offset="off"
 
 
-                 style="z-index: 6; white-space: nowrap;">BIG & BOLD
+                 style="z-index: 6; white-space: nowrap;">{{ slide1.title }}
             </div>
 
             <!-- LAYER NR. 3 -->
@@ -76,10 +77,10 @@
                  data-responsive_offset="off"
                  data-responsive="off"
 
-                 style="z-index: 7; min-width: 410px; max-width: 410px; max-width: 60px; max-width: 60px; white-space: normal;">A Premium Revolution Slider Template for your
-              Website Highlights & Multi-Media Content.
+                 style="z-index: 7; min-width: 410px; max-width: 410px; max-width: 60px; max-width: 60px; white-space: normal;">{{ slide1.caption }}
             </div>
 
+            {% if not request.user.is_authenticated %}
             <!-- LAYER NR. 4 -->
             <div class="tp-caption BigBold-Button rev-btn  rs-parallaxlevel-0"
                  id="slide-309-layer-7"
@@ -97,13 +98,15 @@
                  data-start="650"
                  data-splitin="none"
                  data-splitout="none"
-                 data-actions='[{"event":"click","action":"scrollbelow","offset":"px"}]'
+
+                 data-actions='[{"event":"click", "action":"simplelink", "target":"_self", "url":"/"}, {"event":"click", "action":"jumptoslide", "slide":"rs-417", "delay":""}]'
                  data-basealign="slide"
                  data-responsive_offset="off"
                  data-responsive="off"
 
-                 style="z-index: 8; white-space: nowrap;border-color:rgba(255, 255, 255, 0.25);outline:none;box-shadow:none;box-sizing:border-box;-moz-box-sizing:border-box;-webkit-box-sizing:border-box;">READ MORE
+                 style="z-index: 8; white-space: nowrap;border-color:rgba(255, 255, 255, 0.25);outline:none;box-shadow:none;box-sizing:border-box;-moz-box-sizing:border-box;-webkit-box-sizing:border-box;">UNITE
             </div>
+            {% endif %}
 
             <!-- LAYER NR. 5 -->
             <div class="tp-caption BigBold-Button rev-btn  rs-parallaxlevel-0"
@@ -133,7 +136,8 @@
           <!-- SLIDE  -->
           <li data-index="rs-310" data-transition="slideoverhorizontal" data-slotamount="default"  data-easein="Power4.easeInOut" data-easeout="Power4.easeInOut" data-masterspeed="1000"  data-thumb="../../assets/images/typing_cover-100x50.jpg"  data-rotate="0"  data-saveperformance="off"  data-title="HTML5 Video" data-description="">
             <!-- MAIN IMAGE -->
-            <img src="{% static "images/sliders/slide-2-min.png" %}"  alt=""  data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="10" class="rev-slidebg" data-no-retina>
+            {% get_photo_url_by_slug "slide-home-2" as slide2 %}
+            <img src="{{ slide2.image.url }}"  alt=""  data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="10" class="rev-slidebg" data-no-retina>
             <!-- LAYERS -->
 
             <!-- BACKGROUND VIDEO LAYER -->
@@ -196,7 +200,7 @@
                  data-responsive_offset="off"
 
 
-                 style="z-index: 6; white-space: nowrap;">SO SMOOTH!
+                 style="z-index: 6; white-space: nowrap;">{{ slide2.title }}
             </div>
 
             <!-- LAYER NR. 3 -->
@@ -220,7 +224,7 @@
                  data-responsive_offset="off"
                  data-responsive="off"
 
-                 style="z-index: 7; min-width: 410px; max-width: 410px; max-width: 60px; max-width: 60px; white-space: normal;">You can Download this Premium Slider for Free if you Activate your Copy of Slider Revolution.
+                 style="z-index: 7; min-width: 410px; max-width: 410px; max-width: 60px; max-width: 60px; white-space: normal;">{{ slide2.caption }}
             </div>
 
             <!-- LAYER NR. 4 -->
@@ -240,12 +244,12 @@
                  data-start="650"
                  data-splitin="none"
                  data-splitout="none"
-                 data-actions='[{"event":"click","action":"scrollbelow","offset":"px"}]'
+                 data-actions='[{"event":"click", "action":"simplelink", "target":"_self", "url":"{% url "list_project" %}"}, {"event":"click", "action":"jumptoslide", "slide":"rs-417", "delay":""}]'
                  data-basealign="slide"
                  data-responsive_offset="off"
                  data-responsive="off"
 
-                 style="z-index: 8; white-space: nowrap;border-color:rgba(255, 255, 255, 0.25);outline:none;box-shadow:none;box-sizing:border-box;-moz-box-sizing:border-box;-webkit-box-sizing:border-box;">READ MORE
+                 style="z-index: 8; white-space: nowrap;border-color:rgba(255, 255, 255, 0.25);outline:none;box-shadow:none;box-sizing:border-box;-moz-box-sizing:border-box;-webkit-box-sizing:border-box;">VER PROYECTOS
             </div>
 
             <!-- LAYER NR. 5 -->
@@ -276,7 +280,8 @@
           <!-- SLIDE  -->
           <li data-index="rs-311" data-transition="slideoverhorizontal" data-slotamount="default"  data-easein="Power4.easeInOut" data-easeout="Power4.easeInOut" data-masterspeed="1000"  data-thumb="../../assets/images/bigbold_1-100x50.jpg"  data-rotate="0"  data-saveperformance="off"  data-title="Scroll Down" data-description="">
             <!-- MAIN IMAGE -->
-            <img src="{% static "images/sliders/slide-3-min.png" %}"  alt=""  data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="10" class="rev-slidebg" data-no-retina>
+            {% get_photo_url_by_slug "slide-home-3" as slide3 %}
+            <img src="{{ slide3.image.url }}"  alt=""  data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="10" class="rev-slidebg" data-no-retina>
             <!-- LAYERS -->
 
             <!-- LAYER NR. 1 -->
@@ -323,7 +328,7 @@
                  data-responsive_offset="off"
 
 
-                 style="z-index: 6; white-space: nowrap;">SCROLL DOWN
+                 style="z-index: 6; white-space: nowrap;">{{ slide3.title }}
             </div>
 
             <!-- LAYER NR. 3 -->
@@ -347,7 +352,7 @@
                  data-responsive_offset="off"
                  data-responsive="off"
 
-                 style="z-index: 7; min-width: 410px; max-width: 410px; max-width: 60px; max-width: 60px; white-space: normal;">This Premium Revolution Slider Template Features an Exclusive Scroll Effect. Get it Now!
+                 style="z-index: 7; min-width: 410px; max-width: 410px; max-width: 60px; max-width: 60px; white-space: normal;">{{ slide3.caption }}
             </div>
 
             <!-- LAYER NR. 4 -->
@@ -367,12 +372,12 @@
                  data-start="650"
                  data-splitin="none"
                  data-splitout="none"
-                 data-actions='[{"event":"click","action":"scrollbelow","offset":"px"}]'
+                 data-actions='[{"event":"click", "action":"simplelink", "target":"_self", "url":"{% url "find_users" %}"}, {"event":"click", "action":"jumptoslide", "slide":"rs-417", "delay":""}]'
                  data-basealign="slide"
                  data-responsive_offset="off"
                  data-responsive="off"
 
-                 style="z-index: 8; white-space: nowrap;border-color:rgba(255, 255, 255, 0.25);outline:none;box-shadow:none;box-sizing:border-box;-moz-box-sizing:border-box;-webkit-box-sizing:border-box;">READ MORE
+                 style="z-index: 8; white-space: nowrap;border-color:rgba(255, 255, 255, 0.25);outline:none;box-shadow:none;box-sizing:border-box;-moz-box-sizing:border-box;-webkit-box-sizing:border-box;">CONOCER DISEÑADORES
             </div>
 
             <!-- LAYER NR. 5 -->

@@ -994,6 +994,7 @@ pages styles
 	background-color:rgba(0, 0, 0, 0.2);
 }
 .ce-feature-box-13 .img-box .text-box{
+	height: 235px;
 	position: absolute;
 	width:80%;
 	padding:50px;

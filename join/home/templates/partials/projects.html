@@ -1,109 +1,33 @@
-<section class="sec-padding">
+<section class="sec-padding" style="padding: 40px 0 40px 0">
   <div class="container">
     <div class="row">
       <div class="col-sm-12">
         <div class="sec-title-container text-center">
           <h5 class="font-weight-4 less-mar-1 line-height-4 text-primary montserrat">Proyectos fenomenales que inspiran</h5>
-          <h2 class="font-weight-6 less-mar-1 montserrat line-height-5">Proyectos fenomenales que inspiran<br/></h2>
+          <h2 class="font-weight-6 less-mar-1 montserrat line-height-5">Propone tu idea y crea un proyecto en conjunto con otros diseñadores.<br/></h2>
         </div>
       </div>
       <div class="clearfix"></div>
       <!--end title-->
+      {% for project in popular_projects %}
       <div class="col-md-3 col-sm-6 col-xs-12 margin-bottom">
         <div class="ce-feature-box-43">
           <div class="main-box">
             <div class="img-box">
               <div class="overlay">
-                <p class="small-text text-center">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Suspendisse et justo. </p>
+                <p class="small-text text-center">{{ project.description }}</p>
                 <br/>
-                <ul class="sc-icons">
-                  <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                  <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                  <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
-                  <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
-                </ul>
               </div>
-              <img alt="" class="img-responsive" src="http://via.placeholder.com/550x700"> </img></div>
+              <img alt="" class="img-responsive" src="{{ project.get_primary_image_url }}"> </img></div>
             <div class="text-box text-center">
-              <h5 class="nopadding title">Matthew</h5>
-              <p class="subtext">Founder and CEO</p>
+              <a href="{% url "detail_project_view" project.id %}"><h5 class="nopadding title">{{ project.title }}</h5></a>
+              <a href="{% url "user_profile" project.owner.pk %}"></a><p class="subtext">{{ project.owner.get_full_name }}</p>
             </div>
           </div>
         </div>
         <!--end feature box-->
       </div>
-      <!--end item-->
-      <div class="col-md-3 col-sm-6 col-xs-12 margin-bottom">
-        <div class="ce-feature-box-43">
-          <div class="main-box">
-            <div class="img-box">
-              <div class="overlay">
-                <p class="small-text text-center">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Suspendisse et justo. </p>
-                <br/>
-                <ul class="sc-icons">
-                  <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                  <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                  <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
-                  <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
-                </ul>
-              </div>
-              <img alt="" class="img-responsive" src="http://via.placeholder.com/550x700"> </img></div>
-            <div class="text-box text-center">
-              <h5 class="nopadding title">Margaret</h5>
-              <p class="subtext">UI Designer</p>
-            </div>
-          </div>
-        </div>
-        <!--end feature box-->
-      </div>
-      <!--end item-->
-      <div class="col-md-3 col-sm-6 col-xs-12 margin-bottom">
-        <div class="ce-feature-box-43">
-          <div class="main-box">
-            <div class="img-box">
-              <div class="overlay">
-                <p class="small-text text-center">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Suspendisse et justo. </p>
-                <br/>
-                <ul class="sc-icons">
-                  <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                  <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                  <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
-                  <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
-                </ul>
-              </div>
-              <img alt="" class="img-responsive" src="http://via.placeholder.com/550x700"> </img></div>
-            <div class="text-box text-center">
-              <h5 class="nopadding title">Benjamin</h5>
-              <p class="subtext">Marketing</p>
-            </div>
-          </div>
-        </div>
-        <!--end feature box-->
-      </div>
-      <!--end item-->
-      <div class="col-md-3 col-sm-6 col-xs-12 margin-bottom">
-        <div class="ce-feature-box-43">
-          <div class="main-box">
-            <div class="img-box">
-              <div class="overlay">
-                <p class="small-text text-center">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Suspendisse et justo. </p>
-                <br/>
-                <ul class="sc-icons">
-                  <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                  <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                  <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
-                  <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
-                </ul>
-              </div>
-              <img alt="" class="img-responsive" src="http://via.placeholder.com/550x700"> </img></div>
-            <div class="text-box text-center">
-              <h5 class="nopadding title">Jennifer</h5>
-              <p class="subtext">Support</p>
-            </div>
-          </div>
-        </div>
-        <!--end feature box-->
-      </div>
+      {% endfor %}
       <!--end item-->
     </div>
   </div>

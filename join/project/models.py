@@ -25,6 +25,11 @@ class Project(TimeStampedModel, TitleDescriptionModel):
 
     brief_description = models.CharField(null=True, blank=True, max_length=130)
     collaborators = models.ManyToManyField('authentication.User', related_name='projects')
+
+    followed_by = models.ManyToManyField('authentication.User', related_name='projects_followed')
+    liked_by = models.ManyToManyField('authentication.User', related_name='projects_liked')
+    viewed_by = models.ManyToManyField('authentication.User', related_name='projects_viewed')
+
     gallery = models.OneToOneField('photologue.Gallery', on_delete=models.CASCADE, related_name='extended',
                                    blank=True, null=True)
 

@@ -11,3 +11,5 @@ django-photologue
 django-model-utils==3.1.2
 Pillow==5.0.0
 psycopg2==2.7.4
+pgmagick
+sorl-thumbnail

@@ -19,7 +19,7 @@ class UserAdminAuth(UserAdmin):
     fieldsets = (
         (None, {'fields': ('username', 'password')}),
         (_('Personal info'), {'fields': (
-            'first_name', 'last_name', 'email', 'avatar', 'brief_introduction'
+            'first_name', 'last_name', 'email', 'picture', 'brief_introduction'
         )}),
         (_('Permissions'), {'fields': ('is_active', 'is_staff', 'is_superuser',
                                        'groups', 'user_permissions')}),

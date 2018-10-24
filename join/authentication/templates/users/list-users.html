@@ -1,5 +1,5 @@
 {% extends 'base.html' %}
-{% load core_tags %}
+{% load core_tags thumbnail %}
 {% block content %}
   {% load i18n static %}
   <section class="section-side-image clearfix">
@@ -62,8 +62,10 @@
                           <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
                         </ul>
                       </div>
-                      {% if user.avatar %}
-                        <img alt="" class="img-responsive" src="{{ user.avatar.url }}"/>
+                      {% if user.picture %}
+                        {% thumbnail user.picture "500x600" crop="center" as im %}
+                          <img alt="{{ user.get_full_name }}" class="img-responsive" src="{{ im.url }}"/>
+                        {% endthumbnail %}
                       {% else %}
                         <img alt="" class="img-responsive" src="http://via.placeholder.com/500x600"/>
                       {% endif %}

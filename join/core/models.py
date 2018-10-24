@@ -1,6 +1,7 @@
 from django.contrib.contenttypes.fields import GenericForeignKey
 from django.contrib.contenttypes.models import ContentType
 from django.db import models
+from sorl.thumbnail import ImageField
 
 from django_extensions.db.models import (
     TimeStampedModel, TitleDescriptionModel, ActivatorModel, TitleSlugDescriptionModel,)
@@ -17,3 +18,17 @@ class File(TimeStampedModel):
 
     uploaded_by = models.ForeignKey('authentication.User', blank=True, null=True,
                                     related_name='files', on_delete=models.CASCADE)
+
+
+class Image(TimeStampedModel):
+    title = models.CharField(max_length=100, blank=True, null=True)
+    description = models.TextField(blank=True, null=True)
+    author = models.ForeignKey('authentication.User', blank=True, null=True, on_delete=models.CASCADE)
+    file = ImageField(upload_to='images')
+
+
+class Comment(TimeStampedModel):
+    comment = models.TextField()
+    author = models.ForeignKey('authentication.User',
+                               blank=True, null=True, related_name='comments',
+                               on_delete=models.PROTECT)

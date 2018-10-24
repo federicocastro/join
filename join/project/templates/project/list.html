@@ -1,5 +1,5 @@
 {% extends 'base.html' %}
-{% load core_tags %}
+{% load core_tags thumbnail %}
 {% block content %}
   {% load i18n static %}
   <section class="section-side-image clearfix">
@@ -49,15 +49,17 @@
       </div>
       <div class="row sec-padding">
         {% for project in object_list %}
-        <div class="col-md-3 col-sm-6 col-xs-12">
+          <div class="col-md-3 col-sm-6 col-xs-12">
             <div class="img-hover-4">
               <div class="text-box ">
                 <h5 class="text-white">{{ project.title }}</h5>
                 <p class="text-light">{{ project.brief_description }}</p>
               </div>
-              <img src="{{ project.get_primary_image_url }}" alt="" class="img-responsive"/>
+              {% thumbnail project.images.first "485x618" crop="center" as im %}
+                <img src="{{ im.url }}" alt="" class="img-responsive"/>
+              {% endthumbnail %}
             </div>
-        </div>
+          </div>
         {% endfor %}
       </div>
     </div>

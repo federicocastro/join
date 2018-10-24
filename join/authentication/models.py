@@ -6,6 +6,8 @@ from django.utils.translation import ugettext_lazy as _
 from django_extensions.db.models import TitleSlugDescriptionModel
 from model_utils import Choices
 
+from core.models import ImageField
+
 
 class CustomUserManager(UserManager):
 
@@ -32,7 +34,7 @@ class User(AbstractUser):
 
     ALTERNATIVE_USERNAME_FIELD = "email"
 
-    avatar = models.ImageField(blank=True, null=True, upload_to='photos')
+    picture = ImageField(blank=True, null=True, upload_to='users-pictures')
 
     profession = models.ForeignKey('authentication.Profession', blank=True, null=True, on_delete=models.SET_NULL)
 

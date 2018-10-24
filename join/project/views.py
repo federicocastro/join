@@ -24,6 +24,11 @@ class DetailProjectView(DetailView):
     model = Project
     pk_url_kwarg = 'pk'
 
+    def get_context_data(self, **kwargs):
+        ctx = super(DetailProjectView, self).get_context_data(**kwargs)
+        ctx['related_projects'] = Project.objects.all()
+        return ctx
+
 
 add_project_view = AddProjectView.as_view()
 list_project_view = ListProjectView.as_view()

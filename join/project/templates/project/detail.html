@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+{% load thumbnail %}
 {% load core_tags %}
 {% load static i18n %}
 {% block content %}
@@ -31,19 +32,19 @@
             <div class="carousel_holder">
               <div class="bg2-featurebox-6">
                 <div id="sync1" class="owl-carousel">
-                  <div class="item"><img src="{{ project.get_primary_image_url }}" alt="" class="img-responsive"></div>
-                  <div class="item"><img src="http://via.placeholder.com/1000x900" alt="" class="img-responsive"></div>
-                  <div class="item"><img src="http://via.placeholder.com/1000x900" alt="" class="img-responsive"></div>
-                  <div class="item"><img src="http://via.placeholder.com/1000x900" alt="" class="img-responsive"></div>
+                  {% for image in object.images.all %}
+                    <div class="item"><img style="margin: auto" src="{{ image.file.url }}" alt="" class="img-responsive"></div>
+                  {% endfor %}
                 </div>
               </div>
               <br/>
               <div class="ce4-feature-box-42">
                 <div id="sync2" class="owl-carousel">
-                  <div class="item"><img src="http://via.placeholder.com/200x150" alt="" class="img-responsive"/></div>
-                  <div class="item"><img src="http://via.placeholder.com/200x150" alt="" class="img-responsive"/></div>
-                  <div class="item"><img src="http://via.placeholder.com/200x150" alt="" class="img-responsive"/></div>
-                  <div class="item"><img src="http://via.placeholder.com/200x150" alt="" class="img-responsive"/></div>
+                  {% for image in object.images.all %}
+                    {% thumbnail image.file "200x150" padding=True as im %}
+                      <div class="item"><img style="margin: auto" src="{{ im.url }}" alt="" class="img-responsive"/></div>
+                    {% endthumbnail %}
+                  {% endfor %}
                 </div>
               </div>
             </div>
@@ -51,35 +52,28 @@
             <br/>
             <br/>
             <div>
-              <h4 class="uppercase title"><a href="#">{{ project.title }} </a></h4>
+              <h4 class="uppercase title"><a href="#">{{ object.title }} </a></h4>
               <div class="blog-post-info"><span><i class="fa fa-comments-o"></i> 15 Comments</span> <span><i class="fa fa-folder"></i> Business/agro</span><span><i class="fa fa-thumbs-up"></i> 256 Likes</span> </div>
               <br/>
-              <p>{{ project.description }}</p>
-              <br/>
-              <h5>Share This Article</h5>
-              <ul class="footer-social-icons">
-                <li><a class="twitter" href="#"><i class="fa fa-twitter"></i></a></li>
-                <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
-                <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
-                <li><a href="#"><i class="fa fa-dribbble"></i></a></li>
-              </ul>
+              <p>{{ object.description }}</p>
             </div>
             <!--end post item-->
 
             <div class="clearfix"></div>
             <br/>
             <h4>3 Comments</h4>
+            {% for comment in object.comments.all %}
             <div class="text-box border white padding-4">
-              <div class="imgbox-medium left round overflow-hidden"><img src="http://via.placeholder.com/350x350" alt="" class="img-responsive"/></div>
+              <div class="imgbox-medium left round overflow-hidden"><img src="{{ comment.author.avatar.a }}" alt="" class="img-responsive"/></div>
               <div class="text-box-right more-padding-1">
-                <h5 class="less-mar-1">Charlotte</h5>
-                <div class="blog-post-info"><span>July 15 2015 at 10:30 AM</span></div>
+                <h5 class="less-mar-1">{{ comment.author }}</h5>
+                <div class="blog-post-info"><span>{{ comment.created | timesince }}</span></div>
                 <br/>
-                <p>Lorem ipsum dolor sit amet consectetuer adipiscing elit Suspendisse et justo Praesent mattis commodo augue  amet consectetuer adipiscing. </p>
+                <p>{{ comment.comment }} </p>
                 <br/>
-                <a class="btn btn-border less-bor dark btn-small" href="#"><i class="fa fa-reply" aria-hidden="true"></i> &nbsp;Reply</a> </div>
+                <a class="btn btn-border less-bor dark btn-small" href="#"><i class="fa fa-reply" aria-hidden="true"></i> &nbsp;Responder</a> </div>
             </div>
+            {% endfor %}
             <!--end comment box-->
 
             <div class="col-divider-margin-2"></div>
@@ -114,18 +108,15 @@
             <div class="clearfix"></div>
             <br/>
             <br/>
-            <a class="btn btn-dark-3 btn-large uppercase" href="#">Load More Comments</a>
+            <a class="btn btn-dark-3 btn-large uppercase" href="#">Cargar Más Comentarios</a>
             <div class="clearfix"></div>
             <br/>
             <br/>
-            <h4>Post a Comment</h4>
-            <input class="bg-cinput" type="text" placeholder="Enter Name" value="">
-            <input class="bg-cinput" type="text" placeholder="Email Address" value="">
-            <input class="bg-cinput" type="text" placeholder="Phone" value="">
-            <textarea class="bg-ctexteria" placeholder="Your Comment"></textarea>
+            <h4>Enviar Comentario</h4>
+            <textarea class="bg-ctexteria" placeholder="Escriba aquí su comentario..."></textarea>
             <div class="clearfix"></div>
             <br/>
-            <a class="btn btn-dark-3 btn-large uppercase" href="#"><i class="fa fa-paper-plane" aria-hidden="true"></i> &nbsp;Post Comments</a> </div>
+            <a class="btn btn-dark-3 btn-large uppercase" href="#"><i class="fa fa-paper-plane" aria-hidden="true"></i> &nbsp;Enviar</a> </div>
           <!--end left col main-->
 
           <div class="col-md-4 col-sm-12 col-xs-12 section-white">
@@ -139,37 +130,30 @@
             </div>
             <!--end item holder-->
 
-            <div class="pages-sidebar-item">
-              <h5 class="uppercase pages-sidebar-item-title">Projectos </h5>
-              <div class="col-md-12 col-sm-12 col-xs-12 nopadding">
-                <div class="imgbox-small left"> <img src="http://via.placeholder.com/700x700" alt="" class="img-responsive"/></div>
-                <div class="text-box-right">
-                  <h6 class="uppercase nopadding"><a href="#" class="text-hover-gyellow">Nullam turpis Cras dapibusscing</a></h6>
-                  <div class="blog-post-info padding-top-1"> <span> By Benjamin</span> <span> 15 Comments</span> </div>
-                </div>
+            {% if related_projects %}
+              <div class="pages-sidebar-item">
+                <h5 class="uppercase pages-sidebar-item-title">Proyectos Relacionados</h5>
+                {% for related_project in related_projects %}
+                  <div class="col-md-12 col-sm-12 col-xs-12 nopadding">
+                    <div class="imgbox-small left">
+                      <a href="{% url 'detail_project_view' related_project.id %}">
+                        <img src="{{ related_project.get_primary_image_url }}" alt="" class="img-responsive"/>
+                      </a>
+                    </div>
+                    <div class="text-box-right">
+                      <h6 class="uppercase nopadding">
+                        <a href="{% url 'detail_project_view' related_project.id %}" class="text-hover-gyellow">{{ related_project.title }}</a>
+                      </h6>
+                      <div class="blog-post-info padding-top-1">
+                        <a href="{% url "user_profile" related_project.owner.id %}"><span> {{ related_project.owner }}</span> </a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="divider-line solid light margin"></div>
+                {% endfor %}
+                <!--end post-->
               </div>
-              <!--end post-->
-
-              <div class="divider-line solid light margin"></div>
-              <div class="col-md-12 col-sm-12 col-xs-12 nopadding">
-                <div class="imgbox-small left"> <img src="http://via.placeholder.com/700x700" alt="" class="img-responsive"/></div>
-                <div class="text-box-right">
-                  <h6 class="uppercase nopadding"><a href="#" class="text-hover-gyellow">Nullam turpis Cras dapibusscing</a></h6>
-                  <div class="blog-post-info padding-top-1"> <span> By Benjamin</span> <span> 15 Comments</span> </div>
-                </div>
-              </div>
-              <!--end post-->
-
-              <div class="divider-line solid light margin"></div>
-              <div class="col-md-12 col-sm-12 col-xs-12 nopadding">
-                <div class="imgbox-small left"> <img src="http://via.placeholder.com/700x700" alt="" class="img-responsive"/></div>
-                <div class="text-box-right">
-                  <h6 class="uppercase nopadding"><a href="#" class="text-hover-gyellow">Nullam turpis Cras dapibusscing</a></h6>
-                  <div class="blog-post-info padding-top-1"> <span> By Benjamin</span> <span> 15 Comments</span> </div>
-                </div>
-              </div>
-              <!--end post-->
-            </div>
+            {% endif %}
             <!--end item holder-->
 
             <div class="pages-sidebar-item">
@@ -186,13 +170,6 @@
               </ul>
             </div>
             <!--end item holder-->
-
-            <div class="pages-sidebar-item">
-              <h5 class="uppercase pages-sidebar-item-title">Newsletter</h5>
-              <input type="text" name="name" class="pages-newsletter" value="Enter your e-mail" maxlength="100" />
-            </div>
-            <!--end item holder-->
-
             <div class="pages-sidebar-item">
               <h5 class="uppercase pages-sidebar-item-title">Featured Works</h5>
               <ul class="sidebar-works">

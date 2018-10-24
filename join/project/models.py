@@ -1,11 +1,20 @@
 from django.contrib.contenttypes.fields import GenericRelation
 from django.db import models
 from django.utils.translation import ugettext_lazy as _
-
 from core.models import TimeStampedModel, TitleDescriptionModel, TitleSlugDescriptionModel
 from model_utils import Choices
 
 from tag.models import TaggedItem
+
+from core.models import Image, Comment
+
+
+class ProjectImage(Image):
+    project = models.ForeignKey('project.Project', related_name='images', on_delete=models.CASCADE)
+
+
+class ProjectComment(Comment):
+    project = models.ForeignKey('project.Project', related_name='comments', on_delete=models.CASCADE)
 
 
 class Project(TimeStampedModel, TitleDescriptionModel):
@@ -29,9 +38,6 @@ class Project(TimeStampedModel, TitleDescriptionModel):
     followed_by = models.ManyToManyField('authentication.User', related_name='projects_followed')
     liked_by = models.ManyToManyField('authentication.User', related_name='projects_liked')
     viewed_by = models.ManyToManyField('authentication.User', related_name='projects_viewed')
-
-    gallery = models.OneToOneField('photologue.Gallery', on_delete=models.CASCADE, related_name='extended',
-                                   blank=True, null=True)
 
     license = models.ForeignKey('project.License', null=True, blank=True, on_delete=models.PROTECT)
 

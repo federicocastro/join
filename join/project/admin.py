@@ -1,13 +1,17 @@
 from django.contrib import admin
 from tag.admin import TaggedItemAdminInline
-from .models import Project, Interest
+from .models import Project, Interest, ProjectImage
+
+
+class ProjectImageAdminInline(admin.TabularInline):
+    model = ProjectImage
 
 
 @admin.register(Project)
 class ProjectAdmin(admin.ModelAdmin):
     list_display = ('id', 'title', 'created', 'owner')
     search_fields = ('id', 'title', 'description', 'owner')
-    inlines = (TaggedItemAdminInline,)
+    inlines = (TaggedItemAdminInline, ProjectImageAdminInline)
 
     def get_queryset(self, request):
         qs = super(ProjectAdmin, self).get_queryset(request)

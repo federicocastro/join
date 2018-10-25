@@ -2,26 +2,6 @@
 {% load core_tags thumbnail %}
 {% block content %}
   {% load i18n static %}
-  <section class="section-side-image clearfix">
-    <div class="img-holder col-md-12 col-sm-12 col-xs-12">
-      <div class="background-imgholder" style="background:url(http://via.placeholder.com/1500x1000);"><img alt="" class="nodisplay-image" src="http://via.placeholder.com/1500x1000"> </img></div>
-    </div>
-    <div class="container-fluid">
-      <div class="row">
-        <div class="col-md-12 col-sm-12 col-xs-12 clearfix nopadding">
-          <div class="header-inner less-height">
-            <div class="overlay">
-              <div class="text text-center">
-                <h3 class="uppercase text-white less-mar-1 title">Portfolio</h3>
-                <h6 class="uppercase text-white sub-title"> Lightbox Gallery</h6>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-  <div class=" clearfix"></div>
   <!--end header section -->
   <section>
     <div class="pagenation-holder">
@@ -32,8 +12,8 @@
           </div>
           <div class="col-md-6">
             <ol class="breadcrumb">
-              <li><a href="#">{% trans "Home" %}</a></li>
-              <li class="current"><a href="#">{% trans "Projects" %}</a></li>
+              <li><a href="{% url 'home_view' %}">{% trans "Home" %}</a></li>
+              <li class="current"><a href="{% url 'list_project' %}">{% trans "Projects" %}</a></li>
             </ol>
           </div>
         </div>

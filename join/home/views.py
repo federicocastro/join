@@ -21,7 +21,7 @@ class HomeView(TemplateView):
 
     def get_context_data(self, **kwargs):
         context = super(HomeView, self).get_context_data(**kwargs)
-        context['popular_users'] = User.objects.filter(avatar__isnull=False)[:6]
+        context['popular_users'] = User.objects.filter(picture__isnull=False)[:6]
         context['popular_projects'] = Project.objects.annotate(
             count_likes=Count('liked_by'),
             count_followers=Count('followed_by'),

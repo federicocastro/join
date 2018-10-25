@@ -1,3 +1,4 @@
+{% load thumbnail %}
 <section class="sec-padding" style="padding: 40px 0 40px 0">
   <div class="container">
     <div class="row">
@@ -10,23 +11,27 @@
       <div class="clearfix"></div>
       <!--end title-->
       {% for project in popular_projects %}
-      <div class="col-md-3 col-sm-6 col-xs-12 margin-bottom">
-        <div class="ce-feature-box-43">
-          <div class="main-box">
-            <div class="img-box" style="height: 343px;">
-              <div class="overlay">
-                <p class="small-text text-center">{{ project.description }}</p>
-                <br/>
+        <div class="col-md-3 col-sm-6 col-xs-12 margin-bottom">
+          <div class="ce-feature-box-43">
+            <div class="main-box">
+              <div class="img-box" style="height: 343px;">
+                <div class="overlay">
+                  <p class="small-text text-center">{{ project.description }}</p>
+                  <br/>
+                </div>
+                {% thumbnail project.images.first "270x342" crop="center" as im %}
+                  <img alt="" class="img-responsive" src="{{ im.url }}"/>
+                {% empty %}
+                {% endthumbnail %}
               </div>
-              <img alt="" class="img-responsive" src="{{ project.get_primary_image_url }}"> </img></div>
-            <div class="text-box text-center">
-              <a href="{% url "detail_project_view" project.id %}"><h5 class="nopadding title">{{ project.title }}</h5></a>
-              <a href="{% url "user_profile" project.owner.pk %}"></a><p class="subtext">{{ project.owner.get_full_name }}</p>
+              <div class="text-box text-center">
+                <a href="{% url "detail_project_view" project.id %}"><h5 class="nopadding title">{{ project.title }}</h5></a>
+                <a href="{% url "user_profile" project.owner.pk %}"></a><p class="subtext">{{ project.owner.get_full_name }}</p>
+              </div>
             </div>
           </div>
+          <!--end feature box-->
         </div>
-        <!--end feature box-->
-      </div>
       {% endfor %}
       <!--end item-->
     </div>

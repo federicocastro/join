@@ -49,6 +49,7 @@ class User(AbstractUser):
     following_count = models.PositiveIntegerField(default=0)
 
     facebook_profile = models.CharField(max_length=300, blank=True, null=True)
+    youtube_profile = models.CharField(max_length=300, blank=True, null=True)
     twitter_profile = models.CharField(max_length=300, blank=True, null=True)
     linkedin_profile = models.CharField(max_length=300, blank=True, null=True)
     gplus_profile = models.CharField(max_length=300, null=True, blank=True)
@@ -68,6 +69,9 @@ class User(AbstractUser):
 
     def get_instagram_profile_url(self):
         return 'https://www.instagram.com/{}'.format(self.instagram_profile)
+
+    def get_youtube_profile_url(self):
+        return 'https://www.youtube.com/{}'.format(self.youtube_profile)
 
     objects = CustomUserManager()
 

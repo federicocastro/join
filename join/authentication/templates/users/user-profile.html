@@ -57,28 +57,25 @@
               <!--end post-->
             </div>
             <!--end item holder-->
-            <div class="pages-sidebar-item">
-              <h5 class="uppercase pages-sidebar-item-title">{% trans "Habilidades" %}</h5>
-              <ul class="pages-tags">
-                <li><a href="#"></a></li>
-                <li><a href="#">Art</a></li>
-                <li><a href="#">UI Design</a></li>
-                <li><a href="#">Photography</a></li>
-                <li><a class="active" href="#">Design</a></li>
-                <li><a href="#">Art</a></li>
-                <li><a href="#">Responsive</a></li>
-                <li><a href="#">Develop</a></li>
-              </ul>
-            </div>
+            {% if user.skills.exists %}
+              <div class="pages-sidebar-item">
+                <h5 class="uppercase pages-sidebar-item-title">{% trans "Habilidades" %}</h5>
+                <ul class="pages-tags">
+                  {% for skill in user.skills %}
+                    <li><a href="#">{{ skill.title }}</a></li>
+                  {% endfor %}
+                </ul>
+              </div>
+            {% endif %}
             {% if user.interests.exists %}
-            <div class="pages-sidebar-item">
-              <h5 class="uppercase pages-sidebar-item-title">{% trans "Intereses" %}</h5>
-              <ul class="pages-tags">
-                {% for interest in user.interests.all %}
-                  <li><a href="#">{{ interest.title }}</a></li>
-                {% endfor %}
-              </ul>
-            </div>
+              <div class="pages-sidebar-item">
+                <h5 class="uppercase pages-sidebar-item-title">{% trans "Intereses" %}</h5>
+                <ul class="pages-tags">
+                  {% for interest in user.interests.all %}
+                    <li><a href="#">{{ interest.title }}</a></li>
+                  {% endfor %}
+                </ul>
+              </div>
             {% endif %}
             <!--end item holder-->
             <div class="pages-sidebar-item">
@@ -113,41 +110,41 @@
               </ul>
               <div class="clearfix"></div>
               <ul class="social-icons h-anim-rotate socila-sm">
-                <li class="hover-rss">
-                  <a href="#">
-                    <i aria-hidden="true" class="fa fa-rss"></i>
-                  </a>
-                </li>
+                {% if user.facebook_profile %}
                 <li class="hover-facebook">
-                  <a href="#">
+                  <a href="{{ user.get_facebook_profile_url }}">
                     <i aria-hidden="true" class="fa fa-facebook"></i>
                   </a>
                 </li>
+                {% endif %}
+                {% if user.twitter_profile %}
                 <li class="hover-twitter">
-                  <a href="#">
+                  <a href="{{ user.get_twitter_profile_url }}">
                     <i aria-hidden="true" class="fa fa-twitter"></i>
                   </a>
                 </li>
-                <li class="hover-vimeo">
-                  <a href="#">
-                    <i aria-hidden="true" class="fa fa-vimeo"></i>
+                {% endif %}
+                {% if user.instagram_profile %}
+                <li class="hover-instagram">
+                  <a href="{{ user.get_instagram_profile_url }}">
+                    <i aria-hidden="true" class="fa fa-instram"></i>
                   </a>
                 </li>
+                {% endif %}
+                {% if user.linkedin_profile %}
+                <li class="hover-linkedin">
+                  <a href="{{ user.get_linkedin_profile_url }}">
+                    <i aria-hidden="true" class="fa fa-linkedin"></i>
+                  </a>
+                </li>
+                {% endif %}
+                {% if user.youtube_profile %}
                 <li class="hover-youtube">
-                  <a href="#">
+                  <a href="{{ user.get_youtube_profile_url }}">
                     <i aria-hidden="true" class="fa fa-youtube"></i>
                   </a>
                 </li>
-                <li class="hover-stumbleupon">
-                  <a href="#">
-                    <i aria-hidden="true" class="fa fa-stumbleupon"></i>
-                  </a>
-                </li>
-                <li class="hover-android">
-                  <a href="#">
-                    <i aria-hidden="true" class="fa fa-android"></i>
-                  </a>
-                </li>
+                {% endif %}
               </ul>
             </div>
             <!--end item-->

@@ -4,7 +4,7 @@ from django.contrib.auth.forms import UserCreationForm, AdminPasswordChangeForm
 from django.utils.translation import ugettext_lazy as _
 
 from .forms import UserChangeForm
-from .models import User, Profession, Team
+from .models import User, Profession, Team, Skill
 
 
 class UserAdminAuth(UserAdmin):
@@ -25,6 +25,7 @@ class UserAdminAuth(UserAdmin):
                                        'groups', 'user_permissions')}),
         (_('Important dates'), {'fields': ('last_login', 'date_joined')}),
         (_('Interests'), {'fields': ('interests',)}),
+        (_('Skill'), {'fields': ('skills',)}),
         (_('Profession'), {'fields': ('profession',)}),
         (_('Social Accounts'), {'fields': ('facebook_profile', 'instagram_profile',
                                            'linkedin_profile', 'twitter_profile')})
@@ -40,6 +41,11 @@ class UserAdminAuth(UserAdmin):
 
     filter_horizontal = ['groups', 'user_permissions', 'interests']
     save_on_top = True
+
+
+@admin.register(Skill)
+class SkillAdmin(admin.ModelAdmin):
+    list_display = ('id', 'title', 'slug', 'description')
 
 
 @admin.register(Profession)

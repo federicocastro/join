@@ -39,6 +39,7 @@ class User(AbstractUser):
     profession = models.ForeignKey('authentication.Profession', blank=True, null=True, on_delete=models.SET_NULL)
 
     interests = models.ManyToManyField('project.Interest')
+    skills = models.ManyToManyField('authentication.Skill', related_name='users')
 
     brief_introduction = models.TextField(max_length=150, blank=True, null=True)
 
@@ -69,6 +70,12 @@ class User(AbstractUser):
         return 'https://www.instagram.com/{}'.format(self.instagram_profile)
 
     objects = CustomUserManager()
+
+
+class Skill(TitleSlugDescriptionModel):
+
+    def __str__(self):
+        return self.title
 
 
 class Profession(TitleSlugDescriptionModel):

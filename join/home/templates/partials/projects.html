@@ -19,7 +19,7 @@
                   <p class="small-text text-center">{{ project.description }}</p>
                   <br/>
                 </div>
-                {% thumbnail project.images.first "270x342" crop="center" as im %}
+                {% thumbnail project.images.first.file "270x342" crop="center" as im %}
                   <img alt="" class="img-responsive" src="{{ im.url }}"/>
                 {% empty %}
                 {% endthumbnail %}

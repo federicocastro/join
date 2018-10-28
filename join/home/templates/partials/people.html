@@ -1,19 +1,20 @@
-{% load i18n static %}
+{% load i18n static thumbnail core_tags %}
 <section id="people-block" class="section-light">
-  <div class="container-fluid" style="padding: 0px;">
-    <div class="parallax vertical-align" data-parallax-bg-image="{% static "images/users-background-min.png" %}" data-parallax-direction="down" data-parallax-speed="0.9">
-      <div class="parallax-overlay bg-opacity-8">
-        <div id="people-sublock" class="container sec-tpadding-3 sec-bpadding-3">
-          <div class="row">
-            <div class="col-sm-12">
-              <div class="sec-title-container text-center">
-                <h2 class=" raleway font-weight-b less-mar-1 uppercase text-white">PERSONAS CON TALENTOS. PERSONAS INCREÍBLES.</h2>
-                <h6 class="ce-sub-text big-width raleway text-gray">DESCUBRÍ A DISEÑADORES CON TALENTOS DIFERENTES A LOS TUYOS PARA HACER REALIDAD UNA IDEA O PROYECTO.</h6>
-              </div>
+  <div class="container-fluid" style="padding-left: 0px; padding-right: 0px">
+    {% get_photo_url_by_slug "users-background" as userbackground %}
+    <div class="parallax vertical-align" data-parallax-bg-size="none" data-parallax-bg-image="{{ userbackground.image.url }}" data-parallax-direction="down" data-parallax-speed="0.9">
+    <div class="parallax-overlay bg-opacity-8">
+      <div id="people-sublock" class="container sec-tpadding-3 sec-bpadding-5">
+        <div class="row">
+          <div class="col-sm-12">
+            <div class="sec-title-container text-center less-padding-4">
+              <h2 class=" raleway font-weight-b less-mar-1 uppercase text-white">PERSONAS CON TALENTOS</h2>
+              <h6 class="ce-sub-text big-width raleway text-gray">DESCUBRÍ A DISEÑADORES CON TALENTOS DIFERENTES A LOS TUYOS PARA HACER REALIDAD UNA IDEA O PROYECTO.</h6>
             </div>
-            <div class="clearfix"></div>
-            <!--end title-->
-            {% for user in popular_users %}
+          </div>
+          <div class="clearfix"></div>
+          <!--end title-->
+          {% for user in popular_users %}
             <div class="col-md-4 col-sm-6 col-xs-12">
               <div class="ce-feature-box-13">
                 <div class="img-box">
@@ -31,15 +32,17 @@
                     <p class="padding-top-1">{% if user.brief_introduction %}{{ user.brief_introduction }}{% endif %}</p>
                   </div>
                   <div class="overlay"></div>
-                  <img alt="" class="img-responsive" src="{{ user.picture.url }}"/>
+                  {% thumbnail user.picture "370x420" crop="center" format="PNG" as im %}
+                    <img alt="" class="img-responsive" src="{{ im.url }}"/>
+                  {% endthumbnail %}
                 </div>
               </div>
             </div>
-            {% endfor %}
-          </div>
+          {% endfor %}
         </div>
       </div>
     </div>
+  </div>
 
   </div>
 </section>

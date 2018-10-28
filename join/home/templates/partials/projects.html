@@ -3,7 +3,7 @@
   <div class="container">
     <div class="row">
       <div class="col-sm-12">
-        <div class="sec-title-container text-center">
+        <div class="sec-title-container text-center less-padding-4">
           <h5 class="font-weight-4 less-mar-1 line-height-4 text-primary montserrat">Proyectos fenomenales que inspiran</h5>
           <h2 class="font-weight-6 less-mar-1 montserrat line-height-5">Propone tu idea y crea un proyecto en conjunto con otros diseñadores.<br/></h2>
         </div>
@@ -16,7 +16,7 @@
             <div class="main-box">
               <div class="img-box" style="height: 343px;">
                 <div class="overlay">
-                  <p class="small-text text-center">{{ project.description }}</p>
+                  <a href="{% url "detail_project_view" project.id %}"><p class="small-text text-center" style="width: 250px">{{ project.description }}</p></a>
                   <br/>
                 </div>
                 {% thumbnail project.images.first.file "270x342" crop="center" as im %}
@@ -26,7 +26,7 @@
               </div>
               <div class="text-box text-center">
                 <a href="{% url "detail_project_view" project.id %}"><h5 class="nopadding title">{{ project.title }}</h5></a>
-                <a href="{% url "user_profile" project.owner.pk %}"></a><p class="subtext">{{ project.owner.get_full_name }}</p>
+                <a href="{% url "user_profile" project.owner.pk %}"><p class="subtext">{{ project.owner.get_full_name }}</p></a>
               </div>
             </div>
           </div>

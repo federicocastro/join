@@ -48,7 +48,7 @@ INSTALLED_APPS = [
     'sorl.thumbnail',
 
     'authentication',
-
+    'slider',
     'home',
     'core',
     'project',

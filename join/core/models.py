@@ -27,6 +27,10 @@ class Image(TimeStampedModel):
     file = ImageField(upload_to='images')
 
 
+class ImageTitleSlug(TitleSlugDescriptionModel):
+    file = ImageField(upload_to='images')
+
+
 class Comment(TimeStampedModel):
     comment = models.TextField()
     author = models.ForeignKey('authentication.User',

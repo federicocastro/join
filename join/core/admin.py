@@ -1,5 +1,15 @@
 from django.contrib import admin
-from .models import File
+from .models import File, ImageTitleSlug, Image
+
+
+@admin.register(ImageTitleSlug)
+class ImageTitleSlugAdmin(admin.ModelAdmin):
+    list_display = ('id', 'title', 'slug')
+
+
+@admin.register(Image)
+class ImageAdmin(admin.ModelAdmin):
+    list_display = ('id', 'title')
 
 
 @admin.register(File)

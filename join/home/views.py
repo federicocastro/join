@@ -31,7 +31,7 @@ class HomeView(TemplateView):
         ).order_by(
             '-popularity',
             '-created'
-        )[:6]
+        )[:8]
         return context
 
 

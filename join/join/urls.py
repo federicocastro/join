@@ -23,6 +23,9 @@ from rest_framework_jwt.views import obtain_jwt_token, refresh_jwt_token, verify
 
 urlpatterns = [
     path('', home_view, name='home_view'),
+    path('home/', home_view, name='home_view'),
+    path('forum/', home_view, name='forum_view'),  # TODO: Change this when forum section is implemented.
+    path('news/', home_view, name='news_view'),  # TODO: Change this when news section is implemented.
     path('<page_name>.html', page_view, name='page_view'),
     path('admin/', admin.site.urls),
     path('api/token/auth/', obtain_jwt_token),

@@ -10,7 +10,7 @@
           <li data-index="rs-{{ forloop.counter|add:308 }}" data-transition="slideoverhorizontal" data-slotamount="default"  data-easein="Power4.easeInOut" data-easeout="Power4.easeInOut" data-masterspeed="1000"  data-thumb="{{ mini_thumb_slide.url }}"  data-rotate="0"  data-fstransition="fade" data-fsmasterspeed="1500" data-fsslotamount="7" data-saveperformance="off"  data-title="{{ slide.title }}" data-description="{{ slide.description }}">
           {% endthumbnail %}
             <!-- MAIN IMAGE -->
-            {% thumbnail slide.image "1920x1080" quality="15" format="PNG" as thumb_slide %}
+            {% thumbnail slide.image slide.resize_to quality=slide.quality format=slide.format as thumb_slide %}
               <img src="{{ thumb_slide.url }}" alt=""  data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="10" class="rev-slidebg" data-no-retina>
             {% endthumbnail %}
 

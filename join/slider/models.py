@@ -11,3 +11,7 @@ class Slide(TimeStampedModel, TitleSlugDescriptionModel, ActivatorModel):
     btn_link = models.URLField(blank=True, null=True)
     btn_view_name = models.CharField(max_length=100, blank=True, null=True)
     is_public = models.BooleanField(default=True)
+
+    resize_to = models.CharField(default="1920x1080", max_length=30)
+    quality = models.CharField(default="15", max_length=30)
+    format = models.CharField(default="PNG", max_length=30)

@@ -1,57 +1,58 @@
-{% load i18n static %}
+{% load i18n static core_tags thumbnail %}
 <section class="section-side-image section-dark sec-padding-5 clearfix">
-        <div class="img-holder col-md-12 col-sm-3 pull-left">
-          <div class="background-imgholder" style="background:url(http://via.placeholder.com/1500x960);"><img alt="" class="nodisplay-image" src="http://via.placeholder.com/1500x960"> </img></div>
-        </div>
-        <div class="container-fluid">
-          <div class="row slider-btn-2">
-            <div class="owl-carousel owl-theme" id="owl-demo17">
-              <div class="item">
-                <div class="col-md-6 col-md-offset-5">
-                  <div class="ce-feature-box-49">
-                    <div class="top-box text-center">
-                      <div class="quote-icon"><i aria-hidden="true" class="fa fa-quote-left"></i></div>
-                      <h3 class="raleway font-weight-3">We develop user interface Applications, animations &amp; icons. </h3>
-                    </div>
-                    <div class="text-box">
-                      <h2 class="font-weight-6 less-mar-1 text-white opacity-5">We offer high Quality Templates and Services </h2>
-                      <br/>
-                      <h6 class=" text-white opacity-5">Pharetra semper. Morbi posuere. Donec quis nulla eget orci scelerisque sit amet. </h6>
-                      <p>consectetuer adipiscing elit Suspendisse et justo Praesent mattis commodo sit justo amet et augue Aliquam ornare</p>
-                      <p>Praesent mattis commodo augue Aliquam ornare hendrerit augue Cras tellus In pulvinar lectus a est Curabitur eget orci Cras laoreet ligula. Etiam sit amet dolor. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae Nullam tellus diam .</p>
-                      <div class="clearfix"></div>
-                      <br/>
-                      <br/>
-                      <a class="btn btn-dark btn-round uppercase" href="#"><i aria-hidden="true" class="fa fa-play-circle"></i> Read more</a> </div>
-                  </div>
-                </div>
-                <!--end item-->
+  <div class="img-holder col-md-12 col-sm-3 pull-left">
+    {% get_image_by_slug "news-background" as news_background %}
+    <div class="background-imgholder" style="background:url(http://via.placeholder.com/1500x960);"><img alt="" class="nodisplay-image" src="{{ news_background.image.url }}"> </img></div>
+  </div>
+  <div class="container-fluid">
+    <div class="row slider-btn-2">
+      <div class="owl-carousel owl-theme" id="owl-demo17">
+        <div class="item">
+          <div class="col-md-6 col-md-offset-5">
+            <div class="ce-feature-box-49">
+              <div class="top-box text-center">
+                <div class="quote-icon"><i aria-hidden="true" class="fa fa-quote-left"></i></div>
+                <h3 class="raleway font-weight-3">We develop user interface Applications, animations &amp; icons. </h3>
               </div>
-              <!--end carousel item-->
-              <div class="item">
-                <div class="col-md-6 col-md-offset-5">
-                  <div class="ce-feature-box-49">
-                    <div class="top-box text-center">
-                      <div class="quote-icon"><i aria-hidden="true" class="fa fa-quote-left"></i></div>
-                      <h3 class="raleway font-weight-3">We offer best price products and included unlimited Plans . </h3>
-                    </div>
-                    <div class="text-box">
-                      <h2 class="font-weight-6 less-mar-1 text-white opacity-5">Our Creative Team gives You best Service</h2>
-                      <br/>
-                      <h6 class=" text-white opacity-5">Pharetra semper. Morbi posuere. Donec quis nulla eget orci scelerisque sit amet. </h6>
-                      <p>consectetuer adipiscing elit Suspendisse et justo Praesent mattis commodo sit justo amet et augue Aliquam ornare</p>
-                      <p>Praesent mattis commodo augue Aliquam ornare hendrerit augue Cras tellus In pulvinar lectus a est Curabitur eget orci Cras laoreet ligula. Etiam sit amet dolor. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae Nullam tellus diam .</p>
-                      <div class="clearfix"></div>
-                      <br/>
-                      <br/>
-                      <a class="btn btn-dark btn-round uppercase" href="#"><i aria-hidden="true" class="fa fa-play-circle"></i> Read more</a> </div>
-                  </div>
-                </div>
-                <!--end item-->
-              </div>
-              <!--end carousel item-->
+              <div class="text-box">
+                <h2 class="font-weight-6 less-mar-1 text-white opacity-5">We offer high Quality Templates and Services </h2>
+                <br/>
+                <h6 class=" text-white opacity-5">Pharetra semper. Morbi posuere. Donec quis nulla eget orci scelerisque sit amet. </h6>
+                <p>consectetuer adipiscing elit Suspendisse et justo Praesent mattis commodo sit justo amet et augue Aliquam ornare</p>
+                <p>Praesent mattis commodo augue Aliquam ornare hendrerit augue Cras tellus In pulvinar lectus a est Curabitur eget orci Cras laoreet ligula. Etiam sit amet dolor. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae Nullam tellus diam .</p>
+                <div class="clearfix"></div>
+                <br/>
+                <br/>
+                <a class="btn btn-dark btn-round uppercase" href="#"><i aria-hidden="true" class="fa fa-play-circle"></i> Read more</a> </div>
             </div>
-            <!--end carousel-->
           </div>
+          <!--end item-->
         </div>
-      </section>
+        <!--end carousel item-->
+        <div class="item">
+          <div class="col-md-6 col-md-offset-5">
+            <div class="ce-feature-box-49">
+              <div class="top-box text-center">
+                <div class="quote-icon"><i aria-hidden="true" class="fa fa-quote-left"></i></div>
+                <h3 class="raleway font-weight-3">We offer best price products and included unlimited Plans . </h3>
+              </div>
+              <div class="text-box">
+                <h2 class="font-weight-6 less-mar-1 text-white opacity-5">Our Creative Team gives You best Service</h2>
+                <br/>
+                <h6 class=" text-white opacity-5">Pharetra semper. Morbi posuere. Donec quis nulla eget orci scelerisque sit amet. </h6>
+                <p>consectetuer adipiscing elit Suspendisse et justo Praesent mattis commodo sit justo amet et augue Aliquam ornare</p>
+                <p>Praesent mattis commodo augue Aliquam ornare hendrerit augue Cras tellus In pulvinar lectus a est Curabitur eget orci Cras laoreet ligula. Etiam sit amet dolor. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae Nullam tellus diam .</p>
+                <div class="clearfix"></div>
+                <br/>
+                <br/>
+                <a class="btn btn-dark btn-round uppercase" href="#"><i aria-hidden="true" class="fa fa-play-circle"></i> Read more</a> </div>
+            </div>
+          </div>
+          <!--end item-->
+        </div>
+        <!--end carousel item-->
+      </div>
+      <!--end carousel-->
+    </div>
+  </div>
+</section>

@@ -56,10 +56,21 @@
                         <p>{% if user.brief_introduction %}{{ user.brief_introduction }}{% endif %}</p>
                         <br/>
                         <ul class="sc-icons">
-                          <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                          <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                          <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
-                          <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                          {% if user.linkedin_profile %}
+                          <li><a href="{{ user.get_linkedin_profile_url }}"><i class="fa fa-linkedin"></i></a></li>
+                          {% endif %}
+                          {% if user.instagram_profile %}
+                          <li><a href="{{ user.get_instagram_profile_url }}"><i class="fa fa-instagram"></i></a></li>
+                          {% endif %}
+                          {% if user.facebook_profile %}
+                          <li><a href="{{ user.get_facebook_profile_url }}"><i class="fa fa-facebook"></i></a></li>
+                          {% endif %}
+                          {% if user.gplus_profile %}
+                          <li><a href="{{ user.get_gplus_profile_url }}"><i class="fa fa-google-plus"></i></a></li>
+                          {% endif %}
+                          {% if user.twitter_profile %}
+                          <li><a href="{{ user.get_twitter_profile_url }}"><i class="fa fa-twitter"></i></a></li>
+                          {% endif %}
                         </ul>
                       </div>
                       {% if user.picture %}
@@ -71,7 +82,7 @@
                       {% endif %}
                     </div>
                     <div class="text-box padding-3 text-center">
-                      <h5 class="less-mar-1">{{ user.get_full_name }}</h5>
+                      <a href="{% url "user_profile" user.pk %}"><h5 class="less-mar-1">{{ user.get_full_name }}</h5></a>
                       <p>{{ user.profession }}</p>
                     </div>
                   </div>

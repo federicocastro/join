@@ -1,5 +1,6 @@
 from django.contrib.auth.models import AbstractUser, UserManager
 from django.db import models
+from django.db.models import Count
 from photologue.models import Photo
 
 from django.utils.translation import ugettext_lazy as _
@@ -13,6 +14,9 @@ class CustomUserManager(UserManager):
 
     def get_queryset(self, *args, **kwargs):
         qs = super(CustomUserManager, self).get_queryset(*args, **kwargs)
+        qs = qs.annotate(
+            has_projects=Count('my_projects') + Count('projects')
+        )
 
         return qs
 

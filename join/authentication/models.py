@@ -4,7 +4,7 @@ from django.db.models import Count
 from photologue.models import Photo
 
 from django.utils.translation import ugettext_lazy as _
-from django_extensions.db.models import TitleSlugDescriptionModel
+from django_extensions.db.models import TitleSlugDescriptionModel, TimeStampedModel
 from model_utils import Choices
 
 from core.models import ImageField
@@ -78,6 +78,11 @@ class User(AbstractUser):
         return 'https://www.youtube.com/{}'.format(self.youtube_profile)
 
     objects = CustomUserManager()
+
+
+class UserFollow(TimeStampedModel):
+    user = models.ForeignKey('authentication.User', on_delete=models.CASCADE, related_name='following')
+    user_followed = models.ForeignKey('authentication.User', on_delete=models.CASCADE, related_name='followed_by')
 
 
 class Skill(TitleSlugDescriptionModel):

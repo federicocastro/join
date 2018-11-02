@@ -41,47 +41,11 @@
             <div class="pages-sidebar-item" style="margin-bottom: 15px;">
               <h5 class="uppercase pages-sidebar-item-title">{{ user.profession }}</h5>
               <p>{{ user.brief_introduction }}</p>
-              <ul class="port-project-info">
-                <li><span>Nombre</span> {{ user.get_full_name }}</li>
-                <li><span>Joined</span> {{ user.date_joined | date }}</li>
-                <li><span>Skills</span> PSD / HTML5 / CSS3</li>
-                  <ul class="social-icons h-anim-rotate socila-sm">
-                    {% if user.facebook_profile %}
-                      <li class="hover-facebook">
-                        <a href="{{ user.get_facebook_profile_url }}">
-                          <i aria-hidden="true" class="fa fa-facebook"></i>
-                        </a>
-                      </li>
-                    {% endif %}
-                    {% if user.twitter_profile %}
-                      <li class="hover-twitter">
-                        <a href="{{ user.get_twitter_profile_url }}">
-                          <i aria-hidden="true" class="fa fa-twitter"></i>
-                        </a>
-                      </li>
-                    {% endif %}
-                    {% if user.instagram_profile %}
-                      <li class="hover-instagram">
-                        <a href="{{ user.get_instagram_profile_url }}">
-                          <i aria-hidden="true" class="fa fa-instram"></i>
-                        </a>
-                      </li>
-                    {% endif %}
-                    {% if user.linkedin_profile %}
-                      <li class="hover-linkedin">
-                        <a href="{{ user.get_linkedin_profile_url }}">
-                          <i aria-hidden="true" class="fa fa-linkedin"></i>
-                        </a>
-                      </li>
-                    {% endif %}
-                    {% if user.youtube_profile %}
-                      <li class="hover-youtube">
-                        <a href="{{ user.get_youtube_profile_url }}">
-                          <i aria-hidden="true" class="fa fa-youtube"></i>
-                        </a>
-                      </li>
-                    {% endif %}
-                  </ul>
+              <ul class="port-project-info" style="border: none; padding: 10px 0px;">
+                <li><span>{% trans "Proyectos Vistos" %}</span> {{ user.projects_viewed.count }}</li>
+                <li><span>{% trans "Valoraciones" %}</span> {{ user.projects_liked.count }}</li>
+                <li><span>{% trans "Seguidores" %}</span> {{ user.followed_by.count }}</li>
+                <li><span>{% trans "Siguiendo" %}</span> {{ user.following.count }}</li>
               </ul>
             </div>
             <!--end item holder-->
@@ -107,9 +71,61 @@
             {% endif %}
             <!--end item holder-->
           </div>
-          <!--end right col-->
         </div>
-      </div>
+        <div class="row">
+          <div class="col-md-6">
+            <div class="col-md-12">
+              <div class="pages-sidebar-item" style="margin-bottom: 0px;">
+                <div class="pages-sidebar-item" style="margin-bottom: 0px;">
+                  <ul class="port-project-info" style="border: none; padding: 20px 0px 0px 10px">
+                    <li><span>Nombre</span> {{ user.get_full_name }}</li>
+                    <li><span>Joined</span> {{ user.date_joined | date }}</li>
+                    <li><span>Email</span> {{ user.email }}</li>
+                    <li><span>Ciudad</span> {{ user.city }}</li>
+                    <ul class="social-icons h-anim-rotate socila-sm">
+                      {% if user.facebook_profile %}
+                        <li class="hover-facebook">
+                          <a href="{{ user.get_facebook_profile_url }}">
+                            <i aria-hidden="true" class="fa fa-facebook"></i>
+                          </a>
+                        </li>
+                      {% endif %}
+                      {% if user.twitter_profile %}
+                        <li class="hover-twitter">
+                          <a href="{{ user.get_twitter_profile_url }}">
+                            <i aria-hidden="true" class="fa fa-twitter"></i>
+                          </a>
+                        </li>
+                      {% endif %}
+                      {% if user.instagram_profile %}
+                        <li class="hover-instagram">
+                          <a href="{{ user.get_instagram_profile_url }}">
+                            <i aria-hidden="true" class="fa fa-instagram"></i>
+                          </a>
+                        </li>
+                      {% endif %}
+                      {% if user.linkedin_profile %}
+                        <li class="hover-linkedin">
+                          <a href="{{ user.get_linkedin_profile_url }}">
+                            <i aria-hidden="true" class="fa fa-linkedin"></i>
+                          </a>
+                        </li>
+                      {% endif %}
+                      {% if user.youtube_profile %}
+                        <li class="hover-youtube">
+                          <a href="{{ user.get_youtube_profile_url }}">
+                            <i aria-hidden="true" class="fa fa-youtube"></i>
+                          </a>
+                        </li>
+                      {% endif %}
+                    </ul>
+                  </ul>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
     </section>
     {% if user.has_projects %}
       <section class="sec-bpadding-5">
@@ -117,7 +133,7 @@
           <div class="row">
             <div class="col-xs-12 nopadding">
               <div class="sec-title-container less-padding-5 text-center">
-                <h4 class="uppercase font-weight-7 less-mar-1">PROYECTOS</h4>
+                <h4 class="uppercase font-weight-7 less-mar-1">{% trans "MIS PROYECTOS" %}</h4>
                 <div class="sp-title-line-1"></div>
               </div>
             </div>
@@ -162,10 +178,32 @@
               </div>
             {% endfor %}
           </div>
+          <div class="row">
+            <div class="col-xs-12 nopadding">
+              <div class="sec-title-container less-padding-5 text-center">
+                <h4 class="uppercase font-weight-7 less-mar-1">{% trans "PROYECTOS VALORADOS" %}</h4>
+                <div class="sp-title-line-1"></div>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
     {% endif %}
-    <!-- end section -->
+    <div class="clearfix"></div>    <!-- end section -->
+    <section class="section-primary">
+      <div class="container">
+        <div class="divider-line solid light opacity-1"></div>
+        <div class="row sec-padding-7">
+          <ul class="clients-list grid-cols-5 hover-7 noborder">
+            {% for project in user.projects.all %}
+              {% thumbnail project.images.first.file "275x300" crop="center" as im %}
+                <li><a href="#"><img alt="" class="img-responsive" src="{{ im.url }}"/></a></li>
+              {% endthumbnail %}
+            {% endfor %}
+          </ul>
+        </div>
+      </div>
+    </section>
     <div class="clearfix"></div>
     <!-- end section -->
     <div class="section-dark sec-padding">

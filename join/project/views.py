@@ -1,3 +1,4 @@
+from django.db import transaction
 from django.views.generic import CreateView, ListView, DetailView
 from .models import Project
 
@@ -27,6 +28,10 @@ class DetailProjectView(DetailView):
     def get_context_data(self, **kwargs):
         ctx = super(DetailProjectView, self).get_context_data(**kwargs)
         ctx['related_projects'] = Project.objects.all()
+        user = self.request.user
+        if user.is_authenticated:
+            with transaction.atomic():
+                user.projects_viewed.add(self.get_object())
         return ctx
 
 

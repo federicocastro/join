@@ -34,46 +34,6 @@
                 <img alt="" class="img-responsive" src="{{ picture.url }}"/>
               {% endthumbnail %}
             </div>
-            <!--end item-->
-          </div>
-          <!--end left col-->
-          <div class="col-md-6 col-sm-12 col-xs-12 section-white">
-            <div class="pages-sidebar-item" style="margin-bottom: 15px;">
-              <h5 class="uppercase pages-sidebar-item-title">{{ user.profession }}</h5>
-              <p>{{ user.brief_introduction }}</p>
-              <ul class="port-project-info" style="border: none; padding: 10px 0px;">
-                <li><span>{% trans "Proyectos Vistos" %}</span> {{ user.projects_viewed.count }}</li>
-                <li><span>{% trans "Valoraciones" %}</span> {{ user.projects_liked.count }}</li>
-                <li><span>{% trans "Seguidores" %}</span> {{ user.followed_by.count }}</li>
-                <li><span>{% trans "Siguiendo" %}</span> {{ user.following.count }}</li>
-              </ul>
-            </div>
-            <!--end item holder-->
-            {% if user.skills.exists %}
-              <div class="pages-sidebar-item" style="margin-bottom: 25px;">
-                <h5 class="uppercase pages-sidebar-item-title">{% trans "Habilidades" %}</h5>
-                <ul class="pages-tags">
-                  {% for skill in user.skills.all %}
-                    <li><a href="#">{{ skill.title }}</a></li>
-                  {% endfor %}
-                </ul>
-              </div>
-            {% endif %}
-            {% if user.interests.exists %}
-              <div class="pages-sidebar-item" style="margin-bottom: 25px;">
-                <h5 class="uppercase pages-sidebar-item-title">{% trans "Intereses" %}</h5>
-                <ul class="pages-tags">
-                  {% for interest in user.interests.all %}
-                    <li><a href="#">{{ interest.title }}</a></li>
-                  {% endfor %}
-                </ul>
-              </div>
-            {% endif %}
-            <!--end item holder-->
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-md-6">
             <div class="col-md-12">
               <div class="pages-sidebar-item" style="margin-bottom: 0px;">
                 <div class="pages-sidebar-item" style="margin-bottom: 0px;">
@@ -122,8 +82,43 @@
                   </ul>
                 </div>
               </div>
-
             </div>
+            <!--end item-->
+          </div>
+          <!--end left col-->
+          <div class="col-md-6 col-sm-12 col-xs-12 section-white">
+            <div class="pages-sidebar-item" style="margin-bottom: 15px;">
+              <h5 class="uppercase pages-sidebar-item-title">{{ user.profession }}</h5>
+              <p>{{ user.brief_introduction }}</p>
+              <ul class="port-project-info" style="border: none; padding: 10px 0px;">
+                <li><span>{% trans "Proyectos Vistos" %}</span> {{ user.projects_viewed.count }}</li>
+                <li><span>{% trans "Valoraciones" %}</span> {{ user.projects_liked.count }}</li>
+                <li><span>{% trans "Seguidores" %}</span> {{ user.followed_by.count }}</li>
+                <li><span>{% trans "Siguiendo" %}</span> {{ user.following.count }}</li>
+              </ul>
+            </div>
+            <!--end item holder-->
+            {% if user.skills.exists %}
+              <div class="pages-sidebar-item" style="margin-bottom: 25px;">
+                <h5 class="uppercase pages-sidebar-item-title">{% trans "Habilidades" %}</h5>
+                <ul class="pages-tags">
+                  {% for skill in user.skills.all %}
+                    <li><a href="#">{{ skill.title }}</a></li>
+                  {% endfor %}
+                </ul>
+              </div>
+            {% endif %}
+            {% if user.interests.exists %}
+              <div class="pages-sidebar-item" style="margin-bottom: 25px;">
+                <h5 class="uppercase pages-sidebar-item-title">{% trans "Intereses" %}</h5>
+                <ul class="pages-tags">
+                  {% for interest in user.interests.all %}
+                    <li><a href="#">{{ interest.title }}</a></li>
+                  {% endfor %}
+                </ul>
+              </div>
+            {% endif %}
+            <!--end item holder-->
           </div>
         </div>
     </section>
@@ -195,7 +190,7 @@
         <div class="divider-line solid light opacity-1"></div>
         <div class="row sec-padding-7">
           <ul class="clients-list grid-cols-5 hover-7 noborder">
-            {% for project in user.projects.all %}
+            {% for project in user.projects_liked.all %}
               {% thumbnail project.images.first.file "275x300" crop="center" as im %}
                 <li><a href="#"><img alt="" class="img-responsive" src="{{ im.url }}"/></a></li>
               {% endthumbnail %}

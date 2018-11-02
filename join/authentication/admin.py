@@ -21,6 +21,9 @@ class UserAdminAuth(UserAdmin):
         (_('Personal info'), {'fields': (
             'first_name', 'last_name', 'email', 'picture', 'brief_introduction'
         )}),
+        (_('Address'), {'fields': (
+            'city', 'country', 'postal_code', 'address_line_1', 'address_line_2'
+        )}),
         (_('Permissions'), {'fields': ('is_active', 'is_staff', 'is_superuser',
                                        'groups', 'user_permissions')}),
         (_('Important dates'), {'fields': ('last_login', 'date_joined')}),

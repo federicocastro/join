@@ -47,10 +47,12 @@ class User(AbstractUser):
 
     brief_introduction = models.TextField(max_length=150, blank=True, null=True)
 
-    project_views_count = models.PositiveIntegerField(default=0)
-    likes_count = models.PositiveIntegerField(default=0)
-    followers_count = models.PositiveIntegerField(default=0)
-    following_count = models.PositiveIntegerField(default=0)
+    # Address
+    city = models.CharField(blank=True, null=True, max_length=200)
+    country = models.CharField(blank=True, null=True, max_length=200)
+    postal_code = models.CharField(blank=True, null=True, max_length=200)
+    address_line_1 = models.CharField(blank=True, null=True, max_length=200)
+    address_line_2 = models.CharField(blank=True, null=True, max_length=200)
 
     facebook_profile = models.CharField(max_length=300, blank=True, null=True)
     youtube_profile = models.CharField(max_length=300, blank=True, null=True)

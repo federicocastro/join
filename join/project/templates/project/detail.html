@@ -137,7 +137,7 @@
                   <div class="col-md-12 col-sm-12 col-xs-12 nopadding">
                     <div class="imgbox-small left">
                       <a href="{% url 'detail_project_view' related_project.id %}">
-                        <img src="{{ related_project.images.first.url }}" alt="" class="img-responsive"/>
+                        <img src="{{ related_project.get_primary_image.url }}" alt="" class="img-responsive"/>
                       </a>
                     </div>
                     <div class="text-box-right">

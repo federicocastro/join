@@ -41,7 +41,7 @@
                     <li><span>Nombre</span> {{ user.get_full_name }}</li>
                     <li><span>Joined</span> {{ user.date_joined | date }}</li>
                     <li><span>Email</span> {{ user.email }}</li>
-                    <li><span>Ciudad</span> {{ user.city }}</li>
+                    {% if user.city %}<li><span>Ciudad</span> {{ user.city }}</li>{% endif %}
                     <ul class="social-icons h-anim-rotate socila-sm">
                       {% if user.facebook_profile %}
                         <li class="hover-facebook">
@@ -140,13 +140,17 @@
                 <div class="sp-feature-box-3 margin-bottom">
                   <a href="{% url "detail_project_view" project.id %}">
                     <div class="img-box">
-                      {% thumbnail project.images.first.file "600x700" crop="center" as im %}
+                      {% thumbnail project.get_primary_image "600x700" crop="center" as im %}
                         <img src="{{ im.url }}" alt="" class="img-responsive"/>
                       {% endthumbnail %}
                       <div class="clearfix"></div>
                       <br/>
                       <h5 class="less-mar-1">{{ project.title }}</h5>
-                      <p>{{ project.brief_description }}</p>
+                      {% if project.brief_description %}
+                        <p>{{ project.brief_description }}</p>
+                      {% else %}
+                        <p><a href="{% url 'user_profile' project.owner.pk %}">{{ project.owner.get_full_name }}</a></p>
+                      {% endif %}
                       <br/>
                     </div>
                   </a>
@@ -159,13 +163,17 @@
                   <a href="{% url "detail_project_view" project.id %}">
                     <div class="img-box">
                       <div class="badge">CREADOR</div>
-                      {% thumbnail project.images.first.file "600x700" crop="center" as im %}
+                      {% thumbnail project.get_primary_image "600x700" crop="center" as im %}
                         <img src="{{ im.url }}" alt="" class="img-responsive"/>
                       {% endthumbnail %}
                       <div class="clearfix"></div>
                       <br/>
                       <h5 class="less-mar-1">{{ project.title }}</h5>
-                      <p>{{ project.brief_description }}</p>
+                      {% if project.brief_description %}
+                        <p>{{ project.brief_description }}</p>
+                      {% else %}
+                        <p><a href="{% url 'user_profile' project.owner.pk %}">{{ project.owner.get_full_name }}</a></p>
+                      {% endif %}
                       <br/>
                     </div>
                   </a>

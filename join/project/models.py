@@ -44,12 +44,13 @@ class Project(TimeStampedModel, TitleDescriptionModel):
     tags = GenericRelation(TaggedItem)
 
     def get_primary_image_url(self):
-        url = 'http://via.placeholder.com/550x700'
-        gallery = self.gallery
-        if gallery and gallery.photos.count():
-            photo = gallery.photos.first()
-            url = photo.image.url
+        first_image = self.get_primary_image()
+        url = first_image.url if first_image else 'http://via.placeholder.com/550x700'
         return url
+
+    def get_primary_image(self):
+        first_image = self.images.first()
+        return first_image.file if first_image else None
 
 
 class Interest(TitleSlugDescriptionModel):

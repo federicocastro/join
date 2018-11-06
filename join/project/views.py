@@ -8,7 +8,7 @@ class AddProjectView(CreateView):
     model = Project
     fields = [
         'title', 'brief_description', 'status', 'visibility',
-        'license', 'description', 'collaborators', 'gallery'
+        'license', 'description', 'collaborators',
     ]
 
     def form_valid(self, form):

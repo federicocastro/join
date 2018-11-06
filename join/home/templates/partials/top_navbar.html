@@ -1,6 +1,6 @@
 {% load i18n static core_tags %}
 <div class="col-md-12 nopadding">
-  <div class="header-section style1 pin-style">
+  <div class="header-section white style1 links-dark pin-style">
     <div class="container">
       <div class="mod-menu">
         <div class="row">
@@ -21,20 +21,53 @@
                 </li>
                 <li class="cart-parent"> <a href="javascript:void(0)" title=""> <i aria-hidden="true" class="fa fa-user"></i> <span class="number mar2"> 4 </span> </a>
                   <div class="cart-box">
-                    <div class="content">
-                      <div class="row">
-                        <div class="col-xs-8"> 2 item(s) </div>
-                        <div class="col-xs-4 text-right"> <span>$99</span> </div>
+                    {% if user.is_authenticated %}
+                      <div class="content">
+                        <div class="border-light">
+                          <div class="row">
+                            <div class="col-md-12"> <i class="fa fa-user-circle"></i> {{ user.get_full_name }} </div>
+                            <div class="col-md-12"> <a href="#"><i class="fa fa-user"></i> {% trans "Editar Perfil" %}</a> </div>
+                            <div class="col-md-12"> <a href="#"><i class="fa fa-commenting"></i> {% trans "Notificaciones" %}</a> </div>
+                            <div class="col-md-12"> <a href="#"><i class="fa fa-envelope"></i> {% trans "Mensajes" %}</a> </div>
+                            <div class="col-md-12"><a class="btn btn-dark-3 btn-half-fullwidth uppercase" href="{% url 'logout' %}?next={% url 'home_view' %}">{% trans "Salir" %}</a></div>
+                          </div>
+                        </div>
                       </div>
-                      <ul>
-                        <li> <img alt="" src="http://via.placeholder.com/80x80"/> Jean &amp; Teashirt <span>$30</span> <a class="close-btn" href="#" title="">x</a> </li>
-                        <li> <img alt="" src="http://via.placeholder.com/80x80"/> Jean &amp; Teashirt <span>$30</span> <a class="close-btn" href="#" title="">x</a> </li>
-                      </ul>
-                      <div class="row">
-                        <div class="col-xs-6"> <a class="btn btn-block btn-warning" href="#" title="View Cart">View Cart</a> </div>
-                        <div class="col-xs-6"> <a class="btn btn-block btn-primary" href="#" title="Check out">Check out</a> </div>
+                    {% else %}
+                      <div class="content">
+                        <form action="{% url 'login' %}" method="post" id="login-form">{% csrf_token %}
+                          <div class=" border-light">
+                            <div class="row">
+                              {% if form.errors %}
+                                <div class="col-md-12">
+                                  <p class=" label label-danger">
+                                    Your username and password didn't match.
+                                    Please try again.
+                                  </p>
+                                </div>
+                              {% endif %}
+                              <div class="col-md-12">
+                                <label class="lable-text" for="id_username"> {% trans "Usuario" %}</label>
+                                <input class="input-1" id="id_username" name="username" placeholder="Name or Email" type="text"/>
+                              </div>
+                              <div class="col-md-12">
+                                <label class="lable-text" for="id_password"> {% trans "Contraseña" %}</label>
+                                <input class="input-1" id="id_password" name="password" placeholder="Password" type="password"/>
+                              </div>
+                              <div class="col-md-12 text-left">
+                                <input type="submit" value="Login"
+                                       class="btn btn-dark-3 btn-half-fullwidth uppercase" />
+                                <input type="hidden" name="next" value="{% url 'home_view' %}" />
+                              </div>
+                              {% url 'admin_password_reset' as password_reset_url %}
+                              <div class="col-md-12"><small><a href="#">{% trans "Registrarse" %}</a>{% if password_reset_url %} / <a href="{{ password_reset_url }}">{% trans "Recuperar Contraseña" %}</a>{% endif %}</small></div>
+                            </div>
+                            <!-- end row -->
+                          </div>
+                        </form>
+                        <!--end form body-->
                       </div>
-                    </div>
+                    {% endif %}
                   </div>
                 </li>
                 <li class="visible-xs menu-icon"> <a aria-expanded="false" class="navbar-toggle collapsed" data-target="#menu" data-toggle="collapse" href="javascript:void(0)"> <i aria-hidden="true" class="fa fa-bars"></i> </a> </li>
@@ -59,26 +92,33 @@
                           <li> <a href="{% url "list_project" %}"><i class="fa fa-angle-right"></i> &nbsp; {% trans "Diseño de Interiores" %}</a> </li>
                         </ul>
                       </li>
+                      {% if user.is_authenticated %}
                       <li> <a href="#">{% trans "Ultimos Vistos" %}</a> <span class="arrow"></span>
                         <ul>
-                          <li> <a href="{% url "list_project" %}"><i class="fa fa-angle-right"></i> &nbsp; Project</a> </li>
-                          <li> <a href="{% url "list_project" %}"><i class="fa fa-angle-right"></i> &nbsp; Project</a> </li>
-                          <li> <a href="{% url "list_project" %}"><i class="fa fa-angle-right"></i> &nbsp; Project</a> </li>
-                          <li> <a href="{% url "list_project" %}"><i class="fa fa-angle-right"></i> &nbsp; Project</a> </li>
-                          <li> <a href="{% url "list_project" %}"><i class="fa fa-angle-right"></i> &nbsp; Project</a> </li>
-                          <li> <a href="{% url "list_project" %}"><i class="fa fa-angle-right"></i> &nbsp; Project</a> </li>
+                          {% if user.projects_viewed.count %}
+                            {% for project in user.projects_viewed.all %}
+                            <li> <a href="{% url "detail_project_view" project.id %}"><i class="fa fa-angle-right"></i> &nbsp; {{ project.title }}</a> </li>
+                            {% endfor %}
+                          {% else %}
+                            <li><p class="text-center">{% trans "No visitaste ningun proyecto aún! ¿Por qué no encuentras uno que te guste?" %}</p></li>
+                          {% endif %}
+                          <li> <a class="btn btn-medium border dark xround-7 uppercase" href="{% url "list_project" %}">{% trans "Ver Proyectos" %}</a> </li>
                         </ul>
+
                       </li>
                       <li> <a href="#">{% trans "Mis Proyectos" %}</a> <span class="arrow"></span>
                         <ul>
-                          <li> <a href="portfolio-parallax.html"><i class="fa fa-angle-right"></i> &nbsp; My Project</a> </li>
-                          <li> <a href="portfolio-video.html"><i class="fa fa-angle-right"></i> &nbsp; My Project</a> </li>
-                          <li> <a href="portfolio-left-sidebar.html"><i class="fa fa-angle-right"></i> &nbsp; My Project</a> </li>
-                          <li> <a href="portfolio-right-sidebar.html"><i class="fa fa-angle-right"></i> &nbsp; My Project</a> </li>
-                          <li> <a href="portfolio-carousel.html"><i class="fa fa-angle-right"></i> &nbsp; My Project</a> </li>
+                          {% if user.my_projects.count %}
+                            {% for project in user.my_projects.all %}
+                              <li> <a href="{% url 'detail_project_view' project.id %}"><i class="fa fa-angle-right"></i> &nbsp; {{ project.title }}</a> </li>
+                            {% endfor %}
+                          {% else %}
+                            <li><p class="text-center">{% trans "No tienes proyectos aún! ¿Por qué no creas uno?" %}</p></li>
+                          {% endif %}
                           <li> <a class="btn btn-medium border dark xround-7 uppercase" href="{% url "add_project" %}">{% trans "Nuevo Proyecto" %}</a> </li>
                         </ul>
                       </li>
+                      {% endif %}
                     </ul>
                   </li>
                   <li class="{% active_menu "forum" %}"> <a href="{% url "forum_view" %}">{% trans "Foro" %}</a> <span class="arrow"></span>

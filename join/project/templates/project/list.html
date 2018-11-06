@@ -31,12 +31,16 @@
         {% for project in object_list %}
           <div class="col-md-3 col-sm-6 col-xs-12">
             <div class="img-hover-4">
+              <a href="{% url 'detail_project_view' project.id %}">
               <div class="text-box ">
                 <h5 class="text-white">{{ project.title }}</h5>
                 <p class="text-light">{{ project.brief_description }}</p>
               </div>
+              </a>
               {% thumbnail project.images.first.file "485x618" crop="center" as im %}
+                <a href="{% url 'detail_project_view' project.id %}">
                 <img src="{{ im.url }}" alt="" class="img-responsive"/>
+                </a>
               {% endthumbnail %}
             </div>
           </div>

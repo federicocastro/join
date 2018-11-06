@@ -4,7 +4,7 @@
   {% load i18n static %}
   <section class="sec-padding">
     <div class="container">
-      <div class="col-md-12 text-center"><h4 class="uppercase">{% trans "Add New Project" %}</h4></div>
+      <div class="col-md-12 text-center"><h4 class="uppercase">{% trans "Crear Nuevo Proyecto" %}</h4></div>
       <div class="clearfix"></div>
       <br/> <br/>
       <form method="post">
@@ -13,20 +13,30 @@
 
           <div class="row">
             <div class="col-md-12">
-              <label class="lable-text" for="title">{{ form.title.label }}</label>
+              <label class="lable-text" for="title">{% trans "Titulo del Proyecto" %}</label>
               {{ form.title | add_css_class:"input-1" }}
             </div>
             <div class="col-md-12">
-              <label class="lable-text" for="description">{{ form.brief_description.label }}</label>
+              <label class="lable-text" for="description">{% trans "Descripción breve" %}</label>
               {{ form.brief_description | add_css_class:"input-1" }}
             </div>
             <div class="col-md-12">
-              <label class="lable-text" for="description">{{ form.description.label }}</label>
+              <label class="lable-text" for="description">{% trans "Descripción" %}</label>
               {{ form.description | add_css_class:"input-1" }}
             </div>
             <div class="col-md-12">
-              <label class="lable-text" for="description">{{ form.visibility.label }}</label>
-              {{ form.visibility }}
+              <label class="lable-text" for="license">{% trans "Licencia" %}</label>
+              <div class="select-box">
+                {{ form.license|add_css_class:"select-box-2" }}
+                <div class="select__arrow"></div>
+              </div>
+            </div>
+            <div class="col-md-12">
+              <label class="lable-text" for="visibility">{% trans "Visibilidad" %}</label>
+              <div class="select-box">
+                {{ form.visibility|add_css_class:"select-box-2" }}
+                <div class="select__arrow"></div>
+              </div>
             </div>
 
           </div>
@@ -35,10 +45,6 @@
             <div class="col-md-6">
               <label class="lable-text" for="collaborators">{{ form.collaborators.label }}</label>
               {{ form.collaborators | add_css_class:"input-1" }}
-            </div>
-            <div class="col-md-6">
-              <label class="lable-text" for="gallery">{{ form.gallery.label }}</label>
-              {{ form.gallery | add_css_class:"input-1" }}
             </div>
           </div>
           <!-- end row -->

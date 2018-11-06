@@ -627,7 +627,7 @@
   padding: 30px 15px;
 }
 .header-section.white {
-  background-color: #fff;
+  background-color: #fff !important;
 }
 .header-section.light {
   background-color: #f5f5f5;

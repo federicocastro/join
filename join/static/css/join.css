@@ -11,3 +11,7 @@
 #people-sublock {
     padding-top: 40px;
 }
+
+.header-section.white {
+  background-color: #fff !important;
+}

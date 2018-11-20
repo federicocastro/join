@@ -4089,7 +4089,9 @@ ul.social-icons {
     font-size: 16px;
     height: 40px;
     line-height: 39px;
-    width: 40px;
+    width: auto;
+    min-width: 40px;
+    padding: 0px 15px;
 }
 
 /* social icon round

@@ -977,7 +977,7 @@ pages styles
 	width:100%;
 	padding:0px;
 	float:left;
-	min-height:645px;
+	min-height:750px;
 }
 .ce-feature-box-13 .img-box{
 	position:relative;
@@ -994,13 +994,13 @@ pages styles
 	background-color:rgba(0, 0, 0, 0.2);
 }
 .ce-feature-box-13 .img-box .text-box{
-	height: 235px;
+	height: 350px;
 	position: absolute;
 	width:80%;
 	padding:50px;
 	float:left;
 	left:0px;
-	bottom:-185px;
+	bottom:-300px;
 	z-index:3;
 	background-color:#fff;
 	transition: all 0.3s ease-out 0s;

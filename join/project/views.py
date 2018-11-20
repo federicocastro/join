@@ -1,18 +1,43 @@
 from django.db import transaction
+from django.http import HttpResponseRedirect
+from django.urls import reverse
 from django.views.generic import CreateView, ListView, DetailView
 from .models import Project
+from django import forms
+
+
+class AddProjectForm(forms.ModelForm):
+    status = forms.ChoiceField(choices=Project.STATUS_CHOICES, required=False)
+
+    class Meta:
+        model = Project
+        fields = ['title', 'brief_description', 'status', 'visibility',
+                  'license', 'description', 'collaborators']
 
 
 class AddProjectView(CreateView):
     template_name = 'project/add.html'
+    form_class = AddProjectForm
     model = Project
-    fields = [
-        'title', 'brief_description', 'status', 'visibility',
-        'license', 'description', 'collaborators',
-    ]
+
+    def get_success_url(self):
+        return reverse('detail_project_view', kwargs={'pk': self.object.id})
+
+    def get_initial(self):
+        initial = super(AddProjectView, self).get_initial()
+        initial.update(
+            {
+                'owner': self.request.user,
+                'status': Project.STATUS_CHOICES.open
+            }
+        )
+        return initial
 
     def form_valid(self, form):
-        return super(AddProjectView, self).form_valid(form)
+        instance = form.save(commit=False)
+        instance.owner = self.request.user
+        instance.save()
+        return HttpResponseRedirect(self.get_success_url())
 
 
 class ListProjectView(ListView):

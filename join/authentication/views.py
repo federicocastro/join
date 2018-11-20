@@ -9,6 +9,11 @@ class UsersView(ListView):
     model = User
     pk_url_kwarg = 'pk'
 
+    def get_queryset(self):
+        qs = super(UsersView, self).get_queryset()
+        qs = qs.filter(is_staff=False)
+        return qs
+
     def get_context_data(self, *args, object_list=None, **kwargs):
         context = super(UsersView, self).get_context_data(*args, object_list=None, **kwargs)
         context['professions'] = Profession.objects.all()

@@ -7,6 +7,9 @@
       <div class="col-md-12 text-center"><h4 class="uppercase">{% trans "Crear Nuevo Proyecto" %}</h4></div>
       <div class="clearfix"></div>
       <br/> <br/>
+      {% if form.errors %}
+        {{ form.errors }}
+      {% endif %}
       <form method="post">
         {% csrf_token %}
         <div class="form-body bg-light">
@@ -53,7 +56,7 @@
             <div class="col-md-12 text-center">
               <button class="btn btn-dark btn-medium uppercase" type="submit">
                 <i class="fa fa-paper-plane"></i>
-                {% trans "Add Project" %}
+                {% trans "Cargar Proyecto" %}
               </button>
             </div>
           </div>

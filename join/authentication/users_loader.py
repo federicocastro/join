@@ -65,7 +65,7 @@ def update_user_image(user, image_name):
     # This saves the model so be sure that is it valid
     image_path = os.path.join(settings.BASE_DIR, static('users/{}'.format(image_name))[1:])
     with open(image_path, 'rb') as user_image_file:
-        file_name = '{}_profile_picture.jpg'.format(user.username)
+        file_name = '{}_profile_picture.jpg'.format(user.id)
         user.picture.save(file_name, files.File(user_image_file))
 
 

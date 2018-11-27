@@ -4,6 +4,11 @@ import os
 from django.conf import settings
 from django.core import files
 from django.contrib.staticfiles.templatetags.staticfiles import static
+from django.db import transaction
+
+from authentication.models import User
+from project.models import ProjectImage, License, Project
+from tag.models import TaggedItem
 
 users = """
 ID,username,first_name,last_name,email,picture,brief_introduction,gender,interests,skills,profession,facebook_profile,intagram_profile,twitter_profile,linkedin_profile,youtube_profile
@@ -31,6 +36,27 @@ ID,username,first_name,last_name,email,picture,brief_introduction,gender,interes
 22,bmorales	,Cecilia Belén,Morales,	ceciliabelen2595@gmail.com,shutterstock_662171107.jpg,¡Hola a todos! Soy una apasionada por las ideas alocadas y me gusta innovar en los diseño de ilustración.. editorial y tipografía. Quiero aprender y aportar mis ideas y conocimientos a los proyectos en los que pueda unirme. Gracias a todos!,Femenino,Tipografía;Diseño Editorial;Ilustración;Creatividad;Packaging; Diseño de Patrones,Adobe Illustrator; Adobe Photoshop; Adobe Indesign;Corel; 3D,Diseñadora Gráfica,ceci.morales33,Meric_ceci,ceci.morales33,ceci.morales33,ceci.morales33
 23,fmartins,Franca,Martins,f.martins@jointest.comc,Franca-martins.jpg,¡Chicos.. hola a todos! Hoy el diseño nos inspira a hacer grandes cosas. Quiero aportar desde mi profesión como diseñadora de interiores. ,Femenino,Equipamiento; Paredes; Muebles; Madera; Empapelados; Ilustración,Solidwork;PatternMaker; Corel; Adobe Illustrator; Photoshop,Diseñadora de Interiores,francamartins,Fran.Martins,francamartins,,
 """
+
+PROJECTS = """
+Titulo,Descripción Corta,Descripción Larga,Licencia,Dueño,Colaboradores,Visibilidad,Estado,Tags,Imagen Principal (500x700) (LINK)
+Bakery,Diseño Packaging,Handmade; calidad y frescura son las principales características de los productos que ofrece Bakery; y sobre las cuales se definió la  identidad y el diseño del packaging. Es un diseño simple; a dos tintas; donde predominan ilustraciones relacionadas al rubro de la marca; sobre un papel natural; rústico y cálido.,Licencia abierta,Carla Guzmán,María Linares - Nicol Maydana - Martina Biré,Privado,Finalizado,Packaging - Embalaje - Identidad - Sustentable,shutterstock_1038992026.jpg
+Geometría natural,Decoración sustentable,Cuadros verdes que dan vida y acomapañan la estructura de los espacios; creados con madera reciclada; pinturas naturales; y plantas tanto para exterior como interior.,Licencia abierta,Mauro Solis - Paula Gilleto,Santiago Paellada - David Fontanarosa,Publico,Iniciado,Diseño de Interiores - Decoración - Verde - Jardín - Sustentable,shutterstock_471391643.jpg
+Lines,Moda/Fotografía,Queremos dar un giro a la moda 2019; queremos llevar la moda line (estilo de líneas) a tu armario. Algo sofisticado; destinado a mujeres con un estilo minimalista y simple ¿Te sumas? ,Licencia cerrada,Guillermina Vazquez,Noelia Jaca- Rafael Hernádez,Publico,Finalizado,Diseño de indumentaria-Fotografía- Belleza- Lineas- Juvenil- 2019- Placard- Femenini- Minimalista,shutterstock_266547770.jpg
+Tipografía Warm,Diseño tipográfico,Un proyecto destinado a generar una nueva tendencia tipográfica para ser utilizada en ambientes festivos; donde el contraste con la luz es lo que predomina. La curva y el espacio entre líneas permiten enfocar la atención de quienes miren un cartel por las calles cordobesas.,Licencia abierta,William Morales- Ruben Perez,Rafael Bernuy- Florencia Monetto,Privado,Finalizado,Colores- tipografía- letras- curvas- carteles- luces- palabras,shutterstock_1084997549.jpg
+Enfoques paisajisticos,Fotografía,Si te apasiona el aire libre y tomar fotos; esté proyecto es para vos. La idea es tomar fotogrfías de los distintos lugares de las sierras de Córdoba para realizar un book de foto. ,Licencia cerrada,Soledad Flores,Cecilia Elena- Micael Sanchez- Pía Lopez,Publico,Abierto,Camara de fotos- paisajes- luz- enfoques- pregnancia,shutterstock_558890911.jpg
+Ilustración tropical,Ilustración- Diseño editorial,La pluma; la tableta y el color son nuestras pasiones por la ilustración. Un trabajo ilustrativo donde se intenta dar a conocer la ilustración y la utilización de los diferentes elementos que pueden intervenir a la hora de pensar un dibujo. Respetar la gama de colores y a línea permite la unidad del diseño. En busqueda de dibujos con un estilo fresco y tropical que permitan ser leidos por si mismo.,Licencia abierta,Marcos Creche,Joel Gomez- Micaela Simes- Noel Boero- Julian Carballo,Privado,Iniciado,Punto- línea- dibujo- ilustración- papel- computadora- pincel- tableta,shutterstock_589045499-01.jpg
+Loarem mercados,Identidad corporativa- Diseño gráfico,La identidad de marca permite la identificación por parte del usuario; sea donde sea que se visualize. La combinación de elementos y creación de merchandasing colaboran en la huella de la marca. Un trabajo que inivita a la innovación e inspiración para dejar una huella por los supermercados cordobeses.,Licencia cerrada,Matías Ramirez,Magalí Courel- Sol Prados,Publico,Iniciado,Merchandasing- tipografía- diseño de identidad- marca- proyecto- ,shutterstock_1130146703.png
+Trajes de baño pop,Diseño de indumentaria- Diseño de identidad,Con la llegada del verano los trajes de baño son el boom del momento. Un emprendimiento que apunta a la alta costura de mayas y bikinis de colores; inspirados en la tendencia pop.¿Contamos con vos?,Licencia abierta,Celeste Moyano,Joaquin Hernández- Candelaria Molina,Privado,Abierto,Telas- mayas- colores- corte y confección-diseño de indumentaria,shutterstock_132434312.jpg
+"""
+
+
+def update_project_image(project, image_name):
+    image_path = os.path.join(settings.BASE_DIR, static('projects/{}'.format(image_name))[1:])
+    with open(image_path, 'rb') as project_image_file:
+        file_name = '{}_project_picture.jpg'.format(project.id)
+        project_image = ProjectImage(project=project)
+        project_image.file.save(file_name, files.File(project_image_file))
+        project_image.save()
 
 
 def update_user_image(user, image_name):
@@ -80,11 +106,60 @@ def update_user_image_from_url(user, image_url):
     user.picture.save(file_name, files.File(lf))
 
 
+def get_user_from_full_name(full_name):
+    full_name = [u for u in full_name.split('-')][0].strip() if '-' in full_name else full_name
+    first_name, last_name = full_name.split()
+    try:
+        user = User.objects.get(first_name=first_name, last_name=last_name)
+    except User.DoesNotExist as e:
+        user = None
+    return user
+
+
+def create_super_user():
+    u = User(username='admin', email='fmc0208@gmail.com',
+             first_name='Federico', last_name='Castro',
+             is_staff=True, is_superuser=True)
+    u.set_password('admin1234')
+    u.save()
+
+
+def load_projects():
+    from project.models import Project
+
+    Project.objects.all().delete()
+
+    for title, short_description, long_description, lic, owner,\
+        collaborators, visibility, status, tags, main_image in [e.split(',') for e in PROJECTS.split('\n') if e][1:]:
+        owner = get_user_from_full_name(full_name=owner) or User.objects.get(username='admin')
+        long_description = long_description.replace(';', ',')
+        collaborators = [c.strip() for c in collaborators.split('-')]
+        collaborators = [get_user_from_full_name(u) for u in collaborators]
+        tags = [t.strip() for t in tags.split('-')]
+
+        lic, created = License.objects.get_or_create(title=lic)
+
+        project = Project.objects.create(
+            title=title,
+            brief_description=short_description,
+            description=long_description,
+            license=lic,
+            owner=owner,
+        )
+
+        update_project_image(project, image_name=main_image)
+
+        for tag in tags:
+            ti = TaggedItem.objects.create(tag=tag.capitalize(), content_object=project)
+
+        for c in collaborators:
+            if c:
+                project.collaborators.add(c)
+
+
 def load_users():
     from authentication.models import User, Skill, Profession
     from project.models import Interest
-
-    User.objects.all().delete()
 
     for idu, username, first_name, last_name, email, image_file_name, \
         description, gender, interests, skills, profession, \
@@ -134,3 +209,13 @@ def load_users():
             user.interests.set(user_interests)
             update_user_image(user, image_file_name)
             user.save()
+
+
+def load_initial_data():
+    with transaction.atomic():
+        User.objects.all().delete()
+        Project.objects.all().delete()
+        create_super_user()
+        load_users()
+        load_projects()
+

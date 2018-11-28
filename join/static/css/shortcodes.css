@@ -572,6 +572,10 @@ image hover styles
 	color:#000;
 	border-color:#000;
 }
+.btn.border.border-white {
+	color:#fff;
+	border-color:#fff;
+}
 .btn.border.border-cyan {
 	color:#01bf9d;
 	border-color:#01bf9d;

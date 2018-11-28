@@ -1,4 +1,4 @@
-{% load i18n static core_tags %}
+{% load i18n static core_tags thumbnail %}
 {% get_image_by_slug "foro-background" as forobackground %}
 {% if forobackground %}
   <section class="section-side-image section-light sec-padding-5 clearfix" style="background: url({{ forobackground.file.url }});">
@@ -29,7 +29,10 @@
               <br/>
               <div class="divider-line solid light-2"></div>
               <br/>
-              <div class="imgbox-tiny round center overflow-hidden"><img alt="" class="img-responsive" src="http://via.placeholder.com/100x100"/></div>
+              {% get_image_by_slug "celeste-moyano" as image_var %}
+              {% thumbnail image_var.file "100x100" crop="center" format="PNG" as im %}
+                <div class="imgbox-tiny round center overflow-hidden"><img alt="" class="img-responsive" src="{{ im.url }}"/></div>
+              {% endthumbnail %}
               <h6 class="less-mar-1 title montserrat">Celeste Moyano</h6>
               <span>Diseñadora de Indumentaria</span>
               <div><a href="#" class="btn btn-tiny border border-cello uppercase xround-5">Responder</a></div>
@@ -48,7 +51,10 @@
               <br/>
               <div class="divider-line solid light-2"></div>
               <br/>
-              <div class="imgbox-tiny round center overflow-hidden"><img alt="" class="img-responsive" src="http://via.placeholder.com/100x100"/></div>
+              {% get_image_by_slug "florencia-bernuy" as image_var %}
+              {% thumbnail image_var.file "100x100" crop="center" format="PNG" as im %}
+                <div class="imgbox-tiny round center overflow-hidden"><img alt="" class="img-responsive" src="{{ im.url }}"/></div>
+              {% endthumbnail %}
               <h6 class="less-mar-1 title montserrat">Florencia Bernuy</h6>
               <span>Diseñadora Gráfica</span>
               <div><a href="#" class="btn btn-tiny border border-cello uppercase xround-5">Responder</a></div>
@@ -67,7 +73,10 @@
               <br/>
               <div class="divider-line solid light-2"></div>
               <br/>
-              <div class="imgbox-tiny round center overflow-hidden"><img alt="" class="img-responsive" src="http://via.placeholder.com/100x100"/></div>
+              {% get_image_by_slug "ruben-perez" as image_var %}
+              {% thumbnail image_var.file "100x100" crop="center" format="PNG" as im %}
+                <div class="imgbox-tiny round center overflow-hidden"><img alt="" class="img-responsive" src="{{ im.url }}"/></div>
+              {% endthumbnail %}
               <h6 class="less-mar-1 title montserrat">Rubén Pérez</h6>
               <span>Diseñador Gráfico</span>
               <div><a href="#" class="btn btn-tiny border border-cello uppercase xround-5">Responder</a></div>

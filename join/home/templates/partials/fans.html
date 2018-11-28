@@ -2,7 +2,7 @@
 <section class="section-side-image section-dark sec-padding-5 clearfix">
   <div class="img-holder col-md-12 col-sm-3 pull-left">
     {% get_image_by_slug "news-background" as news_background %}
-    <div class="background-imgholder" style="background:url(http://via.placeholder.com/1500x960);"><img alt="" class="nodisplay-image" src="{{ news_background.file.url }}"> </img></div>
+    <div class="background-imgholder" style="background:url({{ news_background.file.url }});"><img alt="" class="nodisplay-image" src="{{ news_background.file.url }}"> </img></div>
   </div>
   <div class="container-fluid">
     <div class="row slider-btn-2">

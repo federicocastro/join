@@ -1,4 +1,4 @@
-{% load i18n static core_tags thumbnail %}
+{% load i18n static core_tags thumbnail webp_converter %}
 {% get_image_by_slug "foro-background" as forobackground %}
 {% if forobackground %}
   <section class="section-side-image section-light sec-padding-5 clearfix" style="background: url({{ forobackground.file.url }});">

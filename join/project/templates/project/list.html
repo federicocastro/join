@@ -1,5 +1,5 @@
 {% extends 'base.html' %}
-{% load core_tags thumbnail webp_converter %}
+{% load core_tags thumbnail webp_converter  %}
 {% block content %}
   {% load i18n static %}
   <!--end header section -->
@@ -37,7 +37,7 @@
                 <p class="text-light">{{ project.brief_description }}</p>
               </div>
               </a>
-              {% thumbnail project.images.first.file "485x618" crop="center" as im %}
+              {% thumbnail project.images.first.file "485x618" format="WEBP" crop="center" as im %}
                 <a href="{% url 'detail_project_view' project.id %}">
                 <img src="{{ im.url }}" alt="" class="img-responsive"/>
                 </a>

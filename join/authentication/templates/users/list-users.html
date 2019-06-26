@@ -74,7 +74,7 @@
                         </ul>
                       </div>
                       {% if user.picture %}
-                        {% thumbnail user.picture "500x600" crop="center" as im %}
+                        {% thumbnail user.picture "500x600" format="WEBP" crop="center" as im %}
                           <img alt="{{ user.get_full_name }}" class="img-responsive" src="{{ im.url }}"/>
                         {% endthumbnail %}
                       {% else %}

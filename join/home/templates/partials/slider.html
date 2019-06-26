@@ -6,7 +6,7 @@
     <div id="rev_slider_104_1" class="rev_slider fullscreenbanner" style="display:none;" data-version="5.0.7">
       <ul>	<!-- SLIDE  -->
         {% for slide in sliders %}
-          {% thumbnail slide.image "100x50" quality="15" format="PNG" as mini_thumb_slide %}
+          {% thumbnail slide.image "100x50" quality="15" format="WEBP" as mini_thumb_slide %}
           <li data-index="rs-{{ forloop.counter|add:308 }}" data-transition="slideoverhorizontal" data-slotamount="default"  data-easein="Power4.easeInOut" data-easeout="Power4.easeInOut" data-masterspeed="1000"  data-thumb="{{ mini_thumb_slide.url }}"  data-rotate="0"  data-fstransition="fade" data-fsmasterspeed="1500" data-fsslotamount="7" data-saveperformance="off"  data-title="{{ slide.title }}" data-description="{{ slide.description }}">
           {% endthumbnail %}
             <!-- MAIN IMAGE -->

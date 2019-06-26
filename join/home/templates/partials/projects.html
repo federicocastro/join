@@ -20,7 +20,7 @@
                   <a href="{% url "detail_project_view" project.id %}"><p class="small-text text-center" style="width: 250px">{{ project.description }}</p></a>
                   <br/>
                 </div>
-                {% thumbnail project.images.first.file "270x342" crop="center" as im %}
+                {% thumbnail project.images.first.file "270x342" format="WEBP" crop="center" as im %}
                   <img alt="" class="img-responsive" src="{{ im.url }}"/>
                 {% empty %}
                 {% endthumbnail %}

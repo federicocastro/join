@@ -41,7 +41,7 @@
               <div class="ce4-feature-box-42">
                 <div id="sync2" class="owl-carousel">
                   {% for image in object.images.all %}
-                    {% thumbnail image.file "200x150" padding=True as im %}
+                    {% thumbnail image.file "200x150" format="WEBP" padding=True as im %}
                       <div class="item"><img style="margin: auto" src="{{ im.url }}" alt="" class="img-responsive"/></div>
                     {% endthumbnail %}
                   {% endfor %}

@@ -33,7 +33,7 @@
                     <p class="padding-top-1">{% if user.brief_introduction %}{{ user.brief_introduction }}{% endif %}</p>
                   </div>
                   <div class="overlay"></div>
-                  {% thumbnail user.picture "370x420" crop="center" format="PNG" as im %}
+                  {% thumbnail user.picture "370x420" crop="center" format="WEBP" as im %}
                     <img alt="" class="img-responsive" src="{{ im.url }}"/>
                   {% endthumbnail %}
                 </div>

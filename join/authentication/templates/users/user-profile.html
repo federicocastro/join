@@ -30,7 +30,7 @@
         <div class="row">
           <div class="col-md-6">
             <div class="col-md-12">
-              {% thumbnail user.picture "740x740" crop="center" as picture %}
+              {% thumbnail user.picture "740x740" format="WEBP" crop="center" as picture %}
                 <img alt="" class="img-responsive" src="{{ picture.url }}"/>
               {% endthumbnail %}
             </div>
@@ -170,7 +170,7 @@
                 <div class="sp-feature-box-3 margin-bottom">
                   <a href="{% url "detail_project_view" project.id %}">
                     <div class="img-box">
-                      {% thumbnail project.get_primary_image "600x700" crop="center" as im %}
+                      {% thumbnail project.get_primary_image "600x700" format="WEBP" crop="center" as im %}
                         <img src="{{ im.url }}" alt="" class="img-responsive"/>
                       {% endthumbnail %}
                       <div class="clearfix"></div>
@@ -193,7 +193,7 @@
                   <a href="{% url "detail_project_view" project.id %}">
                     <div class="img-box">
                       <div class="badge">CREADOR</div>
-                      {% thumbnail project.get_primary_image "600x700" crop="center" as im %}
+                      {% thumbnail project.get_primary_image "600x700" format="WEBP" crop="center" as im %}
                         <img src="{{ im.url }}" alt="" class="img-responsive"/>
                       {% endthumbnail %}
                       <div class="clearfix"></div>
@@ -229,7 +229,7 @@
         <div class="row sec-padding-7">
           <ul class="clients-list grid-cols-5 hover-7 noborder">
             {% for project in user.projects_liked.all %}
-              {% thumbnail project.images.first.file "275x300" crop="center" as im %}
+              {% thumbnail project.images.first.file "275x300" format="WEBP" crop="center" as im %}
                 <li><a href="#"><img alt="" class="img-responsive" src="{{ im.url }}"/></a></li>
               {% endthumbnail %}
             {% endfor %}

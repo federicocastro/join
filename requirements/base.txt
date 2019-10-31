@@ -10,7 +10,7 @@ django-contrib-comments
 django-photologue
 django-model-utils==3.1.2
 django-webp-converter
-Pillow==5.0.0
+Pillow==6.2.0
 psycopg2==2.7.4
 pgmagick
 sorl-thumbnail
